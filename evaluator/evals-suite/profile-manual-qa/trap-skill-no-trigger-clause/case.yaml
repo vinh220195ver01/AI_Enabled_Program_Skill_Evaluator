@@ -1,0 +1,18 @@
+schema_version: "1.1"
+name: trap-skill-no-trigger-clause
+# kind: trap
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: A3[0] ("Has a trigger clause: Use when...") là false cho
+  test-requirements-analysis. Bằng chứng trong files/skills/test-requirements-analysis/SKILL.md: dòng
+  description bắt đầu "For reviewing a user story and its acceptance..." và không có cụm
+  "Use when" / "Use this skill when"; mục "## When to use" trong thân bài không thay thế điều
+  kiện này, vì điều kiện nói về description.
+  Hành vi bắt buộc: A3[0] false với locations trích nguyên văn đầu dòng description (kèm số
+  dòng) trong SKILL.md; các điều kiện A3 còn lại không bị kéo theo (rule 8: một nguyên nhân
+  đếm một lần): A3[1] (hoạt động + đầu vào) vẫn true, A3[3] và A3[4] (Process, đánh số) true;
+  A1 và A2 true; đúng cấu trúc kết quả của judge (skills, skill_results hoặc competency_results, gate, notes) và `merge_judge_results.py --submission-dir submission/` không báo lỗi riêng nào của file (nó chỉ phàn nàn các competency chưa chấm).
+  KHÔNG được: làm tròn A3[0] thành true vì thân bài có mục "When to use"; bịa lỗi cho các
+  điều kiện khác; sửa SKILL.md; cho điểm hay verdict.

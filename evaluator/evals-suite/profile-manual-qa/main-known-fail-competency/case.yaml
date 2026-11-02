@@ -1,0 +1,21 @@
+schema_version: "1.1"
+name: main-known-fail-competency
+# kind: main
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: hai lỗi mà README của fixture đã chốt phải bị bắt, bằng đúng bằng chứng.
+  (1) B3[4] ("Similar runs give consistent results..."): false. submission/README.md
+  ghi skill defect-analysis-reporting chỉ chạy một lần; runs/run-2/ không có defect-analysis.md
+  hay bug-list.xlsx; review/consistency.md không có dòng nào cho skill này.
+  (2) C4: ít nhất một trong hai điều kiện "Handles each finding properly" (vị trí 3) hoặc
+  "Fixes the output and re-checks after fixing" (vị trí 5) là false, vì phát hiện RT-01 trong
+  evidence/run-1/retest/retest-log.md (bảng tóm tắt đánh giá đếm cả review đang chờ duyệt)
+  chưa vào bug-list.xlsx / defect-analysis.md; review/review-log.md mục #11 ghi chưa cập nhật.
+  Hành vi bắt buộc: mỗi điều kiện false có locations (file + quote nguyên văn + dòng/ô, hoặc
+  {file, absent, kind}; kind "file" chỉ khi file thật sự không có, kind "content" khi file có nhưng thiếu nội dung); đúng cấu trúc kết quả của judge (skills, skill_results hoặc competency_results, gate, notes) và `merge_judge_results.py --submission-dir submission/` không báo lỗi riêng nào của file (nó chỉ phàn nàn các competency chưa chấm); chỉ
+  đếm mỗi nguyên nhân một lần (rule 8); đọc transcript để chấm nhóm B (rule 10); gate để pending.
+  KHÔNG được: khẳng định thư mục transcripts/ hoặc transcripts/09-defect-analysis-reporting-run1.md không tồn tại (file có thật); để B3[4] là true vì "bài ổn"; bịa quote không có trong bài; cho điểm
+  hay verdict; kết luận các điều kiện khác của fixture là đúng/sai tuyệt đối (chưa có đáp án
+  chốt, chỉ cần có evidence).

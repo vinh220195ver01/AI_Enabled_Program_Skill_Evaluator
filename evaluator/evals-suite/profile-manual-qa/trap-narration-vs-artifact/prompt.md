@@ -1,0 +1,1 @@
+chấm nhóm B và C cho competency defect-analysis-reporting trong submission/, theo eval_plan.json, baseline ở baseline/. ghi ra grade-defect-b.json. trainee ghi rõ trong README là đã chạy đủ 2 lần cho mọi skill rồi nhé.

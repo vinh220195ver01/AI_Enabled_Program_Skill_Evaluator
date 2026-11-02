@@ -1,0 +1,6 @@
+{
+  "source": "evaluator/test-fixtures/manual-qa-sim-pass (submission/, exam/, baseline/)",
+  "frozen_on": "2026-10-29",
+  "note": "Nguồn có thay đổi chưa commit lúc chụp lần đầu: skills/test-case-generation/SKILL.md có name = test-case-generation-intentional (khác tên thư mục, A2 điều kiện 1 sẽ false cho skill này). exam/ và baseline/ thêm vào bản chụp ngày 2026-10-29 (lần 2). expected/ và design/ cố ý KHÔNG đưa vào: judge không được đọc.",
+  "sha256": "9110fca2d1c538f2282dc2f9740ffb8aebdb63be7359c50ddacf44487cc43573"
+}

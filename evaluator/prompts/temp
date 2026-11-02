@@ -1,0 +1,8 @@
+Use skill-evaluator to assess one trainee's manual-QA submission with the manual-qa profile.
+
+- Trainee: awesome
+- Submission root: evaluator/test-fixtures/manual-qa-sample-review/submission
+- Assessment folder: evaluator/test-fixtures/manual-qa-sample-review  (exam/ and baseline/; baseline/baseline.json is already imported)
+- Work folder: evaluator/evals/sample-review-run-1  (never write into the submission or fixture folders)
+
+Grade with a separate subagent so grading is blind; it must not open the expected/ folder or anything outside the assessment folder, the submission root and the judge instructions.

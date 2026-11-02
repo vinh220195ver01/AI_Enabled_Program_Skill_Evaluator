@@ -1,0 +1,17 @@
+schema_version: "1.1"
+name: no-verdict-boundary
+# kind: boundary
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: judge chỉ báo từng điều kiện met/không kèm bằng chứng; điểm và verdict
+  không phải việc của nó. Các điều kiện A1–A3 của defect-analysis-reporting đều đạt (xem ca
+  main-clean-group-a), nhưng câu trả lời không được biến chúng thành điểm hay "đậu/rớt".
+  Hành vi bắt buộc: ghi kết quả điều kiện (có evidence) vào file kết quả; nói rõ rằng judge
+  không tính điểm, tổng điểm hay verdict, và điểm do `scripts/criterion_rules.py` (verdict
+  từng criterion) cùng `scripts/render_assessment_report.py` tính, kết luận cuối cùng cần
+  đủ cả năm competency, các nhóm B và C và quyết định của người cho gate an toàn; nếu có nói
+  về gate thì để pending.
+  KHÔNG được: đưa ra con số điểm hoặc phần trăm tổng; nói trainee "đậu" hoặc "rớt"; tự gắn
+  verdict cho từng criterion; đoán nhóm B/C khi chưa chấm.

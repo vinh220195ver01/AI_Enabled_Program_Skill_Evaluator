@@ -1,0 +1,391 @@
+{
+  "about": "How results graded with the v0.3 points model (error counts per criterion A1-A8, B1-B4, C1-C7) map onto the conditions of the current manual-qa criteria. Used by scripts/convert_v03_results.py. A v0.3 criterion maps only where it checks the same thing as a current condition; the rest is listed as not convertible (course decision M-26: the dropped v0.3 criteria come back later as T-05). `confidence`: exact = same check; approximate = close but not identical wording.",
+  "skill_competency_by_folder_keyword": [
+    {
+      "keyword": "requirement",
+      "competency": "requirements-analysis"
+    },
+    {
+      "keyword": "condition",
+      "competency": "test-design"
+    },
+    {
+      "keyword": "design",
+      "competency": "test-design"
+    },
+    {
+      "keyword": "case",
+      "competency": "test-case-generation"
+    },
+    {
+      "keyword": "data",
+      "competency": "test-data-generation"
+    },
+    {
+      "keyword": "defect",
+      "competency": "defect-analysis-reporting"
+    },
+    {
+      "keyword": "bug",
+      "competency": "defect-analysis-reporting"
+    }
+  ],
+  "competency_by_file_keyword": [
+    {
+      "keyword": "tr-list",
+      "competency": "requirements-analysis"
+    },
+    {
+      "keyword": "test_requirement",
+      "competency": "requirements-analysis"
+    },
+    {
+      "keyword": "test-requirement",
+      "competency": "requirements-analysis"
+    },
+    {
+      "keyword": "clarification",
+      "competency": "requirements-analysis"
+    },
+    {
+      "keyword": "tc-list",
+      "competency": "test-case-generation"
+    },
+    {
+      "keyword": "test_case",
+      "competency": "test-case-generation"
+    },
+    {
+      "keyword": "test-case",
+      "competency": "test-case-generation"
+    },
+    {
+      "keyword": "bug",
+      "competency": "defect-analysis-reporting"
+    },
+    {
+      "keyword": "defect",
+      "competency": "defect-analysis-reporting"
+    }
+  ],
+  "rules": [
+    {
+      "old": "A1",
+      "name": "Structure",
+      "level": "skill",
+      "confidence": "exact",
+      "targets": [
+        {
+          "new": "A1",
+          "cond": 0,
+          "match": "folder|kebab|upper|lowercase|name"
+        },
+        {
+          "new": "A1",
+          "cond": 1,
+          "match": "SKILL\\.md"
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "A2",
+      "name": "Frontmatter",
+      "level": "skill",
+      "confidence": "exact",
+      "targets": [
+        {
+          "new": "A2",
+          "cond": 2,
+          "match": "description"
+        },
+        {
+          "new": "A2",
+          "cond": 0,
+          "match": "frontmatter|---|yaml"
+        },
+        {
+          "new": "A2",
+          "cond": 1,
+          "match": "name"
+        }
+      ],
+      "default": 2
+    },
+    {
+      "old": "A3",
+      "name": "Description",
+      "level": "skill",
+      "confidence": "exact",
+      "targets": [
+        {
+          "new": "A3",
+          "cond": 0,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "A4",
+      "name": "Process",
+      "level": "skill",
+      "confidence": "approximate",
+      "note": "v0.3 checked numbered steps in order; the current A3 has the Process heading (cond 3) and continuous numbering (cond 4). Errors are put on cond 4, or cond 3 when the heading is missing.",
+      "targets": [
+        {
+          "new": "A3",
+          "cond": 3,
+          "match": "heading|section|process|workflow"
+        },
+        {
+          "new": "A3",
+          "cond": 4,
+          "match": null
+        }
+      ],
+      "default": 1
+    },
+    {
+      "old": "A5",
+      "name": "File-opening instructions",
+      "level": "skill",
+      "confidence": "none",
+      "targets": []
+    },
+    {
+      "old": "A6",
+      "name": "Files in the right place",
+      "level": "skill",
+      "confidence": "none",
+      "targets": []
+    },
+    {
+      "old": "A7",
+      "name": "No domain knowledge",
+      "level": "skill",
+      "confidence": "exact",
+      "targets": [
+        {
+          "new": "A4",
+          "cond": 0,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "A8",
+      "name": "No overlap",
+      "level": "skill",
+      "confidence": "exact",
+      "note": "v0.3 marked N/A with one skill; the current A3 cond 2 is then met.",
+      "targets": [
+        {
+          "new": "A3",
+          "cond": 2,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "B1",
+      "name": "Clarification questions (provenance)",
+      "level": "competency",
+      "confidence": "none",
+      "targets": [],
+      "competency": "requirements-analysis"
+    },
+    {
+      "old": "B2",
+      "name": "TR list (provenance)",
+      "level": "competency",
+      "confidence": "approximate",
+      "note": "Provenance has no current equivalent; only errors about the file not matching its template (columns, widths, headers) map, to C3 cond 0.",
+      "targets": [
+        {
+          "new": "C3",
+          "cond": 0,
+          "match": "column|width|template|header|sheet"
+        }
+      ],
+      "default": null,
+      "competency": "requirements-analysis"
+    },
+    {
+      "old": "B3",
+      "name": "TC list (provenance)",
+      "level": "competency",
+      "confidence": "approximate",
+      "note": "As B2.",
+      "targets": [
+        {
+          "new": "C3",
+          "cond": 0,
+          "match": "column|width|template|header|sheet"
+        }
+      ],
+      "default": null,
+      "competency": "test-case-generation"
+    },
+    {
+      "old": "B4",
+      "name": "Bug report (provenance)",
+      "level": "competency",
+      "confidence": "approximate",
+      "note": "As B2; a missing report section maps to C2 cond 1 (template components).",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 1,
+          "match": "section|missing"
+        },
+        {
+          "new": "C3",
+          "cond": 0,
+          "match": "column|width|template|header|sheet"
+        }
+      ],
+      "default": null,
+      "competency": "defect-analysis-reporting"
+    },
+    {
+      "old": "C1",
+      "name": "Clarification questions (quality)",
+      "level": "competency",
+      "competency": "requirements-analysis",
+      "confidence": "exact",
+      "targets": [
+        {
+          "new": "C1",
+          "cond": 1,
+          "match": "Nice to confirm|wrong group|classif"
+        },
+        {
+          "new": "C1",
+          "cond": 2,
+          "match": "no .*group|group .*missing|missing group"
+        },
+        {
+          "new": "C1",
+          "cond": 0,
+          "match": null
+        }
+      ],
+      "default": 2
+    },
+    {
+      "old": "C2",
+      "name": "TR list (quality)",
+      "level": "competency",
+      "competency": "requirements-analysis",
+      "confidence": "approximate",
+      "note": "v0.3 asked that every ambiguity / edge case has a TR row. AC without a TR = current C2 cond 0; ambiguity without a TR = cond 4 (raised as a question or assumption).",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 4,
+          "match": "ambigu|AMB"
+        },
+        {
+          "new": "C2",
+          "cond": 0,
+          "match": null
+        }
+      ],
+      "default": 1
+    },
+    {
+      "old": "C3",
+      "name": "TC coverage",
+      "level": "competency",
+      "competency": "test-case-generation",
+      "confidence": "approximate",
+      "note": "A TR / edge case with no test case = current C2 cond 0 (every requirement covered by an output item).",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 0,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "C4",
+      "name": "TC quality",
+      "level": "competency",
+      "competency": "test-case-generation",
+      "confidence": "approximate",
+      "note": "A vague expected result = current C3 cond 2 (expected results verifiable).",
+      "targets": [
+        {
+          "new": "C3",
+          "cond": 2,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "C5",
+      "name": "Bug finding",
+      "level": "competency",
+      "competency": "defect-analysis-reporting",
+      "confidence": "approximate",
+      "note": "Planted bugs not found = current C2 cond 6 (no serious omissions).",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 6,
+          "match": null
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "C6",
+      "name": "Bug report quality",
+      "level": "competency",
+      "competency": "defect-analysis-reporting",
+      "confidence": "approximate",
+      "note": "A missing field = current C2 cond 1 (template components); fabricated details and severity deviations have no current equivalent.",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 1,
+          "match": "no |missing|empty"
+        },
+        {
+          "new": "C2",
+          "cond": null,
+          "match": "not provided|fabricat|invented"
+        }
+      ],
+      "default": 0
+    },
+    {
+      "old": "C7",
+      "name": "No fabrication",
+      "level": "competency",
+      "confidence": "approximate",
+      "note": "A rule that is not in the story and has no Assumption flag = current C2 cond 4 (missing points raised as questions or assumptions).",
+      "targets": [
+        {
+          "new": "C2",
+          "cond": 4,
+          "match": null
+        }
+      ],
+      "default": 0
+    }
+  ],
+  "no_equivalent": [
+    "advisory flag C6-severity",
+    "A5 file references",
+    "A6 files in the right place",
+    "B1-B4 provenance of the output (transcript shows the skill produced it)",
+    "C3-C7 conditions of v0.3 not listed above"
+  ]
+}

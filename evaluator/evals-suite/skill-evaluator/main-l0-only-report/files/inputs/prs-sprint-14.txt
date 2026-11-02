@@ -1,0 +1,4 @@
+#412 feat: export to pdf [added]
+#415 fix: login loop on safari [fixed]
+#418 chore: bump deps
+#420 feat: remove old dashboard [removed]

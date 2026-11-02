@@ -1,0 +1,11 @@
+21aa feat(export): streaming csv export
+32bb chore: drop python 3.8 from CI matrix
+    BREAKING CHANGE: python 3.8 is no longer supported
+43cc fix(auth): refresh token race
+54dd feat(billing): invoice pdf
+65ee refactor(core): split config loader
+76ff feat(cli): remove --legacy-export flag
+    BREAKING CHANGE: --legacy-export is gone, use --format=csv
+87a0 fix(ui): tooltip overflow
+98b1 docs: changelog howto
+a9c2 chore: pin node 20

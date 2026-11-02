@@ -1,0 +1,334 @@
+{
+  "competency_results": {
+    "test-data-generation": {
+      "B1": [
+        {
+          "met": true,
+          "evidence": "README.md#Skills row 4 (goal: synthetic data for runnable test cases; input test-cases.xlsx; output test-data.xlsx); skills/test-data-generation/SKILL.md#Inputs, #Output"
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points rows 1-7: analysis -> design -> cases -> data -> execution -> bugs, each with a check point; data step reads test-cases.xlsx (runs/run-1/run-log.md step 4)"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md#Process steps 1-7: one purpose (field values per TC ID), one output test-data.xlsx; step 7 reports counts, assumptions, TC IDs without data"
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/run-log.md: step 4 uses test-cases.xlsx produced in step 3 and reviewed in review/review-log.md #5/#6 before data; transcripts/04-test-data-generation-run1.md:5-15 reads tc_file, design, knowledge"
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md keeps data generation separate from case writing and analysis ('Do NOT use to write test cases...'); transcripts/04-test-data-generation-run1.md:2067 one build script, one output, not chopped into trivial steps"
+        },
+        {
+          "met": true,
+          "evidence": "README.md row 5 'CP4: check boundaries; synthetic data only'; README#Stop and escalate; SKILL.md step 7 'stop for review'. Note: the CP4 'check boundaries' was not really carried out, see C4"
+        }
+      ],
+      "B2": [
+        {
+          "met": true,
+          "evidence": "knowledge/index.md (files and which skill reads them), knowledge/screens-and-fields.md (F1-F6, required marks, OQ refs), knowledge/product-review-rules.md (R1-R6, A1-A2, open questions), knowledge/environment.md#Test accounts and data; SKILL.md#Inputs asks for tc_file, design_file, knowledge_dir, output_dir"
+        },
+        {
+          "met": true,
+          "evidence": "Skill instructions (skills/test-data-generation/SKILL.md, references/test-data-rules.md) vs project knowledge (knowledge/*) vs per-run input (test-cases.xlsx passed as a path, transcripts/04-test-data-generation-run1.md:7-15); README.md#What is here"
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Files and when to read them (file-to-skill table); SKILL.md#Files says when to open each reference (steps 3,5,6); note-tags shared, not copied"
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Labels used (Fact/Observed/Assumption/Open question); runs/run-1/test-data.xlsx Notes column tags 'Assumption ... until Q-xx' (314 of 332 rows) and 'Confirmed: mockup-1 R2'"
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Source priority (PO answer > story > mockup > app-note > demo build never a source) and 'If two sources disagree, do not choose: record the conflict ... Must ask'; runs/run-1/clarification-questions.md#Conflicts between sources (Q-13)"
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Maintenance and 'Last updated: 2026-10-21' in every knowledge file; note-tags.md is the single source for tags; review/review-log.md #2 and #8 show source/rule corrections made in one place each"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/references/test-data-rules.md#Privacy (synthetic only; example.com/.org/.test); runs/run-1/test-data.xlsx all emails example.com; review/review-log.md #7; transcripts/04-test-data-generation-run1.md:2167 report 'no real accounts or secrets'"
+        }
+      ],
+      "B3": [
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md description (use when a test case list exists); transcripts/04-test-data-generation-run1.md:5-15 and 08-test-data-generation-run2.md:5-15 run it after test-case-generation with test-cases.xlsx existing"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md:7-15 gives tc_file, design_file, knowledge folder, output folder (all four SKILL.md inputs); no extra questions were needed"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md:2067-2215 AI follows the steps: template copy (verified widths/header), checks of lengths and values vs steps, privacy script check, step-7 report with counts, assumptions, TCs without data, then stops. Note: trainee's prompt narrowed scope to runnable cases (not in the skill), recorded only in the transcript prompt"
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7 (checked privacy rule and data vs steps; found the example.co.uk problem) and #8 (names vs rule: data kept, rule reworded); both against references/test-data-rules.md. Limit: boundary/invalid-single-rule checks of step 4 were not independently reviewed (see C4)"
+        },
+        {
+          "met": true,
+          "evidence": "review/consistency.md last row: run-1 and run-2 both 332 rows, 86 TCs, same sheet/header; runs/run-1/test-data.xlsx vs runs/run-2/test-data.xlsx; purpose differs in 1-2 rows (TC-05-01), explained in consistency.md"
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it steps 1-4 and skills table; runs/run-1/run-log.md and runs/run-2/run-log.md tables with input/output/transcript. Note: the 'only runnable cases' filter used in both prompts is not written in README or skill"
+        }
+      ],
+      "B4": [
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7 (example.co.uk is not a reserved domain, found from the privacy rule) and #8 (own rule stricter than intended, found by comparing data to rule); transcripts/04-test-data-generation-run1.md:2167 AI flags TC-31-02 and the emoji count 1 vs 2 in counters"
+        },
+        {
+          "met": true,
+          "evidence": "Missing input: SKILL.md#Inputs/#Exceptions ask, never guess; unknown rule: Assumption note (runs/run-1/test-data.xlsx Notes 'Assumption ... until Q-03'); conflict: TC-31-02 step vs privacy rule raised to the user (transcripts/04-test-data-generation-run1.md:2167 'Decisions for you' 1) and trainee fixed the source (review-log #7); step failed: AI retagged the note and regenerated (transcripts/04...:2143); unverifiable: emoji length and TC-23 averages flagged in Notes and report. No real missing-input or failed-execution case occurred, so those types are shown by rule and one regenerate only"
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7: fixed TC-31-02 step 4 (E102) and TCD-31-02 so steps, design and data agree; re-check 'No example.co.uk left'; correct rows untouched (runs/run-1/test-data.xlsx identical to runs/run-1/ai-original/test-data.xlsx); runs/run-2/test-data.xlsx D-TC-31-02-04 consistent"
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow 'Stop and escalate to the trainer / PO when ... a skill fails twice ... an output cannot be verified from any source'; SKILL.md#Exceptions"
+        }
+      ],
+      "B5": [
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points table (7 steps, AI yes/no, why); row 5 'Prepare test data: Yes (skill 4)'"
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 3-5 and runs/run-1/run-log.md: design -> test cases -> test data are linked AI steps; the data skill reads test-cases.xlsx"
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it step 4 'each one reads the previous step's file from the same output folder, so nothing is copied by hand'; transcripts/04-test-data-generation-run1.md:7-15 reads runs/run-1/test-cases.xlsx directly"
+        },
+        {
+          "met": true,
+          "evidence": "README.md CP1 and CP3 marked high risk; CP4 for test data; review/review-log.md #7/#8 show review at the data step"
+        },
+        {
+          "met": true,
+          "evidence": "README.md row 2 (PO contact human only), row 6 (execution human only), CP3 'the AI never finalises' expected results"
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 and 6 state No AI with reasons ('talking to the customer is a human job', 'actual results must come from what the tester sees')"
+        }
+      ],
+      "B6": [
+        {
+          "met": true,
+          "evidence": "README.md#How to run it; runs/run-1/run-log.md; transcripts/04-test-data-generation-run1.md:5-15 short prompt naming skill + 4 paths"
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/ is a folder passed as a path; skills hold no project data (README.md 'Only the input and the knowledge folder change')"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md: one trainee message, nothing asked twice; test-cases.xlsx flows into data (run-log step 4)"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md:2067-2215 AI builds the workbook by script, no hand copy; review/effort-estimate.md test-data row. Note: the build script sits in a temp scratchpad, not in the submission"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md:5 and 08-test-data-generation-run2.md:5: single prompt, no mid-run prompting; human review after output (review-log #7/#8)"
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it and SKILL.md#Inputs/#Process/#Exceptions are enough to start; the optional 'runnable only' filter is covered by the Exceptions (unknown rule -> Assumption)"
+        },
+        {
+          "met": true,
+          "evidence": "review/effort-estimate.md row 'Test data: 332 values': manual 2 h vs AI 5 min + 20 min review (stated as an estimate)"
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "Ambiguities that change data values are carried as Assumption + question ID in runs/run-1/test-data.xlsx Notes: AMB1 rating values/half star (Q-03, D-TC-02-02-01), AMB2 length/characters/HTML (Q-04, Q-37, Q-15), AMB3 spaces/trim (Q-17, TC-11, TC-32), AMB9 email format (Q-06, TC-31-03..08), AMB11 save checkbox (Q-13, Q-14), AMB12 validation timing (Q-19): 5-6 of 5-6 data-relevant points. AMB4-AMB8 and AMB10 (approval, confirmation, visibility, purchase, order/paging, review limit) need no input values (TC-13/15/20/21/26/39 have no data). Against all 12 it is 5/12 = 42%; on data-relevant points 100%. Ambiguity: the criterion is written for the requirements-analysis output"
+        },
+        {
+          "met": true,
+          "evidence": "Q-03 (AMB1, Mandatory) is in 'Must ask' in runs/run-1/clarification-questions.md:14; Q-04/Q-05/Q-06 also Must ask; Q-17 (AMB3) and Q-19 are Nice to confirm (non-mandatory in baseline). test-data.xlsx holds no grouping, it cites the Q IDs"
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/clarification-questions.md#Must ask and #Nice to confirm are both present (shared artefact; test-data.xlsx has no such groups). Best reading: met by reference"
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-data.xlsx: 332 rows for 86 TCs; the 11 runnable TCs without data type nothing (TC-01-01, 14-03, 20-01, 25-01..07, 36-01), explained in transcripts/04-test-data-generation-run1.md:2167. AC-01 (TC-02..05), AC-02 (TC-06..12), AC-03 (approval/display cases that need input) covered"
+        },
+        {
+          "met": true,
+          "evidence": "All 6 template columns (TC ID, Data ID, Field, Value, Purpose, Notes) filled in every row of runs/run-1/test-data.xlsx (no empty cell found by script); header equals skills/test-data-generation/assets/test-data-template.xlsx"
+        },
+        {
+          "met": false,
+          "evidence": "runs/run-1/test-data.xlsx!E: valid 295, invalid 31, boundary 6. Invalid cases present: empty, spaces, HTML/script, half star, email formats. Missing: all length-boundary data (review min/max, Name and Email max, long-value cases TC-09/10/29-08..10/31-10..12, TC-18-04, TC-10-04) because the 48 BLOCKED/NOT RUN cases were excluded by the trainee's prompt (transcripts/04-test-data-generation-run1.md:5-15) although SKILL.md#Exceptions says to generate with an Assumption note instead; baseline EC5 (very long review) has no data",
+          "locations": [
+            {
+              "file": "transcripts/04-test-data-generation-run1.md",
+              "line": 15,
+              "quote": "only make data for the cases I can run (Notes not starting with BLOCKED or NOT RUN)"
+            },
+            {
+              "file": "transcripts/08-test-data-generation-run2.md",
+              "line": 15,
+              "quote": "only data for the cases I can run (Notes not starting with BLOCKED or NOT RUN)"
+            },
+            {
+              "file": "skills/test-data-generation/SKILL.md",
+              "line": 22,
+              "quote": "4. Verify every boundary value by counting its length or comparing it with the limit, and verify that each invalid value breaks exactly one rule."
+            },
+            {
+              "file": "runs/run-1/test-data.xlsx",
+              "absent": "No rows for the length-boundary cases (review min/max TC-09-01..04, TC-10-01..04, Name/Email max TC-29-08..10, TC-31-10..12, TC-18-04); only 6 boundary rows exist",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Data for HTML/script (TC-12-01..05), empty required fields, rating range, email formats, spaces (main flow and data-handling risks) in runs/run-1/test-data.xlsx; no payment in scope"
+        },
+        {
+          "met": true,
+          "evidence": "Ambiguous field rules are raised as Assumption/Missing info with Q-ID in Notes (e.g. D-TC-02-02-01 'Missing info: whether half stars are allowed (Q-03)'); 314 of 332 rows carry an Assumption"
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/04-test-data-generation-run1.md:2167-2215: 48 BLOCKED/NOT RUN cases skipped and 11 runnable cases without data named with reasons. The exclusion is in the chat report and prompt, not inside test-data.xlsx"
+        },
+        {
+          "met": true,
+          "evidence": "The length-boundary omission is counted once under condition 3. Other omissions (11 look-only TCs) are justified"
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-data.xlsx sheet 'Test Data', header TC ID/Data ID/Field/Value/Purpose/Notes in template order; Data ID pattern D-TC-nn-nn-nn on all 332 rows, unique; Purpose only valid/invalid/boundary"
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-data.xlsx: field names Your rating/Your review/Name/Email/Save checkbox used consistently; Notes tags consistent. (run-2 has label variants such as 'Your rating * (review 1)', runs/run-2/test-data.xlsx, minor)"
+        },
+        {
+          "met": true,
+          "evidence": "Values are literal and match the case steps (AI check transcripts/04-test-data-generation-run1.md:2084; e.g. D-TC-02-02-04 anna.smith@example.com); special values have a generation rule ('\" \" x 5', '[Enter] x 3')"
+        },
+        {
+          "met": true,
+          "evidence": "Notes give the rule tested, the assumption and the length per row; a tester can type each value as in the steps without asking back"
+        },
+        {
+          "met": true,
+          "evidence": "One field value per row, one purpose; each invalid value breaks one rule (e.g. TC-31-03..08 one email rule each); Notes are 2-4 lines but single-purpose"
+        },
+        {
+          "met": true,
+          "evidence": "No placeholders or AI lead-in text in runs/run-1/test-data.xlsx (only the deliberate '[Enter]' notation for line breaks); same sheet name and widths as the template"
+        },
+        {
+          "met": true,
+          "evidence": "Rows ordered by TC ID on the one sheet the template defines; no summary sheet but the template has none and counts are in the AI report (transcripts/04-test-data-generation-run1.md:2167)"
+        },
+        {
+          "met": true,
+          "evidence": "English, short, neutral wording in Notes and Values (runs/run-1/test-data.xlsx)"
+        }
+      ],
+      "C4": [
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7 checks data against references/test-data-rules.md privacy section and test-cases.xlsx steps; #8 checks names against the rule; knowledge/ is the source of field rules"
+        },
+        {
+          "met": false,
+          "evidence": "review/review-log.md #7 and #8 only check privacy, domains and names. No entry checks the boundary values, the 'invalid breaks exactly one rule' property or value lengths (SKILL.md step 4, README CP4 'check boundaries'); runs/run-1/test-data.xlsx equals runs/run-1/ai-original/test-data.xlsx (no edit), so those items rest on the AI's self-report (transcripts/04-test-data-generation-run1.md:2167-2215). Not prioritised to high-risk items",
+          "locations": [
+            {
+              "file": "review/review-log.md",
+              "line": 15,
+              "quote": "Privacy of the data (email domains, secrets), values match the TC steps"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 16,
+              "quote": "Names in the data vs my rule \"clearly fake, e.g. Test User 01\""
+            },
+            {
+              "file": "README.md",
+              "line": 48,
+              "quote": "CP4: check boundaries; synthetic data only"
+            },
+            {
+              "file": "review/review-log.md",
+              "absent": "No entry checks boundary values, lengths or that each invalid value breaks exactly one rule (SKILL.md step 4); runs/run-1/test-data.xlsx is unchanged from ai-original",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7: example.co.uk is not a reserved domain (raised by the AI, confirmed and fixed by the trainee); #8: own rule stricter than the data (found by the trainee); real findings, though small"
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7: fixed TC-31-02 step 4 and TCD-31-02 with reason 'steps, design and data match'; #8: kept names, reworded rule line 24 with reason"
+        },
+        {
+          "met": true,
+          "evidence": "#7 fix follows the reserved-domain rule in test-data-rules.md; #8 follows the 'no real people' intent; unknown rules stay Assumption (runs/run-1/test-data.xlsx Notes); nothing invented without a source"
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7 re-check 'No example.co.uk left in the test cases or the design'; #8 'Rule and data now agree'; runs/run-2/test-data.xlsx D-TC-31-02-04 anna+shop@mail.example.com consistent"
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-data.xlsx equals runs/run-1/ai-original/test-data.xlsx (all 332 rows unchanged); the fix was made in test cases/design"
+        },
+        {
+          "met": true,
+          "evidence": "Every value built on an unconfirmed rule is tagged 'Assumption ... until Q-xx' (314 rows); ambiguity such as emoji length 1 vs 2 stated (transcripts/04-test-data-generation-run1.md:2167); only mockup R2/R6 facts are marked Confirmed"
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #7/#8 (found, source, action, re-check) plus runs/run-1/ai-original/test-data.xlsx for comparison; records are brief and cover only the two findings"
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "Test-data competency: all data synthetic (example.com / mail.example.com emails, fictional names such as Anna Smith and a Chinese-name edge case; no real accounts, passwords or secrets; test-data-rules.md#Privacy forbids real data). Tools: Claude Code Read/Bash and python openpyxl; AI build scripts were written to a temp scratchpad outside the submission. The AI read only the named files plus the exam folder. No sensitive or production data seen. A person decides the gate."
+  },
+  "notes": [
+    "Group C criteria are written for requirements analysis (ambiguous points, Must ask / Nice to confirm). For test-data-generation I graded by meaning: ambiguities that change data values are carried as Assumption notes with Q-IDs; the Must/Nice grouping lives in the shared clarification-questions.md. Please review that reading.",
+    "Skill vs prompt: the skill says data for each test case and its Exceptions say to generate with an Assumption when a rule is unknown; the trainee's prompt in both runs (transcripts/04-test-data-generation-run1.md:15, 08-test-data-generation-run2.md:15) restricts to cases not BLOCKED/NOT RUN. This ad-hoc filter is not in SKILL.md or README and caused the missing length-boundary data (C2 condition 3).",
+    "Run-1 final test-data.xlsx equals ai-original; the trainee changed test-cases.xlsx/test-design.md (#7) and test-data-rules.md (#8) instead. Run-2 notes use run-1 question IDs (design input was run-1) while run-2/clarification-questions.md is numbered differently; not an error.",
+    "Purpose labels differ in a few rows between runs (TC-05-01 invalid in run-1, boundary in run-2; run-2 Field labels include '*'), disclosed in review/consistency.md.",
+    "No count errors found in test-data; Notes length vs Value length differs only for descriptive values such as '\" \" x 5', where Notes state the typed length.",
+    "Review-log #7 says the AI found the TC-31-02 problem; the trainee applied the fix. B4 condition 1 is met mainly through #8 (trainee) and the AI-raised #7."
+  ]
+}

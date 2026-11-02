@@ -1,0 +1,212 @@
+{
+  "profile": "manual-qa",
+  "version": "0.13-draft",
+  "scoring_model": "weighted-pass-fail",
+  "status": "runnable (weighted-pass-fail: pass/fail-to-score mapping and pass threshold set in course-rules.json); the safety gate still has no conditions, verdict decided by a person",
+  "extends": [
+    "../_shared/course-rules.json"
+  ],
+  "competencies": [
+    "requirements-analysis",
+    "test-design",
+    "test-case-generation",
+    "test-data-generation",
+    "defect-analysis-reporting"
+  ],
+  "groups": [
+    {
+      "$ref": "../_shared/skill-standard.json"
+    },
+    {
+      "id": "B",
+      "no": 2,
+      "section": "For Competence",
+      "name": "AI Application & Enablement",
+      "weight": 0.5,
+      "objective": "Evaluate the trainee's ability to operationalize AI for QA tasks by decomposing tasks, providing relevant context and knowledge, configuring reusable skills, handling exceptions, and selecting appropriate tools or workflows to achieve effective and repeatable execution."
+    },
+    {
+      "id": "C",
+      "no": 3,
+      "section": "For Competence",
+      "name": "QA Output Quality",
+      "weight": 0.3,
+      "objective": "Evaluate whether the final AI-assisted deliverables meet competency-specific QA requirements for accuracy, completeness, and usability, and whether the trainee effectively validates AI-generated results, identifies errors and gaps, and makes necessary corrections before accepting the output."
+    }
+  ],
+  "gates": [
+    {
+      "id": "SAFE",
+      "no": 4,
+      "section": "For Course",
+      "name": "AI Safety & Responsible Use",
+      "weight": 0,
+      "type": "mandatory pass/fail gate",
+      "objective": "Ensure the trainee uses approved AI tools responsibly, protects confidential and sensitive information, complies with company policies and data-handling requirements, and validates AI-generated content before use.",
+      "pass_when_all": null,
+      "fail_when_any": null,
+      "status": "conditions not defined yet"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "B1",
+      "group": "B",
+      "name": "Task Decomposition",
+      "description": "Ability to split a QA task into suitable steps or subtasks so that AI can support it effectively.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Picks one concrete QA task and states its goal, input and expected output (e.g. user story → reviewed list of test requirements)",
+        "The subtasks cover the whole chain from input to output, with no key stage missing (analysis, design, review/check)",
+        "Each subtask has one purpose and one checkable output (e.g. \"list of ambiguous points\", \"list of test conditions\")",
+        "The subtasks follow dependency order: each step only uses results that have already been produced",
+        "Each subtask is sized for AI: unrelated activities are not crammed into one prompt, and the task is not chopped into trivial steps",
+        "The decomposition marks where a human must confirm or where AI is likely to go wrong (e.g. after the list of ambiguous points, before test design)"
+      ]
+    },
+    {
+      "id": "B2",
+      "group": "B",
+      "name": "Context & Knowledge Management",
+      "description": "Ability to provide, organise and maintain context, requirements, constraints, reference materials and domain knowledge for AI.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Provides enough of the right kinds of context for the task: goal, requirements, constraints (scope, test case conventions, priority, environment), reference documents and the necessary domain knowledge. The trainee identifies which information the AI really needs for that task",
+        "Clearly separates the kinds of information: general instructions (how the AI works), project/domain knowledge (project information, glossary, business rules) and the input data of each run. Does not mix everything into one long prompt",
+        "Organises context in a structured, easy-to-find way: context lives in clearly named files/sections, the content is concise, and the AI knows when to read which part. Does not paste a whole long document when only part of it is needed",
+        "Distinguishes fact from assumption: states what is confirmed, what is assumed and what is still missing. Does not let the AI silently fill the gaps",
+        "Handles source reliability: when documents conflict, states which source is authoritative (latest spec, customer decision), or asks the AI to report the conflict instead of choosing on its own",
+        "Maintains and updates context: has a way to keep context correct over time (version/date recorded, updated when requirements change, outdated information removed) and a single source for each kind of information",
+        "Protects information: does not put sensitive data (real customer data, accounts, passwords, personal information) into AI without permission; knows how to mask it or replace it with fake data"
+      ]
+    },
+    {
+      "id": "B3",
+      "group": "B",
+      "name": "Skill Execution & Repeatability",
+      "description": "Evaluates the ability to use AI skills for their intended purpose, provide suitable input, follow the important instructions, and repeat the process consistently in similar situations.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Picks the right skill for the right situation (matches its trigger condition)",
+        "Provides the input the skill requires and answers fully when the skill asks for more",
+        "Follows the skill's mandatory steps and checkpoints",
+        "Checks the output against the skill's standard, notices when the AI deviates from the process, and asks for a rerun",
+        "Similar runs give consistent results in structure and level of detail",
+        "Records, or can explain, how to run it, so someone else following it gets an equivalent result"
+      ]
+    },
+    {
+      "id": "B4",
+      "group": "B",
+      "name": "Exception Handling & Recovery",
+      "description": "Evaluates the ability to detect, respond to and recover when the workflow meets unexpected situations, such as missing input, conflicting information, AI output that does not meet requirements, a failed execution step, or a result that cannot be verified.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Detects exceptions on their own, from concrete signals",
+        "Responds correctly to each type:\n  - Missing input: stop and ask, do not let the AI guess\n  - Conflicting information: state the conflict, ask for the authoritative source\n  - AI output not acceptable: point to exactly what is wrong, ask for a fix with guidance\n  - Execution step failed: read the error, find the cause, try a reasonable fix, limit the number of attempts\n  - Result cannot be verified: mark it unverified, state how to verify it",
+        "Recovers in a controlled way: goes back to the right point, keeps the correct results, re-checks after fixing",
+        "Knows when to stop and hand over to a human (escalation criteria)"
+      ]
+    },
+    {
+      "id": "B5",
+      "group": "B",
+      "name": "AI Integration & Workflow Coverage",
+      "description": "Evaluates how far AI is applied to the QA steps in the workflow that can benefit from it, from supporting a single activity to coordinating AI across several linked steps, with suitable control points and human intervention.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Maps the QA steps, shows which steps should use AI and explains why",
+        "Applies AI to at least 2 linked steps (the output of one step is the input of the next)",
+        "Output passes between steps without being copied by hand or rewritten",
+        "Has control points at high-risk steps",
+        "Keeps humans in the right places (business decisions, communication with the customer)",
+        "Knows which steps should not use AI and states why"
+      ]
+    },
+    {
+      "id": "B6",
+      "group": "B",
+      "name": "Usability & Execution Efficiency",
+      "description": "Evaluates how easy and efficient the AI-enabled skill/workflow is to run, including how simple it is to launch, the need to re-provide context or input, the number of repeated manual actions, and how much the user must intervene to complete the task.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Simple to launch; someone else can run it by reading the instructions",
+        "Context does not have to be provided again each time; only the new input is given",
+        "Input already given is not asked for again; the previous step's output flows into the next step automatically",
+        "Few repeated manual actions (copy-paste, reformatting, re-entering)",
+        "A human only intervenes at the designed control points; almost no wasted intervention",
+        "The instructions are enough for a new tester to run it the first time without getting stuck",
+        "Effort is lower than the baseline (reasonable estimate)"
+      ]
+    },
+    {
+      "id": "C1",
+      "group": "C",
+      "name": "Accuracy",
+      "description": "Evaluates how accurate the QA output is against requirements, business rules, source materials and verified facts.\n- No false information or fabricated content.\n- Logic and conclusions are consistent with the evidence.\n- No violation of business rules or identified constraints.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Finds at least 70% of all ambiguous points",
+        "Every Mandatory ambiguous point the trainee found is in the \"Must ask\" group, not in \"Nice to confirm\"",
+        "Both groups \"Must ask\" and \"Nice to confirm\" are present"
+      ],
+      "needs": [
+        "ambiguities"
+      ]
+    },
+    {
+      "id": "C2",
+      "group": "C",
+      "name": "Completeness & Coverage",
+      "description": "Evaluates how complete the QA output is against the scope, requirements, scenarios and aspects that need checking.\n- Covers the mandatory content.\n- Does not miss important scenarios, conditions or risks within scope.\n- Shows the related requirements and cases that need handling.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Every requirement/AC in scope is covered by at least one output item",
+        "Has all mandatory components of the template (objective, precondition, test data, steps, expected result...)",
+        "Has all relevant scenario types: positive, negative, boundary, validation, error handling, permissions, integration, UI, compatibility, regression",
+        "Misses no important risk in scope (payment, data, security, main flow)",
+        "Missing or ambiguous points in the requirements are raised as clarification questions or assumptions",
+        "Parts not covered or excluded are stated with a reason; out-of-scope content does not count as coverage",
+        "No serious omissions; minor omissions are within the allowed threshold"
+      ]
+    },
+    {
+      "id": "C3",
+      "group": "C",
+      "name": "Usability & Format",
+      "description": "Evaluates how clear, structured and ready to use the output is in the intended QA process.\n- Correct format/template and required structure.\n- Clear, consistent and easy-to-understand content.\n- Usable by the recipient or the next stage without unnecessary editing.",
+      "pass_intro": "Pass when:",
+      "clarifications": [
+        "The exam plants ambiguities in the requirement, and the trainee submits the output without being able to confirm them with the trainer first, so the final output still carries them. An expected result (or other field) that starts with \"TBD\" or is marked BLOCKED and states what must be confirmed is the correct handling of an ambiguity left in the requirement, not an unverifiable expected result (condition 3) and not a placeholder (condition 6). It does not matter whether the answer key lists that ambiguity. An empty cell, a lead-in-text placeholder, or a \"TBD\" that does not say what must be confirmed, or that is put where the requirement is clear, still counts against both conditions (course decision)."
+      ],
+      "pass_when_all": [
+        "Matches the template and structure: all columns/sections, correct order, field names, ID and naming conventions",
+        "Formatting and terminology are consistent across items",
+        "Clear, with only one interpretation: steps are concrete actions, expected results are verifiable",
+        "The recipient understands it and can use it without asking back",
+        "Each item is concise and has one purpose, not crammed with several conditions",
+        "Usable immediately (importable, no bulk hand-editing); no placeholders or AI lead-in text left",
+        "Organised (grouped by function, priority/status, with a summary if long)",
+        "Tone and language suit the recipient (e.g. for a Japanese customer, in English: short, clear, polite)"
+      ]
+    },
+    {
+      "id": "C4",
+      "group": "C",
+      "name": "Human Validation & Improvement",
+      "description": "Evaluates the QA's ability to verify the output, identify problems and make the necessary improvements based on evidence.\n- Checks the output against requirements, business rules or trusted sources.\n- Detects and handles errors, gaps, unverified assumptions or unsuitable content.\n- Edits the output and re-checks it after improving.\n- Does not accept output just because AI produced it or it looks plausible.\nExample: the QA finds that AI produced a wrong expected result, checks the requirement, fixes the test case and verifies the result again.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Checks against trusted sources (requirements, business rules), not just \"it reads plausibly\"",
+        "Checks systematically, prioritising high-risk items (expected results, boundaries, business rules, conclusions)",
+        "Finds real problems: errors, fabricated content, gaps, unverified assumptions, unsuitable content",
+        "Handles each finding properly (fix per the source, label as an assumption, ask for clarification, or delete) with an evidence-based reason",
+        "Does not fix by guessing when the source is insufficient",
+        "Fixes the output and re-checks after fixing; the fix introduces no new error",
+        "Does not change what the AI already got right",
+        "Items that cannot be verified are marked unverified, not presented as fact",
+        "Keeps a record: what was found, the source checked, what was fixed, the re-check result"
+      ]
+    }
+  ]
+}

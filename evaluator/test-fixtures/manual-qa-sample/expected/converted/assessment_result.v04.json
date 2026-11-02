@@ -1,0 +1,1364 @@
+{
+  "converted_from": "..\\..\\test-fixtures\\manual-qa-sample\\expected\\assessment_result.json",
+  "profile_version": "0.11-draft",
+  "skills": [
+    {
+      "name": "defect-analysis-reporting",
+      "competency": "defect-analysis-reporting",
+      "reason": "mapped from the skill folder name"
+    },
+    {
+      "name": "Test-Case-Generation",
+      "competency": "test-case-generation",
+      "reason": "mapped from the skill folder name"
+    },
+    {
+      "name": "test-requirements-analysis",
+      "competency": "requirements-analysis",
+      "reason": "mapped from the skill folder name"
+    }
+  ],
+  "skill_results": {
+    "defect-analysis-reporting": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        }
+      ],
+      "A3": [
+        {
+          "met": false,
+          "evidence": "v0.3 A3 Description: description 'This skill writes bug reports.' has no trigger clause",
+          "locations": [
+            {
+              "file": "skills/defect-analysis-reporting/SKILL.md",
+              "line": 3,
+              "quote": "description 'This skill writes bug reports.' has no trigger clause"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A8 No overlap: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "v0.3 A7 No domain knowledge: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "Test-Case-Generation": {
+      "A1": [
+        {
+          "met": false,
+          "evidence": "v0.3 A1 Structure: folder name has uppercase letters",
+          "locations": [
+            {
+              "file": "skills/Test-Case-Generation",
+              "absent": "folder name has uppercase letters"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 A2 Frontmatter: name 'test-case-generation' differs from folder 'Test-Case-Generation'",
+          "locations": [
+            {
+              "file": "skills/Test-Case-Generation/SKILL.md",
+              "line": 2,
+              "quote": "name 'test-case-generation' differs from folder 'Test-Case-Generation'"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "v0.3 A3 Description: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A8 No overlap: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 A4 Process: steps are numbered 1, 2, 3, 5 (4 is skipped)",
+          "locations": [
+            {
+              "file": "skills/Test-Case-Generation/SKILL.md",
+              "line": 13,
+              "quote": "steps are numbered 1, 2, 3, 5 (4 is skipped)"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "A4": [
+        {
+          "met": false,
+          "evidence": "v0.3 A7 No domain knowledge: https://staging.acme-notes.example/login; v0.3 A7: the account locks after 5 failed attempts and stays locked for 15 minutes",
+          "locations": [
+            {
+              "file": "skills/Test-Case-Generation/SKILL.md",
+              "line": 17,
+              "quote": "https://staging.acme-notes.example/login"
+            },
+            {
+              "file": "skills/Test-Case-Generation/references/tc-writing-rules.md",
+              "line": 5,
+              "quote": "the account locks after 5 failed attempts and stays locked for 15 minutes"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "test-requirements-analysis": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "v0.3 A3 Description: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A8 No overlap: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "v0.3 A7 No domain knowledge: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    }
+  },
+  "competency_results": {
+    "requirements-analysis": {
+      "B1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B3": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B5": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B6": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C1": [
+        {
+          "met": false,
+          "evidence": "v0.3 C1 Clarification questions (quality): only 1 of 2 mandatory and 3 of 5 ambiguities found (60%, below 70%); v0.3 C1: mandatory AMB2 (counter reset) is not asked",
+          "locations": [
+            {
+              "file": "chat-transcript.md",
+              "line": 20,
+              "quote": "only 1 of 2 mandatory and 3 of 5 ambiguities found (60%, below 70%)"
+            },
+            {
+              "file": "chat-transcript.md",
+              "line": 20,
+              "quote": "mandatory AMB2 (counter reset) is not asked"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C1 Clarification questions (quality): no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C1 Clarification questions (quality): no error recorded (exact match)"
+        }
+      ],
+      "C2": [
+        {
+          "met": false,
+          "evidence": "v0.3 C2 TR list (quality): AC4 has no TR row",
+          "locations": [
+            {
+              "file": "outputs/tr-list.xlsx",
+              "sheet": "Test Requirement",
+              "absent": "AC4 has no TR row"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 C2 TR list (quality): mandatory AMB2 has no TR row; v0.3 C2: 3 of 5 ambiguities (60%) have a TR row, below 70%",
+          "locations": [
+            {
+              "file": "outputs/tr-list.xlsx",
+              "sheet": "Test Requirement",
+              "absent": "mandatory AMB2 has no TR row"
+            },
+            {
+              "file": "outputs/tr-list.xlsx",
+              "sheet": "Test Requirement",
+              "absent": "3 of 5 ambiguities (60%) have a TR row, below 70%"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "v0.3 B2 TR list (provenance): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "test-case-generation": {
+      "B1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B3": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B5": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B6": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C2": [
+        {
+          "met": false,
+          "evidence": "v0.3 C3 TC coverage: TR-07 (correct password during the lock, mandatory edge case EC2) has no TC in outputs/tc-list.xlsx",
+          "locations": [
+            {
+              "file": "outputs/tr-list.xlsx",
+              "sheet": "Test Requirement",
+              "cell": "C10",
+              "quote": "TR-07 (correct password during the lock, mandatory edge case EC2) has no TC in outputs/tc-list.xlsx"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 C7 No fabrication: 'Password must be 8-20 characters' is not in the user story and has no Assumption flag; v0.3 C7: spaces-only email shows 'Email is required' (the story only covers an empty email) and has no Assumption flag; v0.3 C7: 'the Login button is disabled' after the lock is not in the story and has no Assumption flag",
+          "locations": [
+            {
+              "file": "outputs/tc-list.xlsx",
+              "sheet": "TC List",
+              "cell": "F10",
+              "quote": "'Password must be 8-20 characters' is not in the user story and has no Assumption flag"
+            },
+            {
+              "file": "outputs/tc-list.xlsx",
+              "sheet": "TC List",
+              "cell": "F8",
+              "quote": "spaces-only email shows 'Email is required' (the story only covers an empty email) and has no Assumption flag"
+            },
+            {
+              "file": "outputs/tc-list.xlsx",
+              "sheet": "TC List",
+              "cell": "F9",
+              "quote": "'the Login button is disabled' after the lock is not in the story and has no Assumption flag"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "v0.3 B3 TC list (provenance): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 C4 TC quality: Expected Result 'Error is displayed correctly'; v0.3 C4: Expected Result 'Success'",
+          "locations": [
+            {
+              "file": "outputs/tc-list.xlsx",
+              "sheet": "TC List",
+              "cell": "F7",
+              "quote": "Expected Result 'Error is displayed correctly'"
+            },
+            {
+              "file": "outputs/tc-list.xlsx",
+              "sheet": "TC List",
+              "cell": "F12",
+              "quote": "Expected Result 'Success'"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "defect-analysis-reporting": {
+      "B1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B3": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B5": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B6": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": false,
+          "evidence": "v0.3 B4 Bug report (provenance): section 'Missing Information & Recommended Next Investigation' is missing; v0.3 C6: no Observed Result",
+          "locations": [
+            {
+              "file": "chat-transcript.md",
+              "line": 69,
+              "quote": "section 'Missing Information & Recommended Next Investigation' is missing"
+            },
+            {
+              "file": "outputs/bug-list.xlsx",
+              "sheet": "Bug List",
+              "cell": "C6",
+              "quote": "no Observed Result"
+            }
+          ]
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C7 No fabrication: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C5 Bug finding: no error recorded (approximate match)"
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "v0.3 B4 Bug report (provenance): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "v0.3 had no gate; the current gate has no conditions yet"
+  },
+  "notes": [
+    "Converted from a v0.3 result; conditions marked pending have no v0.3 equivalent."
+  ]
+}

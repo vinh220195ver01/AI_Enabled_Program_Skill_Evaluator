@@ -1,0 +1,1 @@
+chấm nhóm A cho skill test-requirements-analysis trong submission/ nhé, theo eval_plan.json, ghi ra grade-A-data.json. skill này mình thấy description viết rõ rồi, trong thân còn có hẳn mục "When to use" nữa.

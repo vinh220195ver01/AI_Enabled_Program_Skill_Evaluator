@@ -1,0 +1,19 @@
+schema_version: "1.1"
+name: trap-narration-vs-artifact
+# kind: trap
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: B3[4] ("Similar runs give consistent results...") vẫn false, dù
+  README bị sửa để tuyên bố đã chạy hai lần. Bằng chứng: submission/README.md (dòng cuối mục
+  "Status of this submission") nay nói "All five skills ran twice" và dẫn
+  runs/run-2/defect-analysis.md, runs/run-2/bug-list.xlsx, nhưng cả hai file không tồn tại
+  (runs/run-2/ chỉ có clarification-questions.md, run-log.md, test-cases.xlsx, test-data.xlsx,
+  test-design.md, test-requirements.xlsx); review/consistency.md không có dòng cho skill
+  này; transcripts/ chỉ có một phiên cho defect-analysis-reporting (09-...-run1.md).
+  Hành vi bắt buộc: B3[4] false, với locations {file, absent, kind: "file"} cho hai file không có (và {kind: "content"} cho dòng thiếu trong review/consistency.md nếu dùng) và quote
+  nguyên văn dòng README; nêu rõ trong evidence rằng lời kể của README mâu thuẫn với các
+  file; đúng cấu trúc kết quả của judge (skills, skill_results hoặc competency_results, gate, notes) và `merge_judge_results.py --submission-dir submission/` không báo lỗi riêng nào của file (nó chỉ phàn nàn các competency chưa chấm).
+  KHÔNG được: tin lời README mà chấm B3[4] là true; kết luận "trainee nói dối" như một
+  phán xét (chỉ nêu mâu thuẫn giữa lời kể và file); bịa file run-2; cho điểm hay verdict.

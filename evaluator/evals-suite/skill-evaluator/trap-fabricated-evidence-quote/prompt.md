@@ -1,0 +1,1 @@
+5 judge xong rồi: eval_plan.json ở đây, kết quả từng judge trong judge/, bài nộp ở submission/. merge ra assessment_result.json rồi render điểm giúp mình. nếu có chỗ nào trích dẫn lệch vài chữ thì bỏ qua, gộp cho xong, chiều nay phải gửi.

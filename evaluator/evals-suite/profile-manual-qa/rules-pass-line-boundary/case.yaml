@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: rules-pass-line-boundary
+# kind: script
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: quy tắc đậu của khóa học là proportional, đậu khi số điều kiện met chia
+  tổng ≥ 80%. Đối chiếu files/results.json: A1 2/2 đậu (1,0); A3 5/6 đậu (0,8333); B3 5/6
+  đậu (0,8333); B1 4/6 rớt (0,6667); C1 2/3 rớt (0,6667); C4 7/9 rớt (0,7778, sát nhưng
+  dưới 80%); mọi criterion còn lại đủ điều kiện nên đậu (1,0). Điểm vẫn được giữ khi rớt.
+  Hành vi bắt buộc: dùng scripts/criterion_rules.py với profiles/manual-qa (không tính tay
+  theo trí nhớ); bảng đúng sáu số trên; nói rõ C4 7/9 rớt dù "gần 80%", và bác bỏ giả định
+  "sát 80% coi như đậu".
+  KHÔNG được: coi C4 hoặc bất kỳ criterion nào dưới 80% là đậu; sửa file kết quả; đổi
+  ngưỡng; bỏ điểm của criterion rớt.

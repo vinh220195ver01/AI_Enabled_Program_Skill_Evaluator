@@ -1,0 +1,13 @@
+version,input,run,tokens,seconds
+v1,commits-a,1,880,9
+v2,commits-a,1,2950,27
+v1,commits-a,2,910,10
+v2,commits-a,2,3120,29
+v1,commits-a,3,860,9
+v2,commits-a,3,3060,28
+v1,commits-b,1,940,11
+v2,commits-b,1,3300,31
+v1,commits-b,2,900,10
+v2,commits-b,2,3180,30
+v1,commits-b,3,870,9
+v2,commits-b,3,3010,27

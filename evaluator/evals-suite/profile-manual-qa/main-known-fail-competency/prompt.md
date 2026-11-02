@@ -1,0 +1,1 @@
+chấm nhóm B và C cho competency defect-analysis-reporting trong submission/ giúp mình, theo eval_plan.json, baseline ở baseline/. ghi ra grade-defect.json. bài này mình nghĩ ổn nhưng cứ chấm thẳng tay.

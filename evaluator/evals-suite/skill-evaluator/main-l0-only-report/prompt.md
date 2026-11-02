@@ -1,0 +1,1 @@
+cần báo cáo chất lượng đầu vào của skill release-notes-helper thôi nha, chưa cần chạy thử gì hết, mình chỉ muốn biết file SKILL.md với mấy prompt test trong evals/eval_plan.json ổn chưa. xuất ra file giúp mình.

@@ -1,0 +1,93 @@
+{
+  "metrics": [
+    {
+      "name": "assertion_pass_rate",
+      "axis": ["correctness"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "assertion",
+      "scorer_ref": "agents/grader.md",
+      "description": "Fraction of pre-registered assertions that pass for a given run. Prefer skill-creator's agents/grader.md when reachable (primary); otherwise use this skill's own agents/grader.md (fallback) -- same ordering as SKILL.md Step 3 and references/skill-creator-integration.md. Do NOT load both."
+    },
+    {
+      "name": "l0_skill_quality_score",
+      "axis": ["correctness", "quality"],
+      "applies_to_layers": ["L0"],
+      "scorer_type": "rubric",
+      "scorer_ref": "agents/input-layer-judge.md",
+      "description": "8-dimension, 1-5-per-dimension rubric (D1-D8, quality axis, 40 points max) scoring the target skill's own SKILL.md design quality, plus a separate 1-5 Eval-Design Checks trio: instruction clarity and test prompt realism (quality axis), and description accuracy -- references/layers-and-metrics.md's L0 Correctness axis ('is the description factually accurate about what the skill does?'), which is why this entry is tagged with both axes, not quality alone. L0 only — see rubric_quality_score below for L1/L2."
+    },
+    {
+      "name": "rubric_quality_score",
+      "axis": ["quality"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "rubric",
+      "scorer_ref": "agents/generic-quality-judge.md",
+      "description": "1-5 blind rubric score per dimension for output-level quality assertions can't capture (clarity, tone, judgment). Prefer an adapted skill-creator quality judge when reachable; otherwise agents/generic-quality-judge.md -- it doesn't carry a fixed rubric, it defines the discipline for pre-registering one into eval_plan.json's scope.quality_rubric before any output exists. Routing rule: use manual_tc_quality_score (below) whenever the skill under test writes manual test cases; use this entry for every other skill type instead — never both for the same run. NOT agents/input-layer-judge.md (L0-only, 8-dimension 1-5-per-dimension scale) and NOT agents/manual-tc-quality-judge.md (that's manual_tc_quality_score's scorer, not this one)."
+    },
+    {
+      "name": "manual_tc_quality_score",
+      "axis": ["quality"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "rubric",
+      "scorer_ref": "agents/manual-tc-quality-judge.md",
+      "description": "Blind rubric score (1-5 per dimension) for manual test-case craftsmanship: traceability, atomicity, clarity/reproducibility, coverage, expected-result precision. Use for skills whose job is writing manual test cases when no filled profile exists (with a profile, use manual_qa_assessment_score) — for every other skill type, use rubric_quality_score (above) instead; correctness/format is graded separately by assertions via agents/grader.md."
+    },
+    {
+      "name": "manual_qa_assessment_score",
+      "axis": ["correctness", "quality"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "rubric",
+      "scorer_ref": "agents/manual-qa-assessment-judge.md",
+      "description": "Profile-driven manual-QA grading: the judge counts errors per criterion (groups A skill set, B workflow provenance, C quality vs answer key); scripts/render_assessment_report.py converts them to points (max_points minus penalty_per_error x errors) and a pass/fail at the profile threshold. Advisory flags wait for a human decision. Use when a filled profiles/manual-qa exists; otherwise use manual_tc_quality_score. Never both for the same run. Criteria and baseline are data (profiles/manual-qa/*.json), so changing them needs no change to this entry or the judge."
+    },
+    {
+      "name": "token_efficiency",
+      "axis": ["efficiency"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "derived",
+      "scorer_ref": "scripts/aggregate_layered.py",
+      "description": "Mean tokens consumed per run, with stddev across repeats."
+    },
+    {
+      "name": "time_efficiency",
+      "axis": ["efficiency"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "derived",
+      "scorer_ref": "scripts/aggregate_layered.py",
+      "description": "Mean wall-clock duration per run, with stddev across repeats."
+    },
+    {
+      "name": "tool_call_efficiency",
+      "axis": ["efficiency"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "derived",
+      "scorer_ref": "scripts/aggregate_layered.py",
+      "description": "Mean tool_calls per run, with stddev across repeats -- captured per SKILL.md Step 3 ('Capture tokens/time/tool-calls per run'), aggregated into `efficiency_tool_calls` alongside token_efficiency and time_efficiency."
+    },
+    {
+      "name": "run_variance",
+      "axis": ["consistency"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "derived",
+      "scorer_ref": "scripts/aggregate_layered.py",
+      "description": "Stddev of correctness/quality/efficiency across N repeats of the same prompt+configuration."
+    },
+    {
+      "name": "refinement_delta",
+      "axis": ["correctness", "quality", "efficiency"],
+      "applies_to_layers": ["L3"],
+      "scorer_type": "derived",
+      "scorer_ref": "agents/refinement-analyzer.md",
+      "description": "L2-minus-L1 comparison: which assertions flipped, where quality changed and why, substance-vs-polish judgment, cost/benefit verdict."
+    },
+    {
+      "name": "version_ab_delta",
+      "axis": ["correctness", "quality"],
+      "applies_to_layers": ["L1", "L2"],
+      "scorer_type": "rubric",
+      "scorer_ref": "agents/comparator.md",
+      "description": "Blind A/B comparison between two configurations at the same layer (e.g. skill v1 vs v2, or with_skill vs without_skill) — distinct from refinement_delta, which compares L1 vs L2 within one configuration, not across versions. scorer_type is 'rubric', not 'derived', because agents/comparator.md performs a fresh blind grading pass on both sides itself (it does not receive already-scored results the way agents/refinement-analyzer.md does). Prefer skill-creator's agents/comparator.md + agents/analyzer.md when reachable; otherwise use this skill's own agents/comparator.md (fallback)."
+    }
+  ],
+  "_extend_by": "Append a new object with name/axis/applies_to_layers/scorer_type/scorer_ref/description. `axis` is always an array, even for a single-axis metric (e.g. [\"correctness\"]) -- a metric spanning multiple axes (e.g. refinement_delta) lists them all as separate array entries, never a comma-joined string. scorer_type is one of: assertion (script-checkable), rubric (needs a blind judge prompt), derived (computed from other metrics' already-recorded data). No changes to SKILL.md's workflow steps are needed to pick up a new metric -- only the scorer implementation and this registry entry."
+}

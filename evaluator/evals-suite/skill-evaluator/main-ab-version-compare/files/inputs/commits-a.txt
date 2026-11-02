@@ -1,0 +1,9 @@
+a1f3 feat(search): add fuzzy matching
+b22c fix(cart): total ignored coupon
+c9d0 chore: bump eslint
+d4e1 feat(api): rename /v1/users to /v2/accounts
+    BREAKING CHANGE: clients must switch base path to /v2/accounts
+e7a8 fix(login): trim whitespace in email
+f01b docs: update README badges
+0a9c feat(ui): dark mode toggle
+1b2d fix(export): csv header order

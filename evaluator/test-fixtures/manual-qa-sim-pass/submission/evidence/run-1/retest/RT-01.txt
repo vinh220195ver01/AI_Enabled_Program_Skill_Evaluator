@@ -1,0 +1,17 @@
+RT-01 Rating summary with a pending and an approved review
+Environment: demo-1.0 (exam/app/index.html via file://), Chrome, fresh browser profile (empty localStorage), viewport 1280x900, 2026-10-21. Console: no messages, no page errors, no dialogs. (headless)
+Steps:
+1. Fresh page. Read the rating summary and the Reviews list.
+2. Click star 4; Your review "Summary check four stars."; Name "Ben Carter"; Email "ben.carter@example.com"; Submit.
+3. Before approving, read the summary and the list again.
+4. Click "Moderator: approve pending reviews"; read both again.
+Observed:
+- Step 1: summary "4.0 out of 5 – based on 3 reviews"; heading "Reviews (3)"; list: 3* Mai T. (October 8, 2026) "Comfortable, but it runs a little small. I would order one size up next time."; 4* David L. (September 29, 2026) "Good quality for the price. The colour is slightly lighter than in the photo."; 5* Anna K. (September 14, 2026) "Great fit and the fabric feels really soft. Washed it several times and it still looks new."
+- Step 2: confirmation "Thank you! Your review has been submited and is awaiting approval."; Pending approval 1.
+- Step 3 (pending, not approved): summary "3.0 out of 5 – based on 4 reviews"; heading "Reviews (3)"; list unchanged (3 reviews, new review not listed).
+  The pending review already counts in the summary: the count went 3 -> 4 and the average dropped 4.0 -> 3.0
+  (3+4+5 = 12 divided by 4). TC-23-02 assumes this stays "4.0 out of 5 - based on 3 reviews".
+- Step 4: moderator message "1 review approved."; summary "4.0 out of 5 – based on 4 reviews" (correct: (3+4+5+4)/4 = 4.0); heading "Reviews (4)";
+  list: 4* ben.carter@example.com (October 21, 2026) "Summary check four stars."; 3* Mai T. (October 8, 2026) "Comfortable, but it runs a little small. I would order one size up next time."; 4* David L. (September 29, 2026) "Good quality for the price. The colour is slightly lighter than in the photo."; 5* Anna K. (September 14, 2026) "Great fit and the fabric feels really soft. Washed it several times and it still looks new."
+  The reviewer name is shown as "ben.carter@example.com", not "Ben Carter".
+Evidence: RT-01.png (three captioned panels: fresh page / after Submit before approve / after approve)

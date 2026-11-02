@@ -1,0 +1,1 @@
+đây là kết quả judge cho competency defect-analysis-reporting của trainee-sim-01 (file results.json, mỗi criterion là danh sách điều kiện met true/false). cho mình bảng criterion nào đậu, criterion nào rớt, và điểm từng cái. mấy cái sát 80% chắc coi như đậu hết nhỉ.

@@ -1,0 +1,10 @@
+TC-32-01 - reviewer-name element of the review "Name trim check." (Elements panel, demo-1.0, Chrome headless, 2026-10-21)
+Entered: Name * = "  Anna Smith  ", Email * = "anna.smith@example.com"
+
+Reviewer-name element (outerHTML):
+<span class="review-author">anna.smith@example.com</span>
+
+Text content: "anna.smith@example.com"
+
+Whole review meta line (outerHTML):
+<div class="review-meta"><span class="stars-static" aria-label="4 out of 5 stars"><span>★</span><span>★</span><span>★</span><span>★</span><span class="off">★</span></span><span class="review-author">anna.smith@example.com</span><span class="review-date">October 21, 2026</span></div>

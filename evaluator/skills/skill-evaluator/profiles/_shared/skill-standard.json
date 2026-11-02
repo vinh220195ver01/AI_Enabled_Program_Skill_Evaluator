@@ -1,0 +1,69 @@
+{
+  "fragment": "skill-standard",
+  "version": "1.2",
+  "group": {
+    "id": "A",
+    "no": 1,
+    "section": "For Skills",
+    "name": "Skill Standard",
+    "weight": 0.2,
+    "objective": "Evaluate whether the trainee designs AI skills that comply with established standards for naming, structure, instruction quality, reusability, and maintainability, enabling clear and consistent execution across relevant QA scenarios.",
+    "standard": {
+      "document": "skill-standard.md",
+      "template": "SKILL.template.md",
+      "note": "The skill standard, template and naming convention that A1-A4 refer to (\"the agreed skill template or standard\"). The conditions in this file are what is graded; the document explains them with examples."
+    }
+  },
+  "criteria": [
+    {
+      "id": "A1",
+      "group": "A",
+      "name": "Naming Convention",
+      "description": "How well the skill follows the naming rules, so names are easy to understand, consistent and reflect the intended purpose.",
+      "pass_intro": "Pass when ALL skills satisfy:",
+      "pass_when_all": [
+        "Folder name: lowercase letters, digits and hyphens only (regex ^[a-z0-9]+(-[a-z0-9]+)*$), at most 64 characters",
+        "Exactly one file named exactly SKILL.md at the root of the skill folder"
+      ]
+    },
+    {
+      "id": "A2",
+      "group": "A",
+      "name": "Structure Compliance",
+      "description": "How well the skill complies with the structure, format and mandatory components of the agreed skill template or standard.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "SKILL.md starts with --- on line 1, has a closing ---, and the YAML parses without error",
+        "Has a name key whose value is IDENTICAL to the folder name (case-sensitive)",
+        "Has a non-empty description of at most 1024 characters, containing no < or > characters"
+      ]
+    },
+    {
+      "id": "A3",
+      "group": "A",
+      "name": "Instruction Quality",
+      "description": "How clear, complete, specific and actionable the instructions in the skill are.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Has a trigger clause: \"Use when…\" / \"Use this skill when…\" / \"Dùng khi…\" (Vietnamese for \"Use when…\")",
+        "States the concrete ACTIVITY + INPUT (e.g. \"reviewing a user story before designing test cases\")",
+        "Read on its own, the description does not overlap with any other skill the trainee submitted: each skill covers a different task, and no two skills do the same job",
+        "SKILL.md has a heading named Process / Workflow / Steps / Quy trình",
+        "Steps are numbered continuously from 1, with no skipped or repeated numbers, and at least 3 steps",
+        "Each step starts with an action verb (Extract, Identify, Export…)"
+      ]
+    },
+    {
+      "id": "A4",
+      "group": "A",
+      "name": "Reusability & Maintainability",
+      "description": "How easily the skill can be reused in suitable situations, and updated, extended and maintained when requirements change.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "The skill folder (SKILL.md, references/, assets/, scripts/) contains no information hard-wired to a specific project or customer (project name, customer name, internal URL, personal machine path, account/password, real data, project business rules)",
+        "Project-specific information comes in through the input (a placeholder such as {project_name}, or the skill says \"ask the user if missing\"), not written directly into the process",
+        "Each piece of content has a single source (output template, checklist, severity list...); a change only needs editing in one place"
+      ]
+    }
+  ]
+}

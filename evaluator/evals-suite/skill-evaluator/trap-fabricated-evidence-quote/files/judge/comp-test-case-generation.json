@@ -1,0 +1,440 @@
+{
+  "competency_results": {
+    "test-case-generation": {
+      "B1": [
+        {
+          "met": true,
+          "evidence": "README.md#Skills row 3 and skills/test-case-generation/SKILL.md#Inputs/#Output: goal = write manual test cases; input = test-requirements.xlsx + test-design.md + knowledge; output = test-cases.xlsx."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md#Process steps 1-7: read inputs and list TR/condition IDs, read knowledge, write cases, source expected results, traceability/self-check, export, report and stop. Upstream analysis/design are skills 1-2 (README.md#Workflow and control points rows 1-4)."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process: each step has its own output (ID list, knowledge labels, cases, 'To be confirmed' marks, traceability check, xlsx, report with counts per TR). Step 3 bundles summary/precondition/steps/expected but these are one activity (writing a case)."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md Step 1 (needs reviewed TR + approved design) -> Step 2 -> 3 -> 4 -> 5 -> 6 -> 7; README.md#How to run it step 4: skill 3 reads previous step's file."
+        },
+        {
+          "met": true,
+          "evidence": "One skill session writes 145 cases from 145 conditions (transcripts/03-test-case-generation-run1.md:2199); not chopped into trivial steps, no unrelated activity (no design, no data) in the prompt (SKILL.md description 'Do NOT use to ... choose test techniques or generate test data')."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md Step 7 'then stop, because expected results must be confirmed by a person'; README.md#Workflow row 4 'CP3 (high risk): confirm expected results ... the AI never finalises them'; transcripts/03-test-case-generation-run1.md:2199-2263 shows the stop and the 7 decisions asked."
+        }
+      ],
+      "B2": [
+        {
+          "met": true,
+          "evidence": "knowledge/index.md (files + read-by-skill table), knowledge/product-review-rules.md (story, AC, facts, assumptions, open questions), screens-and-fields.md, glossary.md, environment.md; transcripts/03-test-case-generation-run1.md:5-17 passes TR list, design, clarification questions, knowledge folder, build note."
+        },
+        {
+          "met": true,
+          "evidence": "Instructions in skills/test-case-generation/SKILL.md + references/tc-writing-rules.md; project knowledge in knowledge/; per-run input given in the prompt (transcripts/03-test-case-generation-run1.md:5-17); README.md says 'The skills hold no project data'."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Files and when to read them maps each file to the skills that read it; SKILL.md Step 2 reads only the files the index lists for test cases; tc-writing-rules.md opened only at Steps 3 and 5."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Labels used (Fact / Observed / Assumption / Open question); SKILL.md Step 4 'To be confirmed' + Missing info tag; runs/run-1/test-cases.xlsx Notes columns carry 'Assumption: ... until Q-xx is answered' and 'Missing info: ... (Q-xx)'."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Source priority (PO answers > user story > mockup > app-note > build is never a source of expected results); SKILL.md#Exceptions: design vs TR disagree -> report and ask; review/review-log.md #2 and #6 (build's '500' counter not used as a source)."
+        },
+        {
+          "met": false,
+          "evidence": "Dates exist (knowledge/*.md 'Last updated: 2026-10-21') and knowledge/index.md#Maintenance, but the same open points are held in several places: knowledge/product-review-rules.md OQ1-OQ12 vs runs/run-1/clarification-questions.md Q-01..Q-38 (different numbering), assumptions in knowledge A1-A2, runs/run-1/test-design.md#Assumptions to confirm and the 'Assumption used until answered' column of clarification-questions.md (review/review-log.md #6: the AI took Q-34/Q-35 assumptions from the questions file because the design lacked them). No single source for assumptions.",
+          "locations": [
+            {
+              "file": "knowledge/product-review-rules.md",
+              "line": 35,
+              "quote": "The rating is a whole number from 1 to 5 (one per star)."
+            },
+            {
+              "file": "knowledge/product-review-rules.md",
+              "line": 42,
+              "quote": "Purchase check"
+            },
+            {
+              "file": "runs/run-1/clarification-questions.md",
+              "line": 31,
+              "quote": "Assumption used until answered"
+            },
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 516,
+              "quote": "## Assumptions to confirm"
+            },
+            {
+              "file": "knowledge/",
+              "absent": "one single file holding all assumptions and open questions with one numbering (OQ vs Q-xx duplicated)",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "All emails example.com / fictional names (runs/run-1/test-cases.xlsx Steps, e.g. TC-31-02); knowledge/index.md#Maintenance 'No real personal data, accounts or passwords'; review/review-log.md #7 (example.co.uk replaced by reserved domain)."
+        }
+      ],
+      "B3": [
+        {
+          "met": true,
+          "evidence": "transcripts/03-test-case-generation-run1.md:5-8 and transcripts/07-test-case-generation-run2.md:5-8 invoke skills/test-case-generation/SKILL.md after TR list and design exist, matching its description."
+        },
+        {
+          "met": true,
+          "evidence": "Prompts give TR file, design file, knowledge folder, output folder (transcripts/03-test-case-generation-run1.md:8-17; transcripts/07-test-case-generation-run2.md:8-17); skill asked for nothing else."
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/03-test-case-generation-run1.md:1371-2199: AI read SKILL.md, TR list, design, knowledge, wrote one case per condition, checked traceability, exported from template, reported per-TR counts and TBC list, then stopped (Step 7). Same flow in transcripts/07-test-case-generation-run2.md:1150-1403."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #5 (scripted scan for vague phrases, generic data) and #6 (trainee recounted AI miscounts 18 vs 19 and 15 vs 22; transcripts/03-test-case-generation-run1.md:2636-2664 AI admits '22, not 15'); counts in README.md match the file (75/22/22/26). No rerun was needed. Run-2 output has no per-output review beyond counts in review/consistency.md."
+        },
+        {
+          "met": true,
+          "evidence": "review/consistency.md row test-case-generation; verified: runs/run-1/ai-original/test-cases.xlsx, runs/run-1/test-cases.xlsx, runs/run-2/test-cases.xlsx all have the 7-column 'Test Cases' sheet, 41 TRs, 145 cases, TC-<TR>-<nn> IDs. Differences (120 TBC in ai-original vs 29 in run-2) are explained by the extra run-2 prompt instruction (transcripts/07-test-case-generation-run2.md:8-17). Placeholder wording differs ([minimum] vs (minimum))."
+        },
+        {
+          "met": false,
+          "evidence": "The decisions that shape the result (use design assumptions as working expected results, firm 'no script runs', BLOCKED/NOT RUN/OBSERVE ONLY prefixes) were given in chat (transcripts/03-test-case-generation-run1.md:2269-2283, 2590-2594) and as an ad-hoc instruction in the run-2 prompt (transcripts/07-test-case-generation-run2.md:8-17); they are not written into skills/test-case-generation/SKILL.md or README.md. Someone following README.md would get the 120-'To be confirmed' output of ai-original, not the final deliverable.",
+          "locations": [
+            {
+              "file": "transcripts/03-test-case-generation-run1.md",
+              "line": 3051,
+              "quote": "use the design's assumptions as the working expected results"
+            },
+            {
+              "file": "transcripts/07-test-case-generation-run2.md",
+              "line": 16,
+              "quote": "use the design's assumptions as working expected results"
+            },
+            {
+              "file": "skills/test-case-generation/SKILL.md",
+              "absent": "the rule to use design assumptions as working expected results and the BLOCKED / NOT RUN / OBSERVE ONLY status prefixes",
+              "kind": "content"
+            },
+            {
+              "file": "README.md",
+              "absent": "how to treat 'To be confirmed' expected results after step 7",
+              "kind": "content"
+            }
+          ]
+        }
+      ],
+      "B4": [
+        {
+          "met": true,
+          "evidence": "review/review-log.md #6: AI miscounts detected by trainee and recounted from the file; #5 scripted scan; #7 reserved-domain issue; transcripts/03-test-case-generation-run1.md:2199-2263 AI flagged design header Q-01..Q-32 vs Q-33..Q-38 mismatch."
+        },
+        {
+          "met": true,
+          "evidence": "Missing/conflicting input: SKILL.md#Exceptions; transcripts/03-test-case-generation-run1.md:2199-2263 asks 7 decisions rather than guessing; unverified: 35 cases keep 'To be confirmed' and 22 are OBSERVE ONLY (runs/run-1/test-cases.xlsx Notes, e.g. TC-23-02, TC-16-01), trainee 'good that you didn't invent those' (transcripts/03-test-case-generation-run1.md:2590); build's 500 counter refused as source (review-log.md #6). Not exercised here: failed export, or unacceptable AI output needing pointed feedback (graded on the types that occurred)."
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/03-test-case-generation-run1.md:2269-2283 and 2590-2594: targeted changes ('only change test-cases.xlsx', keep Missing info notes); final counts recounted (review-log.md #6); review-log.md #7 fix then 'No example.co.uk left'. Run-2 output not re-checked beyond counts."
+        },
+        {
+          "met": true,
+          "evidence": "README.md (paragraph after the workflow table): stop and escalate when story info is missing, two sources conflict, a skill fails twice on the same step, an output cannot be verified; SKILL.md#Exceptions (export fails -> retry once then ask)."
+        }
+      ],
+      "B5": [
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points: 7 QA steps with AI? Yes/No and Why."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Skills: skill 2 test-design.md -> skill 3 test-cases.xlsx -> skill 4 test-data.xlsx; runs/run-1/run-log.md steps 2-4 with transcripts 02, 03, 04."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it step 4 ('reads the previous step's file from the same output folder'); transcripts/03-test-case-generation-run1.md:5-17 passes file paths only. Minor hand edits: test-design.md header and TC-31-02 cell E102 (review-log.md #5, #7)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow CP1-CP5, CP3 high risk for expected results; SKILL.md Step 7; transcripts/03-test-case-generation-run1.md:2199-2263 gate before execution."
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 and 6 (PO communication and execution are human); CP3 decisions made by the trainee (transcripts/03-test-case-generation-run1.md:2269-2283)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 and 6 state No and why (customer talk is human; actual results must come from what the tester sees)."
+        }
+      ],
+      "B6": [
+        {
+          "met": true,
+          "evidence": "README.md#How to run it (6 steps) and SKILL.md#Inputs; transcripts/03-test-case-generation-run1.md:5-17 shows a short prompt launching the skill."
+        },
+        {
+          "met": true,
+          "evidence": "Context in knowledge/ (not re-pasted); prompt supplies only paths and build (transcripts/03-test-case-generation-run1.md:5-17, transcripts/07-test-case-generation-run2.md:5-17)."
+        },
+        {
+          "met": true,
+          "evidence": "Skill reads the TR file, design file and knowledge itself (SKILL.md Steps 1-2); no input asked twice in transcripts 03 or 07."
+        },
+        {
+          "met": true,
+          "evidence": "Few manual actions: two hand edits (test-design.md header, TC-31-02 E102, review-log.md #5, #7) plus two chat rounds to relabel statuses (transcripts/03-test-case-generation-run1.md:2269, 2590); no copy-paste between steps."
+        },
+        {
+          "met": true,
+          "evidence": "Interventions are at CP3 (transcripts/03-test-case-generation-run1.md:2269-2283 decisions, 2590-2594 observe-only); the two relabelling rounds are somewhat wasteful but tied to the control point."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it and SKILL.md give enough to start; knowledge/index.md explains where context lives. (How to treat 'To be confirmed' results after step 7 is not documented: counted under B3 condition 6.)"
+        },
+        {
+          "met": true,
+          "evidence": "review/effort-estimate.md: test cases manual ~12 h vs AI 13 min + ~1 h review (estimates stated as estimates)."
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "Missing-info/assumption notes in runs/run-1/test-cases.xlsx tie cases to questions covering all 12 baseline ambiguities: AMB1 Q-03 (TC-02-02), AMB2 Q-04/Q-15 (TC-09-x, TC-12-x), AMB3 Q-17 (TC-11-x), AMB4 Q-07 (TC-14-01), AMB5 Q-21 (TC-33-x), AMB6 Q-08 (TC-16-01), AMB7 Q-09/Q-10/Q-23 (TC-17/20/21), AMB8 Q-01 (TC-26-x), AMB9 Q-06 (TC-31-x), AMB10 Q-12 (TC-39-x), AMB11 Q-13/Q-14 (TC-36/37), AMB12 Q-20 (TC-34-x). 12/12 >= 70%."
+        },
+        {
+          "met": false,
+          "evidence": "Mandatory AMB5 (what the customer sees after submit) is Q-21 in 'Nice to confirm' (runs/run-1/clarification-questions.md Q-21, Q-22) and TC-33-01/02 depend on it (runs/run-1/test-cases.xlsx TC-33-01 Notes). Other mandatory points (AMB1 Q-03, AMB4 Q-07, AMB6 Q-08, AMB8 Q-01) are in 'Must ask'. Grouping is skill 1's output; test-cases.xlsx carries no groups (see notes).",
+          "locations": [
+            {
+              "file": "runs/run-1/clarification-questions.md",
+              "line": 38,
+              "quote": "Success message"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/clarification-questions.md has '## Must ask' (Q-01..Q-15, Q-33) and '## Nice to confirm' (Q-16..Q-38); the test cases cite those Q IDs. test-cases.xlsx has no groups itself (ambiguity in notes)."
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-cases.xlsx: TR-01..TR-41 each have 1-12 cases (41 TRs, 145 cases); runs/run-2/test-cases.xlsx same 41 TRs. AC-01/02/03 covered by TR-01..11 / TR-06..11 / TR-13..24."
+        },
+        {
+          "met": true,
+          "evidence": "Columns TR ID, TC ID, TC Summary, Pre-Condition, Steps, Expected Result, Notes (skills/test-case-generation/assets/test-case-template.xlsx); no empty cell in any of the 145 rows (run-1 and run-2). Test data is inside Steps and in test-data.xlsx."
+        },
+        {
+          "met": true,
+          "evidence": "Positive, negative, boundary (TR-03, 09, 10, 29, 31), validation (TR-05,07,11,28,30,34), error handling (TR-40,41), permissions (TR-26,27), UI (TR-25), integration/regression (TR-14,15,20-23), security (TR-12, 19). Compatibility absent but excluded with reason in runs/run-1/test-design.md#Not covered (only Chrome, Q-31)."
+        },
+        {
+          "met": true,
+          "evidence": "TR-12 script injection (TC-12-01..05), TR-19 email not shown (TC-19-01/02), TR-23 summary with pending review (TC-23-02), TR-03 rating 1/5 (TC-03-01), TR-05/07 empty rating/review, TR-09/10 length limits all have cases. Several are BLOCKED/NOT RUN/OBSERVE ONLY but the items exist."
+        },
+        {
+          "met": true,
+          "evidence": "Every unknown is a 'Missing info: ... (Q-xx)' or 'Assumption: ... until Q-xx is answered' note in test-cases.xlsx Notes; 35 expected results left 'To be confirmed (Q-xx)'."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-cases.xlsx Notes prefixes 'BLOCKED - waiting for Q-xx' (22), 'NOT RUN on demo-1.0 - <reason>' (26), 'OBSERVE ONLY - no verdict until Q-xx' (22); runs/run-1/test-design.md#Not covered lists exclusions with reasons."
+        },
+        {
+          "met": true,
+          "evidence": "No TR or AC uncovered. Minor: possible duplicates (TC-10-01 vs TC-07-01, TC-39-01 vs TC-33-01, TC-24-01 vs TC-14-01) kept and flagged in Notes; 48 of 145 cases cannot run on demo-1.0 but are stated so."
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "Header row identical to skills/test-case-generation/assets/test-case-template.xlsx in runs/run-1, runs/run-1/ai-original and runs/run-2 test-cases.xlsx (sheet 'Test Cases'); IDs TC-<TR>-<nn>, no duplicate ID; every Notes starts with or contains 'Condition: TCD-xx-yy'."
+        },
+        {
+          "met": true,
+          "evidence": "Same pattern across rows: 'Verify that ...' summaries, numbered steps with exact control labels ('Your rating *', 'Submit'), Notes tags Condition/Technique/Assumption/Missing info (run-1 and run-2)."
+        },
+        {
+          "met": false,
+          "evidence": "35 expected results in runs/run-1/test-cases.xlsx start 'To be confirmed (Q-xx)' and cannot be judged pass/fail (e.g. TC-12-03, TC-23-01 'rounded as confirmed', TC-16-01 'either ... or ...', TC-17-03 'full name, first name, or initials'); run-2 has 29 (e.g. TC-20-01, TC-26-02). The other ~110 rows are concrete (e.g. TC-04-02, TC-11-01). 30 more cells in column F: search 'To be confirmed'.",
+          "locations": [
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F37",
+              "quote": "To be confirmed (Q-15): the word \"bold\" is not shown in bold type"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F47",
+              "quote": "To be confirmed (Q-08): either the review"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F51",
+              "quote": "The name is shown in the confirmed form"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F58",
+              "quote": "To be confirmed (Q-10): the reviews are in the confirmed order"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F68",
+              "quote": "To be confirmed (Q-11): the review count is 1 higher than before"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Steps name every control and datum, pre-condition gives build/browser/reset state (all rows); another tester can run without asking; status prefixes explain the non-runnable cases."
+        },
+        {
+          "met": true,
+          "evidence": "One condition per case; longest case 15 steps; expected results are one outcome with a few observable parts (references/tc-writing-rules.md); repeated assumption lines in Notes add noise but do not mix purposes."
+        },
+        {
+          "met": false,
+          "evidence": "runs/run-1/test-cases.xlsx still contains literal placeholders in 8 blocked cases: TC-10-02, 10-03, 10-04, 21-02, 21-03, 21-04, 29-10, 31-12 ('[maximum]', '[page size]'); TC-09-01..04 say 'minimum characters' with no number. run-2 uses '(minimum)' wording in steps. No AI lead-in text found. 3 more cells (TC-10-04, TC-21-02/04): search '[maximum]' or '[page size]' in columns E and F.",
+          "locations": [
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F28",
+              "quote": "\"Your review *\" holds exactly [maximum] characters"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F29",
+              "quote": "\"Your review *\" holds exactly [maximum] characters"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F63",
+              "quote": "All [page size] reviews are on the"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F99",
+              "quote": "\"Name *\" holds exactly [maximum] characters"
+            },
+            {
+              "file": "runs/run-1/test-cases.xlsx",
+              "sheet": "Test Cases",
+              "cell": "F112",
+              "quote": "\"Email *\" holds exactly [maximum] characters"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Sorted by TR then TC (grouped by requirement), status prefixes in Notes, counts per status in README.md; no summary sheet or priority column (template has none)."
+        },
+        {
+          "met": true,
+          "evidence": "English, neutral, short imperative steps (runs/run-1/test-cases.xlsx Steps)."
+        }
+      ],
+      "C4": [
+        {
+          "met": false,
+          "evidence": "review/review-log.md #5 checks the test cases only against references/tc-writing-rules.md and the design ('No vague expected results'; transcripts/03-test-case-generation-run1.md:2269 'checked a sample + scanned the Expected Result column, they're specific'); expected results are not checked against user-story.md/AC or knowledge. #6 is a decision on unconfirmed results, not a check.",
+          "locations": [
+            {
+              "file": "transcripts/03-test-case-generation-run1.md",
+              "line": 3049,
+              "quote": "checked a sample + scanned the Expected Result column"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 13,
+              "quote": "No vague expected results"
+            },
+            {
+              "file": "review/review-log.md",
+              "absent": "an entry checking test-case expected results against user-story.md AC / knowledge",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": false,
+          "evidence": "No systematic pass over high-risk items: transcripts/03-test-case-generation-run1.md:2269 'a sample + scanned'; counts were recounted but there is no per-TR/AC check of expected results or boundaries; run-2 test cases were not reviewed (review/consistency.md counts only).",
+          "locations": [
+            {
+              "file": "transcripts/03-test-case-generation-run1.md",
+              "line": 3049,
+              "quote": "checked a sample + scanned the Expected Result column"
+            },
+            {
+              "file": "review/review-log.md",
+              "absent": "a systematic per-TR/AC check of expected results and boundaries, and any review of runs/run-2/test-cases.xlsx",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #6 (AI miscounts, 120 'To be confirmed' to resolve, build's 500 not a requirement source), #7 (TC-31-02 non-reserved domain example.co.uk, cell E102), transcripts/03-test-case-generation-run1.md:2199-2263 (design header stale); decision 2 (script injection treated as TBC though a firm result)."
+        },
+        {
+          "met": true,
+          "evidence": "Each finding has a decision and reason: review/review-log.md #6 (assumption -> Notes 'Assumption ... until Q-xx', BLOCKED for placeholders, NOT RUN for environment, OBSERVE ONLY without verdict, duplicates noted), #7 fixed in test-cases.xlsx E102 and test-design.md."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #6 and transcripts/03-test-case-generation-run1.md:2590-2594: cases without a source assumption become OBSERVE ONLY; 500 counter not used."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #6 re-check from the file (145 = 75+22+22+26; no verdict case says 'To be confirmed') and #7 'No example.co.uk left'; I verified the counts in runs/run-1/test-cases.xlsx."
+        },
+        {
+          "met": true,
+          "evidence": "Compare runs/run-1/ai-original/test-cases.xlsx with runs/run-1/test-cases.xlsx: changes are status relabelling and assumption notes decided at CP3 plus E102; steps and summaries of verdict cases unchanged. Note: AI added an unrequested tail to TC-12-01/05 Notes (transcripts/03-test-case-generation-run1.md:2618-2664), unreviewed but harmless."
+        },
+        {
+          "met": true,
+          "evidence": "22 OBSERVE ONLY and 13 non-runnable cases keep 'To be confirmed' expected results (runs/run-1/test-cases.xlsx e.g. TC-16-01, TC-26-02). Caveat: 75 cases state the assumed result plainly in Expected Result with the assumption only in Notes (e.g. TC-03-01, TC-31-02)."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #5-#7 (finding, source, action, re-check) plus runs/run-1/ai-original/test-cases.xlsx kept for comparison. No record for the run-2 test cases."
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "Observed: test cases use fictional names and example.com emails only (runs/run-1/test-cases.xlsx; review-log.md #7 replaced example.co.uk); knowledge/ holds no accounts, passwords or real customer data; work done in Claude Code with Python/openpyxl scripts in a temp scratchpad; AI read only the named files and the exam folder (transcripts/03-test-case-generation-run1.md:12-17; transcripts/07-test-case-generation-run2.md:12-17); no PO answers or real data used."
+  },
+  "notes": [
+    "Mapping: skill test-case-generation -> competency test-case-generation (output test-cases.xlsx, transcripts 03 and 07).",
+    "C1 ambiguity: Must ask / Nice to confirm grouping is produced by the requirements-analysis skill, not by test-case-generation. I graded C1 on the Q IDs the test cases cite and the clarification file they cite. The requirements-analysis judge may count the same cause (AMB5 -> Q-21 in 'Nice to confirm'); count once.",
+    "B4 condition 2 wording ('each type') lists five exception types; only missing input, conflict and unverified results occurred in this competency. I graded the types that occurred.",
+    "Run-1 vs run-2: run-2 prompt carries an extra ad-hoc rule (use design assumptions as expected results). Run-2 TC-23-02 has a firm expected result (pending does not change the summary) while run-1 TC-23-02 is OBSERVE ONLY; the summary bug (baseline BUG-03) was only found in retest. Cases for baseline BUG-04 (500-char limit) are BLOCKED by the trainee's choice not to use the build's 500.",
+    "Run-1 ai-original had 120 'To be confirmed' expected results; final has 35. Counts in README/review log verified against the files (75/22/22/26).",
+    "Sensible output not in the key: run-2 'Source:' notes per case; run-2 TC-40-03/40-04 design gap noted by the AI; possible-duplicate notes.",
+    "Possible criterion wording issue: C2/C3 mention a 'test data' component; the course template has no test data column, data is inside Steps. Accepted."
+  ]
+}

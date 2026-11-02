@@ -1,0 +1,8 @@
+RT-02 One-star rating
+Environment: demo-1.0 (exam/app/index.html via file://), Chrome, fresh browser profile (empty localStorage), viewport 1280x900, 2026-10-21. Console: no messages, no page errors, no dialogs. (headless)
+Steps (a): fresh page; click star 2, then star 1; Your review "One star after two."; Name "Anna Smith"; Email "anna.smith@example.com"; Submit.
+Observed (a): stars 1:filled 2:empty 3:empty 4:empty 5:empty (label "1 star"); after Submit: error "Please select a rating.", no confirmation, Pending approval 0.
+Steps (b) (same as TC-03-01): fresh page; click star 1 only; Your review "Rating check: one star."; Name "Anna Smith"; Email "anna.smith@example.com"; Submit.
+Observed (b): stars 1:filled 2:empty 3:empty 4:empty 5:empty (label "1 star"); after Submit: error "Please select a rating.", no confirmation, Pending approval 0.
+Conclusion: rating 1 is rejected with "Please select a rating." whether star 1 is clicked directly or reached from star 2. Same as TC-03-01.
+Evidence: RT-02.png (left panel: a, right panel: b)

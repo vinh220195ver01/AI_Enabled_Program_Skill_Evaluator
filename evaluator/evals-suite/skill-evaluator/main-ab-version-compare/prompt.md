@@ -1,0 +1,1 @@
+mình vừa nâng skill changelog-writer lên v2 (thêm phần xử lý breaking change). chạy thử trên 2 bộ commit trong inputs/, mỗi bản chạy 3 lần, kết quả để trong outputs/ hết rồi, số token/giây trong runs.csv. v2 có ngon hơn v1 thiệt không? trả lời gọn thôi, mình đọc lướt.

@@ -1,0 +1,9 @@
+RT-04 Visible (headed) Chrome window
+Environment: demo-1.0 via file://, Chrome launched with headless: false (visible window), fresh profile, viewport 1280x900, 2026-10-21. Console: no messages, no page errors, no dialogs.
+Repeat of TC-03-01: click star 1; "Rating check: one star."; Anna Smith; anna.smith@example.com; Submit; approve.
+Observed: stars 1:filled 2:empty 3:empty 4:empty 5:empty; error "Please select a rating."; Pending approval 0; approve button disabled; review not in list.
+-> Same as the headless run (Fail).
+Repeat of TC-17-01: click star 4; "Details check: all parts shown."; Anna Smith; anna.smith@example.com; Submit; approve.
+Observed: confirmation "Thank you! Your review has been submited and is awaiting approval."; Pending approval 1; review 4 of 5 stars, name "anna.smith@example.com", date "October 21, 2026", text "Details check: all parts shown.".
+-> Same as the headless run (Fail: the email is shown instead of "Anna Smith").
+Evidence: RT-04-TC-03-01.png, RT-04-TC-17-01.png

@@ -1,0 +1,209 @@
+{
+  "profile": "manual-qa",
+  "version": "imported",
+  "assessment_id": "US-VP02-submit-product-review",
+  "requirement_source": "exam/User Story for My Shop.docx",
+  "severity_scale": [
+    "Critical",
+    "Major",
+    "Minor",
+    "Trivial"
+  ],
+  "thresholds": {
+    "ambiguity_found_pct": 70,
+    "ambiguity_with_tr_pct": 70,
+    "bug_found_pct": 60
+  },
+  "acceptance_criteria": [
+    {
+      "id": "AC_01",
+      "text": "Allow customers to enter a star rating"
+    },
+    {
+      "id": "AC_02",
+      "text": "Provide a text box for review comments"
+    },
+    {
+      "id": "AC_03",
+      "text": "Display approved reviews on the product page"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "AMB1",
+      "description": "Confirm the exact allowed rating values, whether half-star values are supported, and the default state before a rating is selected.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D9",
+      "tr_id": "TR_005"
+    },
+    {
+      "id": "AMB2",
+      "description": "Confirm the minimum/maximum review length and the allowed characters, Unicode/emoji, and HTML handling.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D17",
+      "tr_id": "TR_013"
+    },
+    {
+      "id": "AMB3",
+      "description": "Confirm whether a review containing only spaces is treated as empty and whether leading/trailing spaces are trimmed.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D19",
+      "tr_id": "TR_015"
+    },
+    {
+      "id": "AMB4",
+      "description": "Confirm who or what approves reviews and which review statuses exist before a review becomes visible.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D25",
+      "tr_id": "TR_021"
+    },
+    {
+      "id": "AMB5",
+      "description": "Confirm what the customer sees immediately after submitting a review, including the initial review status and any confirmation message or redirect.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D26",
+      "tr_id": "TR_022"
+    },
+    {
+      "id": "AMB6",
+      "description": "Confirm whether pending and rejected reviews are hidden from the product page and whether the customer can see their status elsewhere.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D27",
+      "tr_id": "TR_023"
+    },
+    {
+      "id": "AMB7",
+      "description": "Confirm which review fields are shown publicly and the display order/pagination rules when multiple approved reviews exist.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D30",
+      "tr_id": "TR_026"
+    },
+    {
+      "id": "AMB8",
+      "description": "Confirm how the system verifies that the customer purchased the product and what should happen for a guest or a customer who did not purchase it.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D50",
+      "tr_id": "TR_046"
+    },
+    {
+      "id": "AMB9",
+      "description": "Confirm the accepted email format and the expected validation behavior for an invalid email address.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D51",
+      "tr_id": "TR_047"
+    },
+    {
+      "id": "AMB10",
+      "description": "Confirm whether the same customer can submit more than one review for the same product and what counts as a duplicate.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D52",
+      "tr_id": "TR_048"
+    },
+    {
+      "id": "AMB11",
+      "description": "Confirm how long and where the \"save my name, email, and website\" checkbox persists data, and why the label mentions Website although no Website input is visible.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D53",
+      "tr_id": "TR_049"
+    },
+    {
+      "id": "AMB12",
+      "description": "Confirm the exact wording and placement of validation messages for missing or invalid required fields.",
+      "mandatory": false,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D54",
+      "tr_id": "TR_050"
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "EC1",
+      "description": "The lowest supported rating can be selected and remains selected before submission.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D10",
+      "tr_id": "TR_006"
+    },
+    {
+      "id": "EC2",
+      "description": "The highest supported rating can be selected and remains selected before submission.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D11",
+      "tr_id": "TR_007"
+    },
+    {
+      "id": "EC3",
+      "description": "Submitting the review without selecting a rating is rejected because the rating is marked as required.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D12",
+      "tr_id": "TR_008"
+    },
+    {
+      "id": "EC4",
+      "description": "Submitting the review with an empty review comment is rejected because the review field is marked as required.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D18",
+      "tr_id": "TR_014"
+    },
+    {
+      "id": "EC5",
+      "description": "Very long review comments are handled according to the confirmed length rule without data corruption or broken page layout.",
+      "mandatory": true,
+      "source_ref": "Test_Requirement.xlsx!Test Requirement!D21",
+      "tr_id": "TR_017"
+    }
+  ],
+  "bugs": [
+    {
+      "id": "BUG-01",
+      "location": "Add a review form - Your rating (star input) / Submit validation",
+      "symptom": "Selecting 1 star and submitting an otherwise valid review is rejected with 'Please select a rating.' although the first star is shown as selected; 2-5 stars are accepted. A 1-star review cannot be submitted.",
+      "severity": "Major"
+    },
+    {
+      "id": "BUG-02",
+      "location": "Approved reviews list - reviewer name of a newly approved review",
+      "symptom": "After a submitted review is approved it is shown on the product page with the reviewer's email address instead of the entered Name, although the form states 'Your email address will not be published'.",
+      "severity": "Critical"
+    },
+    {
+      "id": "BUG-03",
+      "location": "Product rating summary (average rating and review count under the product title)",
+      "symptom": "While a review is pending approval, the summary counts it: the count rises (e.g. 'based on 4 reviews' while 'Reviews (3)' are listed) and the average drops (e.g. 4.0 -> 3.0), because the sum of approved ratings is divided by the number of all reviews including pending ones.",
+      "severity": "Major"
+    },
+    {
+      "id": "BUG-04",
+      "location": "Add a review form - Your review text box (length limit)",
+      "symptom": "A review of exactly 500 characters (counter shows '500 / 500', the field accepts no more) is rejected with 'Your review must be 500 characters or fewer.'; only 499 characters or fewer are accepted.",
+      "severity": "Minor"
+    },
+    {
+      "id": "BUG-05",
+      "location": "Add a review form - success message after Submit",
+      "symptom": "The confirmation message has a spelling error: 'Your review has been submited and is awaiting approval.' ('submited' instead of 'submitted').",
+      "severity": "Trivial"
+    }
+  ],
+  "environment_info_provided": {
+    "build": "demo-1.0",
+    "browser": "Chrome",
+    "os": null
+  },
+  "source_files": {
+    "test_requirement": {
+      "file": "Test_Requirement.xlsx",
+      "sha256": "5fc399cea1cf0f7b8a2d00e0dbbbdb255529c99cd969e5677abd74a07e69527f"
+    },
+    "test_case": {
+      "file": "Test_Case.xlsx",
+      "sha256": "37dbe8c5219dacf46de21f666f99b31d9673190af89c58834c661c33dba47f61"
+    }
+  },
+  "import_notes": [
+    "Test_Requirement.xlsx!Test Requirement!D10: no Mandatory value for edge case TR_006; defaulted to mandatory.",
+    "Test_Requirement.xlsx!Test Requirement!D11: no Mandatory value for edge case TR_007; defaulted to mandatory.",
+    "Test_Requirement.xlsx!Test Requirement!D12: no Mandatory value for edge case TR_008; defaulted to mandatory.",
+    "Test_Requirement.xlsx!Test Requirement!D18: no Mandatory value for edge case TR_014; defaulted to mandatory.",
+    "Test_Requirement.xlsx!Test Requirement!D21: no Mandatory value for edge case TR_017; defaulted to mandatory.",
+    "No Bug Report workbook given: B4, C5 and C6 are recorded as not_assessed; bugs is empty."
+  ]
+}

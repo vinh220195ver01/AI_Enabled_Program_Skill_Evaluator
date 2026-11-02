@@ -1,0 +1,7 @@
+RT-03 Name vs email
+Environment: demo-1.0 (exam/app/index.html via file://), Chrome, fresh browser profile (empty localStorage), viewport 1280x900, 2026-10-21. Console: no messages, no page errors, no dialogs. (headless)
+Steps: fresh page; click star 5; Your review "Name check."; Name "Zed Different"; Email "other.person@example.com"; Submit; Moderator: approve pending reviews; read the reviewer name of the review "Name check.".
+Observed: confirmation "Thank you! Your review has been submited and is awaiting approval.". After approval the review shows 5 of 5 stars, date "October 21, 2026", text "Name check.".
+Reviewer name shown: "other.person@example.com" (Elements: <span class="review-author">other.person@example.com</span>).
+"Zed Different" does not appear anywhere in the review; the Email * value is shown where the name should be.
+Evidence: RT-03.png (full page), RT-03-review.png (the review item)

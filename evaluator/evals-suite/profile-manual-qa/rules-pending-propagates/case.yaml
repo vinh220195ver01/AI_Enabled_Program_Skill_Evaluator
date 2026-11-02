@@ -1,0 +1,17 @@
+schema_version: "1.1"
+name: rules-pending-propagates
+# kind: script
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: chưa tính được điểm competency, trạng thái PENDING. Đối chiếu
+  files/conditions.json: C1 có 1 điều kiện met và 2 ô null (chờ người): verdict pending,
+  không tính điểm; C3 có 7 met và 1 null: verdict pass (7/8 ≥ 80%) nhưng điểm criterion
+  chưa chốt (None) vì còn một ô chờ người; do đó nhóm C chưa có điểm và điểm competency
+  chưa có. Nhóm A = 5,0; nhóm B ≈ 4,8611 (B3 5/6 met là 0,8333, các criterion B khác 1,0).
+  Hành vi bắt buộc: dùng scripts/criterion_rules.py với profiles/manual-qa; báo nhóm A và
+  B kèm con số; nêu C1 pending, C3 pass-nhưng-điểm-chờ, nhóm C và competency chưa có
+  điểm; nói đây cần người chấm nốt các ô null (và gate an toàn) trước khi kết luận đậu.
+  KHÔNG được: coi null là chưa đạt (hoặc đã đạt) để ra một con số; đưa điểm competency;
+  kết luận "đậu" hoặc "rớt"; sửa file.

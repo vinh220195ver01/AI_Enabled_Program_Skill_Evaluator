@@ -1,0 +1,29 @@
+{
+  "profile": "manual-qa",
+  "version": "0.3-skeleton",
+  "assessment_id": "TODO: id of the assessment handed to trainees",
+  "requirement_source": "TODO: path or name of the user story / assessment document trainees received",
+  "severity_scale": ["Critical", "Major", "Minor", "Trivial"],
+  "thresholds": {
+    "ambiguity_found_pct": 70,
+    "ambiguity_with_tr_pct": 70,
+    "bug_found_pct": 60
+  },
+  "acceptance_criteria": [
+    {"id": "AC1", "text": "TODO: acceptance criterion text copied from the user story"}
+  ],
+  "ambiguities": [
+    {"id": "AMB1", "description": "TODO: an ambiguous point in the user story", "mandatory": true}
+  ],
+  "edge_cases": [
+    {"id": "EC1", "description": "TODO: an edge case the test cases must cover", "mandatory": true}
+  ],
+  "bugs": [
+    {"id": "BUG-01", "location": "TODO: where the planted bug is", "symptom": "TODO: observable symptom", "severity": "Critical"}
+  ],
+  "environment_info_provided": {
+    "build": null,
+    "browser": null,
+    "os": null
+  }
+}

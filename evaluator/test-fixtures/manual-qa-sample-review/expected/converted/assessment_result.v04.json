@@ -1,0 +1,831 @@
+{
+  "converted_from": "..\\..\\test-fixtures\\manual-qa-sample-review\\expected\\assessment_result.json",
+  "profile_version": "0.11-draft",
+  "skills": [
+    {
+      "name": "test-case-generation",
+      "competency": "test-case-generation",
+      "reason": "mapped from the skill folder name"
+    },
+    {
+      "name": "test-requirements-analysis",
+      "competency": "requirements-analysis",
+      "reason": "mapped from the skill folder name"
+    }
+  ],
+  "skill_results": {
+    "test-case-generation": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "v0.3 A3 Description: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A8 No overlap: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "v0.3 A7 No domain knowledge: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "test-requirements-analysis": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A1 Structure: no error recorded (exact match)"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A2 Frontmatter: no error recorded (exact match)"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "v0.3 A3 Description: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A8 No overlap: no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 A4 Process: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "v0.3 A7 No domain knowledge: no error recorded (exact match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    }
+  },
+  "competency_results": {
+    "requirements-analysis": {
+      "B1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B3": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B5": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B6": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "v0.3 C1 Clarification questions (quality): no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C1 Clarification questions (quality): no error recorded (exact match)"
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C1 Clarification questions (quality): no error recorded (exact match)"
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "v0.3 C2 TR list (quality): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C2 TR list (quality): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "v0.3 B2 TR list (provenance): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    },
+    "test-case-generation": {
+      "B1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B2": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B3": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B5": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "B6": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C1": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "v0.3 C3 TC coverage: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C7 No fabrication: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "v0.3 B3 TC list (provenance): no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": true,
+          "evidence": "v0.3 C4 TC quality: no error recorded (approximate match)"
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ],
+      "C4": [
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        },
+        {
+          "met": null,
+          "pending": "no v0.3 equivalent",
+          "evidence": ""
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "v0.3 had no gate; the current gate has no conditions yet"
+  },
+  "notes": [
+    "Converted from a v0.3 result; conditions marked pending have no v0.3 equivalent."
+  ]
+}

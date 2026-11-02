@@ -1,0 +1,355 @@
+{
+  "competency_results": {
+    "requirements-analysis": {
+      "B1": [
+        {
+          "met": true,
+          "evidence": "Task = user story -> clarification questions + reviewed TR list; goal/input/output in skills/test-requirements-analysis/SKILL.md#Inputs, #Output and README.md#Skills (row 1: User story + AC + mockups -> clarification-questions.md, test-requirements.xlsx)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points rows 1-7 cover analysis, design, cases, data, execution, defects, with a human review at each control point; for this competency the chain is story -> questions/TRs -> CP1 review -> test-condition-design (runs/run-1/run-log.md steps 1-2)."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process steps 1-9: one purpose (turn one story into questions + TR list) with checkable outputs (coverage check step 7, counts report step 9). Two files are produced by the one skill, but both are analysis output; judged one purpose."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process order: ACs (1) -> knowledge (2) -> ambiguities (3) -> Must/Nice (4) -> questions file (5) -> TRs (6, links to questions) -> coverage check (7) -> export (8). README.md: skill 2 reads test-requirements.xlsx from the same folder."
+        },
+        {
+          "met": true,
+          "evidence": "Skill is one prompt-sized unit of 9 steps with its own references (ambiguity-checklist, tr-writing-rules, note-tags); not merged with test design (SKILL.md description 'Do NOT use to choose test techniques...') and not split into trivial steps."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points: CP1 'high risk: check every question and TR against the story; decide Must ask vs Nice to confirm'; step 2 human only; SKILL.md step 9 'stop and wait for the user's review before any test design'; transcripts/01-test-requirements-analysis-run1.md:771-828 shows the stop."
+        }
+      ],
+      "B2": [
+        {
+          "met": true,
+          "evidence": "knowledge/product-review-rules.md (story, ACs, rules, assumptions, open questions), screens-and-fields.md, glossary.md, environment.md; skill step 2 opens only what knowledge/index.md lists for requirements analysis (knowledge/index.md#Files and when to read them)."
+        },
+        {
+          "met": true,
+          "evidence": "Instructions live in skills/ (SKILL.md + references), project knowledge in knowledge/, run input (story, mockups, output folder) given per run in transcripts/01-test-requirements-analysis-run1.md:5-13 and 05-test-requirements-analysis-run2.md:5-13."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md maps each file to the skills that read it; transcripts/01-test-requirements-analysis-run1.md:15-560 show the AI opening index first, then only the listed files plus references at the steps named in SKILL.md#Files."
+        },
+        {
+          "met": true,
+          "evidence": "Labels Fact / Observed / Assumption / Open question (knowledge/index.md#Labels used in these files); product-review-rules.md separates Confirmed rules, Assumptions A1-A2 and Open questions OQ1-OQ12; outputs tag Assumption/Missing info (skills/test-requirements-analysis/references/note-tags.md)."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Source priority (PO answers > story > mockup > app-note > demo build never a requirement); conflicts become Must ask (SKILL.md#Exceptions); Q-02 and Q-13 recorded in runs/run-1/clarification-questions.md#Conflicts between sources; review/review-log.md #2 corrected app-note being cited as a requirement source."
+        },
+        {
+          "met": true,
+          "evidence": "Every knowledge file has Source + 'Last updated' lines; knowledge/index.md#Maintenance says update dates, turn answered Open questions into Facts, remove replaced Assumptions; each fact is kept in one file (OQ IDs referenced from screens-and-fields.md instead of repeated)."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/environment.md#Test accounts and data: 'Use synthetic data only'; knowledge/index.md#Maintenance 'No real personal data, accounts or passwords'; no real data in knowledge/ or runs/run-1/test-requirements.xlsx."
+        }
+      ],
+      "B3": [
+        {
+          "met": true,
+          "evidence": "Trainee names the skill for a user story + AC + mockups, exactly its trigger (transcripts/01-test-requirements-analysis-run1.md:5-13; SKILL.md description). Run 2 same (transcripts/05-test-requirements-analysis-run2.md:5-13)."
+        },
+        {
+          "met": true,
+          "evidence": "Supplies story, mockups, knowledge dir, output dir and 'no answers from the PO' (transcripts/01-test-requirements-analysis-run1.md:7-13). The skill never needed to ask for more input; nothing missing was guessed."
+        },
+        {
+          "met": true,
+          "evidence": "AI read SKILL.md, knowledge index and files, ambiguity-checklist, tr-writing-rules, note-tags and both templates (transcripts/01-test-requirements-analysis-run1.md:15-560), wrote both files, ran the step-7 coverage check, and stopped after the step-9 report (transcripts/01-test-requirements-analysis-run1.md:771-828). Minor: it also opened exam/app-note.md, outside the index-listed files (SKILL.md step 2); the trainee had allowed the exam folder (see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "Trainee checked the output against the skill's own standard and found AC-GEN rows with a file path in the Acceptance Criteria column, gave exact rows (TR-25..TR-41) and the rule line, and asked for the fix; also the R5 source check (transcripts/01-test-requirements-analysis-run1.md:829-841; review/review-log.md #1, #2). Diff of runs/run-1/ai-original/test-requirements.xlsx vs final: only B26:B42 changed."
+        },
+        {
+          "met": true,
+          "evidence": "review/consistency.md rows 1-2: same sheet/header/sections in both runs; 41 vs 42 TRs, same AC split; runs/run-2/test-requirements.xlsx and runs/run-2/clarification-questions.md follow the same layout. Detail level close (note: Must/Nice classification of some points differs, see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it (6 steps, prompt example), runs/run-1/run-log.md and runs/run-2/run-log.md record input, output and transcript per step; two independent runs with the same prompt shape (transcripts/01-...run1.md:5-13 vs 05-...run2.md:5-13)."
+        }
+      ],
+      "B4": [
+        {
+          "met": true,
+          "evidence": "AI flagged exceptions itself: skill rule conflict (tr-writing-rules vs note-tags) and R5 resting on the demo build note (transcripts/01-test-requirements-analysis-run1.md:820-827); trainee found the file path in the AC column by inspecting the file (review/review-log.md #1); two source conflicts raised as Q-02, Q-13 (runs/run-1/clarification-questions.md#Conflicts between sources)."
+        },
+        {
+          "met": true,
+          "evidence": "Conflict: written as Must ask quoting both sources (SKILL.md#Exceptions; Q-02, Q-13). Unacceptable output: feedback names rows, cells and the rule line (transcripts/01-test-requirements-analysis-run1.md:829-841). Unverified: Assumption/Missing info tags on TR notes (runs/run-1/test-requirements.xlsx!Test Requirements!E3). Missing input / failed write are covered by SKILL.md#Exceptions but did not occur in the analysis runs, so are policy only (see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "Trainee limited the fix ('don't touch anything else'), asked for a coverage re-check and the exact changed cells, and the AI reported B26:B42 only (transcripts/01-test-requirements-analysis-run1.md:829-1051); no rerun from scratch; ai-original/ kept."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points: 'Stop and escalate to the trainer / PO when: the story is missing information that blocks expected results; two sources conflict; a skill fails twice on the same step...; an output cannot be verified'. SKILL.md#Exceptions also states retry once then stop."
+        }
+      ],
+      "B5": [
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points table: 7 QA steps, AI yes/no and why for each (step 1 analysis = AI, 'fast at listing gaps and edge cases')."
+        },
+        {
+          "met": true,
+          "evidence": "Analysis output feeds test-condition-design, then test-case-generation and test-data-generation (README.md#Skills Input column; runs/run-1/run-log.md steps 1-4)."
+        },
+        {
+          "met": true,
+          "evidence": "Each later skill reads the prior file from the same output folder (README.md#How to run it step 4; runs/run-1/run-log.md: skill 2 input = test-requirements.xlsx, clarification-questions.md); no copy by hand."
+        },
+        {
+          "met": true,
+          "evidence": "CP1 marked high risk for analysis, CP3/CP5 high risk later; SKILL.md step 9 stops for review (README.md#Workflow and control points)."
+        },
+        {
+          "met": true,
+          "evidence": "Sending questions to the PO and recording answers is 'Human only'; the Must/Nice decision is the trainee's (README.md rows 1-2); the AI never finalises expected results (row 4)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 and 6 (talk to PO; execute tests) are 'No' with reasons ('Talking to the customer is a human job', 'Actual results must come from what the tester sees')."
+        }
+      ],
+      "B6": [
+        {
+          "met": true,
+          "evidence": "README.md#How to run it: copy skills/, point at SKILL.md, example one-line prompt with story, knowledge and output folder; transcripts/01-test-requirements-analysis-run1.md:5-13 shows it works that way."
+        },
+        {
+          "met": true,
+          "evidence": "Context lives in knowledge/ and is read by the skill via index; the run prompt gives only story, folders and 'no PO answers' (transcripts/01-test-requirements-analysis-run1.md:7-13)."
+        },
+        {
+          "met": true,
+          "evidence": "No input asked twice in the analysis runs (no question back to the trainee in transcripts/01-...run1.md or 05-...run2.md); later skills read test-requirements.xlsx from the folder (runs/run-1/run-log.md)."
+        },
+        {
+          "met": true,
+          "evidence": "Outputs are written straight to xlsx/md from templates; the only manual action was one targeted fix request (transcripts/01-test-requirements-analysis-run1.md:829-841)."
+        },
+        {
+          "met": true,
+          "evidence": "One intervention after the run, at the CP1 review (review/review-log.md #1, #2); the skill stops at step 9 and needs no prompting."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it plus SKILL.md#Inputs/#Process give a new tester the prompt shape, inputs and stop point; knowledge/index.md shows the folder layout to copy."
+        },
+        {
+          "met": true,
+          "evidence": "review/effort-estimate.md row 1: manual 4 h vs AI 6 min + 40 min review (stated as estimate); session span 03:55-04:01 in transcripts/01-test-requirements-analysis-run1.md supports the AI time."
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "Baseline AMB1-AMB12 all matched in runs/run-1/clarification-questions.md: AMB1 Q-03; AMB2 Q-04; AMB3 Q-17; AMB4 Q-07; AMB5 Q-08 (+Q-21, Q-22); AMB6 Q-08 + Q-07; AMB7 Q-09, Q-10, Q-23; AMB8 Q-01 (+Q-33); AMB9 Q-06; AMB10 Q-12; AMB11 Q-13, Q-14; AMB12 Q-20 = 12/12 (100%). Run 2 also covers all (runs/run-2/clarification-questions.md Q-01..Q-26)."
+        },
+        {
+          "met": true,
+          "evidence": "Mandatory AMB1, AMB4, AMB5, AMB6, AMB8 are in Must ask (Q-03, Q-07, Q-08, Q-08, Q-01). Ambiguity: AMB5 also lists the confirmation message and redirect, which run 1 asks as Nice (Q-21 message, Q-22 form after submit); the core (initial status / what the customer sees after submit) is Must in Q-08, so graded met (see notes). Run 2 has it fully in Must (runs/run-2/clarification-questions.md Q-09)."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/clarification-questions.md#Must ask (Q-01..Q-15, Q-33) and #Nice to confirm (Q-16..Q-32, Q-34..Q-38) both present."
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "AC-01 -> TR-01..05; AC-02 -> TR-06..12; AC-03 -> TR-13..24 (runs/run-1/test-requirements.xlsx!Test Requirements!A2:E42); baseline AC_01-AC_03 covered; edge cases EC1-EC5 map to TR-03, TR-05, TR-07, TR-10."
+        },
+        {
+          "met": true,
+          "evidence": "Columns AC ID / Acceptance Criteria / TR ID / Test Requirements / Notes filled on every row (A1:E42); matches skills/test-requirements-analysis/assets/test-requirement-template.xlsx header. Notes are empty on a few plain rows (optional by tr-writing-rules.md#Columns)."
+        },
+        {
+          "met": true,
+          "evidence": "TRs cover positive/negative (TR-05,07,11), boundary (TR-03,09,10), validation (TR-28..32,34), error handling (TR-41), permissions (TR-26), integration/calculation (TR-23), UI (TR-25), security (TR-12). Compatibility/accessibility appear only as questions (Q-31, Q-34), not as TRs; judged acceptable for a one-browser demo (see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "Main flow, data/privacy (TR-19, 37, 38), security (TR-12), moderation (TR-13..15), duplicates (TR-39, 40) covered. Gap: Q-33 (cancelled/refunded order may review?) was added later with no TR (runs/run-1/test-requirements.xlsx has no Q-33..Q-38 reference); TR-26 covers the permission topic generally."
+        },
+        {
+          "met": true,
+          "evidence": "Open points are raised as questions with Assumption notes: runs/run-1/test-requirements.xlsx!Test Requirements!E3 (Q-03), E10 (Q-04), E13 (Q-15); Nice questions carry 'Assumption used until answered' (runs/run-1/clarification-questions.md#Nice to confirm)."
+        },
+        {
+          "met": true,
+          "evidence": "Exclusions stated as assumptions with the question: Q-26 notification 'out of scope', Q-27 edit/delete 'Out of scope' (runs/run-1/clarification-questions.md#Nice to confirm); demo build not used as a requirement source (knowledge/index.md#Source priority). No separate 'not covered' list in the TR output."
+        },
+        {
+          "met": true,
+          "evidence": "No in-scope AC or baseline edge case without a TR; only minor items (Q-34..Q-38 added after review without TRs) are unlinked."
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "Sheet 'Test Requirements', header and widths equal the template (transcripts/01-test-requirements-analysis-run1.md:1024-1050 check output); TR-01..TR-41 continuous; AC text word for word; md has the template sections Must ask / Nice to confirm / Conflicts (runs/run-1/clarification-questions.md vs skills/test-requirements-analysis/assets/clarification-questions-template.md)."
+        },
+        {
+          "met": true,
+          "evidence": "All rows start 'Verify that ...', notes use only the four tags (untagged-notes check = [] in transcripts/01-test-requirements-analysis-run1.md:1024-1050); question tables use the same columns throughout."
+        },
+        {
+          "met": false,
+          "evidence": "Several TRs have no single verifiable result until the PO answers: TR-16 ('marked as awaiting approval, or not at all'), TR-17, TR-20 ('confirmed order'), TR-26 and TR-27 ('as confirmed for Q-01/Q-02', 'prefilled, editable or not shown'), TR-39 ('confirmed limit') (runs/run-1/test-requirements.xlsx!Test Requirements!D17,D18,D21,D27,D28,D40). They are requirements tied to open questions, but the wording leaves more than one reading.",
+          "locations": [
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D17",
+              "quote": "marked as awaiting approval, or not at all"
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D18",
+              "quote": "shows the confirmed details"
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D21",
+              "quote": "listed in the confirmed order"
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D27",
+              "quote": "as confirmed for Q-01"
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D28",
+              "quote": "prefilled, editable or not shown"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Questions are specific, give options and a reason (runs/run-1/clarification-questions.md#Must ask); a PO can answer without asking back."
+        },
+        {
+          "met": false,
+          "evidence": "Several TRs/questions combine more than one condition: TR-12 (HTML + script + links, two fields), TR-32 (trim + spaces-only, Name and Email), TR-03 (lowest and highest), Q-01 (sign-in + purchase check + hide/disable/reject), against tr-writing-rules.md#One TR and ambiguity-checklist.md#Writing the question 'One ambiguous point per question' (runs/run-1/test-requirements.xlsx!Test Requirements!D4,D13,D33; runs/run-1/clarification-questions.md Q-01).",
+          "locations": [
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D4",
+              "quote": "both the lowest rating (1 star) and the highest rating (5 stars)"
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D13",
+              "quote": "HTML tags, script code and links entered in \"Your review\" or \"Name\""
+            },
+            {
+              "file": "runs/run-1/test-requirements.xlsx",
+              "sheet": "Test Requirements",
+              "cell": "D33",
+              "quote": "leading and trailing spaces in Name and Email are removed, and a Name or Email made only of spaces"
+            },
+            {
+              "file": "runs/run-1/clarification-questions.md",
+              "line": 12,
+              "quote": "Must the customer be signed in to submit a review, and must the system check that they bought this product?"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "After fix #1 no file paths or AI lead-in remain; xlsx made from the template; no placeholders (transcripts/01-test-requirements-analysis-run1.md:1024-1050; review/review-log.md #1)."
+        },
+        {
+          "met": true,
+          "evidence": "TRs grouped by AC/AC-GEN origin; questions grouped Must/Nice with AC ID and why-it-matters or assumption; counts reported at the top of the AI report (transcripts/01-test-requirements-analysis-run1.md:771-780)."
+        },
+        {
+          "met": true,
+          "evidence": "Plain, short, polite English for the PO and tester (runs/run-1/clarification-questions.md)."
+        }
+      ],
+      "C4": [
+        {
+          "met": true,
+          "evidence": "Checked the TR file and rules against the story ACs, tr-writing-rules.md/note-tags.md and the R5 source against AC-03 and app-note.md (review/review-log.md #1, #2 'Source checked against')."
+        },
+        {
+          "met": false,
+          "evidence": "Only AC coverage, AC-column text, note tags and one rule source are recorded for this skill (review/review-log.md #1, #2). No recorded check that each question is correctly Must vs Nice (the CP1 decision in README.md), that TR content states no rule outside a source, or other high-risk items; Must/Nice classification and TR wording were taken as given.",
+          "locations": [
+            {
+              "file": "review/review-log.md",
+              "absent": "no entry recording a check of the Must ask / Nice to confirm classification or of TR content against a source (only entries #1 and #2 concern test-requirements-analysis)",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Two real problems found: AC-GEN rows with a file path and AI wording (cells B26:B42) and the R5 rule sourced from the demo build's note (review/review-log.md #1, #2; transcripts/01-test-requirements-analysis-run1.md:829-841)."
+        },
+        {
+          "met": true,
+          "evidence": "#1: rule line fixed in tr-writing-rules.md (line 7) and cells fixed per that rule; #2: knowledge/product-review-rules.md R5 re-sourced to AC-03 and TR-13/14 notes checked, each with reason and source (review/review-log.md #1, #2)."
+        },
+        {
+          "met": true,
+          "evidence": "Fixes follow the story's AC-03 and the skill's own conflicting rule, not a guess (review/review-log.md #1, #2; knowledge/product-review-rules.md R5)."
+        },
+        {
+          "met": true,
+          "evidence": "Re-check by diff against ai-original: only B26:B42 changed, no path left (verified: runs/run-1/ai-original/test-requirements.xlsx vs runs/run-1/test-requirements.xlsx differ only in column B rows 26-42); AI re-ran the coverage check (transcripts/01-test-requirements-analysis-run1.md:1028-1050)."
+        },
+        {
+          "met": true,
+          "evidence": "Diff confirms every other cell is untouched; trainee told the AI 'don't touch anything else' (transcripts/01-test-requirements-analysis-run1.md:829-841)."
+        },
+        {
+          "met": true,
+          "evidence": "Open rules stay tagged Assumption/Missing info in the final TR list (runs/run-1/test-requirements.xlsx!Test Requirements!E3,E10,E13). Minor: R5 is a derived inference labelled 'Fact (derived)' (knowledge/product-review-rules.md R5)."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md #1, #2 give what, source, finding, action and re-check result; runs/run-1/ai-original/ keeps the AI's first output for comparison."
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "Requirements-analysis evidence: only exam files, project knowledge and synthetic/no personal data; knowledge/environment.md and index.md forbid real data. Tools used: Read, Bash/python (openpyxl) and file writes in the trainee's own folders; no external services seen. The AI also opened exam/app-note.md although the skill says open only the index-listed files; trainee had allowed the exam folder. No real customer data observed."
+  },
+  "notes": [
+    "C1.2 ambiguity: baseline AMB5 (mandatory) = 'what the customer sees immediately after submitting, including initial status and confirmation message or redirect'. Run 1 puts the initial-status part in Must (Q-08) but the confirmation message (Q-21) and form-after-submit (Q-22) in Nice to confirm; run 2 puts all of it in Must (Q-09). Graded met on the main reading; a strict reading would make C1.2 unmet.",
+    "Run-1 vs run-2 differ in Must/Nice classification: run 2 has spaces-only (Q-05) and feedback after submit (Q-09) as Must; run 1 has them as Nice (Q-17, Q-21/22). review/consistency.md says 'Same Must ask topics' and explains only the splitting of Nice points, not this classification difference. B3.5 graded met (structure and detail close).",
+    "After CP2 the trainee added Q-33 (Must) and Q-34..Q-38 to clarification-questions.md (review/review-log.md #4) but test-requirements.xlsx was not updated: Q-33 has no 'Missing info' TR, which breaks the skill's step-7 rule that every Must ask question links to a TR (SKILL.md step 7). Noted under C2.4 and C2.7, not counted as a separate unmet condition.",
+    "In run 1 the AI itself noticed the conflict between tr-writing-rules.md and note-tags.md, picked the AC column for the AC-GEN explanation and reported the choice (transcripts/01-test-requirements-analysis-run1.md:820-827); treated as detected, not silent. The path in the AC column therefore came from the trainee's own conflicting skill rules, which the trainee then fixed in the skill as well as in the file.",
+    "B4.2 lists five exception types; only conflict, unacceptable output and unverified results occurred in the requirements-analysis sessions. Missing input and failed step are written in SKILL.md#Exceptions but not exercised; graded met because the types that occurred were handled correctly.",
+    "C2.3: no compatibility/accessibility TR (Q-31 browsers, Q-34 keyboard only as questions); graded met because the demo is Chrome only. Regression not applicable.",
+    "Sensible output not in the answer key: TR-12 script injection, TR-40 double submit, TR-41 server error, TR-24 review shown on the correct product, Q-28..Q-31. Q-02 'conflict' (story vs mockup on Name/Email for a known customer) is a stretch as a conflict but harmless."
+  ]
+}

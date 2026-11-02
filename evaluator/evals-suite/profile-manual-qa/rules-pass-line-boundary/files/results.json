@@ -1,0 +1,338 @@
+{
+  "A1": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "A2": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "A3": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    }
+  ],
+  "A4": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "B1": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    }
+  ],
+  "B2": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "B3": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    }
+  ],
+  "B4": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "B5": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "B6": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "C1": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    }
+  ],
+  "C2": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "C3": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    }
+  ],
+  "C4": [
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": true,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    },
+    {
+      "met": false,
+      "evidence": "fixture"
+    }
+  ]
+}

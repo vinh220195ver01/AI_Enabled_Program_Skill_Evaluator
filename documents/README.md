@@ -1,0 +1,4 @@
+# documents/
+
+- `QA_AI_Skills_Assessment_Rubric_MANUAL.xlsx`, `QA_AI_Skills_Assessment_Rubric_AUTO.xlsx` — snapshots of the course rubric at the time they were imported (see `work-log.md`, "Nạp criteria `Intermediate_Manual`/`Intermediate_Auto`"). The criteria have since changed model and been revised several times (deduction v0.3 -> weighted-pass-fail, `fail_when_any` dropped on 2026-10-23, etc.). **These two files are historical references, not the live source** — the current, runnable criteria are `evaluator/skills/skill-evaluator/profiles/manual-qa/criteria.json` and `profiles/auto-qa/criteria.json`, with shared rules in `profiles/_shared/`.
+- `AI_QA_Competency_Scoring_Matrix.md`, `criteria-applicability-for-course-owner.md` — working notes for the course owner; check their own dates against `work-log.md` before relying on a specific claim.

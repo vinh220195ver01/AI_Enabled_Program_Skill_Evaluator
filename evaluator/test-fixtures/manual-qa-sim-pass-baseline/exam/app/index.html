@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classic Cotton T-Shirt - My Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <span class="logo">My Shop</span>
+      <nav class="site-nav">
+        <a href="#">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Cart (0)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="product">
+      <div class="product-image" aria-hidden="true">T-SHIRT</div>
+      <div class="product-info">
+        <h1>Classic Cotton T-Shirt</h1>
+        <div class="rating-summary">
+          <span class="stars-static" id="summary-stars" aria-hidden="true"></span>
+          <span id="summary-text"></span>
+        </div>
+        <p class="price">$19.99</p>
+        <p class="description">
+          A soft, breathable everyday t-shirt made from 100% combed cotton.
+          Regular fit, crew neck, available in five colours.
+        </p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2 id="reviews-heading">Reviews</h2>
+      <p id="no-reviews" class="muted" hidden>There are no reviews yet.</p>
+      <ul id="review-list" class="review-list"></ul>
+    </section>
+
+    <section class="add-review">
+      <h2 class="section-title">Add a review</h2>
+      <p>Your email address will not be published. Required fields are marked <span class="req">*</span></p>
+
+      <div id="form-errors" class="alert alert-error" role="alert" hidden></div>
+      <div id="form-success" class="alert alert-success" role="status" hidden></div>
+
+      <form id="review-form" novalidate>
+        <div class="field field-inline">
+          <span class="label" id="rating-label">Your rating <span class="req">*</span></span>
+          <div class="star-input" id="star-input" role="radiogroup" aria-labelledby="rating-label">
+            <button type="button" class="star" data-index="0" role="radio" aria-checked="false" aria-label="1 star" title="1 star">&#9733;</button>
+            <button type="button" class="star" data-index="1" role="radio" aria-checked="false" aria-label="2 stars" title="2 stars">&#9733;</button>
+            <button type="button" class="star" data-index="2" role="radio" aria-checked="false" aria-label="3 stars" title="3 stars">&#9733;</button>
+            <button type="button" class="star" data-index="3" role="radio" aria-checked="false" aria-label="4 stars" title="4 stars">&#9733;</button>
+            <button type="button" class="star" data-index="4" role="radio" aria-checked="false" aria-label="5 stars" title="5 stars">&#9733;</button>
+          </div>
+          <span id="rating-value" class="muted"></span>
+        </div>
+
+        <div class="field">
+          <label for="comment">Your review <span class="req">*</span></label>
+          <textarea id="comment" name="comment" rows="4" maxlength="500"></textarea>
+          <div class="char-count"><span id="char-count">0</span> / 500</div>
+        </div>
+
+        <div class="field">
+          <label for="name">Name <span class="req">*</span></label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="field checkbox">
+          <input type="checkbox" id="save-info" name="save-info">
+          <label for="save-info">Save my name, email, and website in this browser for the next time I comment.</label>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+    </section>
+
+    <section class="moderator">
+      <h3>Moderator</h3>
+      <p>Pending approval: <strong id="pending-count">0</strong></p>
+      <button type="button" id="approve-btn" class="btn-secondary">Moderator: approve pending reviews</button>
+      <p id="moderator-msg" class="muted" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">&copy; 2026 My Shop. Build demo-1.0</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

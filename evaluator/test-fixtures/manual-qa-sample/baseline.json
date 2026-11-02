@@ -1,0 +1,42 @@
+{
+  "profile": "manual-qa",
+  "version": "sample-1",
+  "assessment_id": "login-sample",
+  "requirement_source": "exam/user-story.md",
+  "severity_scale": ["Critical", "Major", "Minor", "Trivial"],
+  "thresholds": {
+    "ambiguity_found_pct": 70,
+    "ambiguity_with_tr_pct": 70,
+    "bug_found_pct": 60
+  },
+  "acceptance_criteria": [
+    {"id": "AC1", "text": "Valid credentials redirect to /notes."},
+    {"id": "AC2", "text": "Invalid credentials show an error message and stay on the login page."},
+    {"id": "AC3", "text": "Empty email shows \"Email is required\" under the field."},
+    {"id": "AC4", "text": "5 consecutive failed attempts lock the account for 15 minutes."}
+  ],
+  "ambiguities": [
+    {"id": "AMB1", "description": "Password rules (length, complexity) are not stated.", "mandatory": true},
+    {"id": "AMB2", "description": "Does the failed-attempt counter reset after a successful login, or after the lock expires?", "mandatory": true},
+    {"id": "AMB3", "description": "Is the error message the same for an unknown email and a wrong password (account enumeration)?", "mandatory": false},
+    {"id": "AMB4", "description": "Session length and 'remember me' behaviour are not stated.", "mandatory": false},
+    {"id": "AMB5", "description": "Is the email case-sensitive?", "mandatory": false}
+  ],
+  "edge_cases": [
+    {"id": "EC1", "description": "Exactly the 5th failed attempt locks the account (4 must not).", "mandatory": true},
+    {"id": "EC2", "description": "A correct password entered while the account is locked is still rejected.", "mandatory": true},
+    {"id": "EC3", "description": "Email with leading or trailing spaces.", "mandatory": false}
+  ],
+  "bugs": [
+    {"id": "BUG-01", "location": "Login form, lock logic", "symptom": "Account is locked after the 4th failed attempt instead of the 5th.", "severity": "Critical"},
+    {"id": "BUG-02", "location": "Login error message", "symptom": "Message says 'Email not registered' for an unknown email, revealing which emails exist.", "severity": "Major"},
+    {"id": "BUG-03", "location": "Email field validation", "symptom": "Empty email submits with no 'Email is required' message.", "severity": "Minor"},
+    {"id": "BUG-04", "location": "Lock message", "symptom": "Lock message says '15 hours' instead of '15 minutes'.", "severity": "Minor"},
+    {"id": "BUG-05", "location": "Email field", "symptom": "Email with a trailing space is rejected as invalid.", "severity": "Trivial"}
+  ],
+  "environment_info_provided": {
+    "build": "v1.4.2",
+    "browser": "Chrome 126",
+    "os": null
+  }
+}

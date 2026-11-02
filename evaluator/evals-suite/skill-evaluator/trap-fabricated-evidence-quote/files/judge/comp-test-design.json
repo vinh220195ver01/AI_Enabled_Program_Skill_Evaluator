@@ -1,0 +1,335 @@
+{
+  "competency_results": {
+    "test-design": {
+      "B1": [
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Inputs and #Output: task = derive test conditions from the reviewed TR list (test-requirements.xlsx -> test-design.md); README.md#Skills row 2 states input/output."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Process steps 1-9: read TRs, read knowledge, select technique, derive, coverage check, tag notes, write, verify (step 8), report and stop for approval (step 9). Upstream analysis (skill 1) and downstream test cases (skill 3) are in README.md#Skills."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Process: each step has its own output (values table, technique per TR, TCD-<TR>-<nn> conditions, coverage/Not covered tables, verification counts); runs/run-1/test-design.md has these sections."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Process order 1->9 uses only earlier results; README.md#Skills: input is the previous skill's file."
+        },
+        {
+          "met": true,
+          "evidence": "Skill does one activity (condition design), not mixed with analysis or test cases (skills/test-condition-design/SKILL.md description: 'Do NOT use ... to write step-by-step test cases'). Not chopped into trivial steps."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Process step 9 stop for user approval; README.md#Workflow and control points row 3 (CP2: check boundaries and techniques, approve before test cases); transcripts/02-test-condition-design-run1.md:698 trainee decisions at CP2."
+        }
+      ],
+      "B2": [
+        {
+          "met": true,
+          "evidence": "knowledge/index.md (files and which skill reads them), knowledge/product-review-rules.md (story, AC, rules), knowledge/screens-and-fields.md, glossary.md, environment.md; skill takes {tr_file}, {answers}, {knowledge_dir} (SKILL.md#Inputs). Transcript 02:76-540 shows the AI reading all of them."
+        },
+        {
+          "met": true,
+          "evidence": "Instructions live in skills/test-condition-design/SKILL.md, project knowledge in knowledge/, run input in runs/run-1/test-requirements.xlsx; README.md#What is here; knowledge/index.md 'kept outside the skills on purpose'."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Files and when to read them (per-skill read table); small named files; SKILL.md step 2 reads only the files the index lists for test design."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Labels used (Fact / Observed / Assumption / Open question); runs/run-1/test-design.md#Values and rules used has a Confirmed/Assumption/Missing info column with source for ~40 items."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Source priority (PO > story > mockup > app-note > build; 'If two sources disagree, do not choose'); SKILL.md#Exceptions conflict rule; runs/run-1/test-design.md line 5: build's 0/500 counter 'Observed only'."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Maintenance and Last updated line in each file; review/review-log.md row 2 fixed the R5 source. Caveat (notes): open questions exist both in knowledge/product-review-rules.md#Open questions (OQ1-12) and runs/run-1/clarification-questions.md (Q-01..38), two lists."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md: 'No real personal data, accounts or passwords'; design uses no personal data (examples example.com, fictional names) runs/run-1/test-design.md TCD-29-01, TCD-31-02."
+        }
+      ],
+      "B3": [
+        {
+          "met": true,
+          "evidence": "transcripts/02-test-condition-design-run1.md:5-14 and 06-test-condition-design-run2.md:5-14: trainee invokes skills/test-condition-design/SKILL.md with a reviewed TR list, matching its trigger in the description."
+        },
+        {
+          "met": true,
+          "evidence": "Transcript 02:5-14 and 06:5-14 supply tr_file, answers file, knowledge_dir and output_dir (all four skill inputs); the skill never had to ask for more."
+        },
+        {
+          "met": true,
+          "evidence": "Transcript 02:586-700: AI follows steps 1-9 (reads, writes from template, runs verification script for IDs/TR coverage/dangling refs, reports counts, techniques, assumptions, Not covered, then stops for approval at :698)."
+        },
+        {
+          "met": true,
+          "evidence": "Transcript 02:698-710 trainee re-counted 145 conditions and checked look-alike BVA pairs; review/review-log.md rows 3-4 (counts, padding, open assumptions); after the AI reported 3 stale cells trainee asked to fix them and grep for leftovers (02:829-856). Check is limited to counts, padding and assumptions; no rerun was needed."
+        },
+        {
+          "met": true,
+          "evidence": "review/consistency.md row test-condition-design: same sections in runs/run-1/test-design.md and runs/run-2/test-design.md (41 'Technique(s)' lines each; 145 vs 134 conditions, difference explained as finer or coarser splitting)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it steps 1-4 with example prompt, runs/run-1/run-log.md and runs/run-2/run-log.md row test-condition-design (input, output, transcript); transcripts use the same prompt pattern."
+        }
+      ],
+      "B4": [
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md#Exceptions defines concrete signals (value/range absent from sources, answers contradict TR/knowledge, xlsx unreadable). In use: transcript 02:586-700 AI marks missing limits as Missing info and flags 6 conditions needing new questions. Note: the trainee's own detection in design review is thin, most findings came in the AI report."
+        },
+        {
+          "met": true,
+          "evidence": "Missing input: skills/test-condition-design/SKILL.md#Exceptions 'do not invent it'; Q-04/05/06 limits kept symbolic (runs/run-1/test-design.md#TR-09). Conflict: ask which source is authoritative (SKILL.md, not triggered). Not acceptable output: trainee gave exact instructions for Q-IDs (transcript 02:698-710) and exact cells (02:829). Failed step: SKILL.md xlsx exception; README.md escalation 'fails twice on the same step'. Unverifiable: Missing info/Assumption tags and #Assumptions to confirm table."
+        },
+        {
+          "met": true,
+          "evidence": "Transcript 02:698-856 and review/review-log.md row 4: kept 145 conditions unchanged, edited only affected notes (diff ai-original vs final = 13 lines), re-checked with grep for 'to be added'/'new question needed' (02:856-869)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md last paragraph of #Workflow and control points: stop and escalate when story info blocks expected results, sources conflict, a skill fails twice on the same step, or output cannot be verified."
+        }
+      ],
+      "B5": [
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points table: 7 QA steps with AI? yes/no and Why."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Skills: skill 1 TR list -> skill 2 test-design.md -> skill 3 test-cases.xlsx -> skill 4 test-data; runs/run-1/run-log.md rows 1-4."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Inputs default {output_dir}/test-requirements.xlsx; transcript 02:5-14 and 06:5-14 pass file paths, nothing copied by hand; README.md 'Each one reads the previous step's file'."
+        },
+        {
+          "met": true,
+          "evidence": "README.md table row 3 CP2 (check boundaries and techniques, approve before test cases), SKILL.md step 9; row 4 CP3 marked high risk, row 1 CP1 high risk."
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 (send questions to PO: human only), 4 (AI never finalises expected results), 7 (confirm severity before logging)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md rows 2 and 6 'Human only' with why (customer talk; actual results from what the tester sees)."
+        }
+      ],
+      "B6": [
+        {
+          "met": true,
+          "evidence": "README.md#How to run it (4 steps, example prompt); skill is one SKILL.md plus assets/references."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/ folder is passed once via {knowledge_dir} (transcript 02:5-14); README.md 'Only the input and the knowledge folder change'."
+        },
+        {
+          "met": true,
+          "evidence": "Transcript 06:5-14 run 2 reads run-1/test-requirements.xlsx by path; SKILL.md default input is the previous step's file; no input asked twice in transcripts 02 and 06."
+        },
+        {
+          "met": true,
+          "evidence": "Transcripts 02 and 06: one short prompt with paths each; no copy-paste of outputs between steps."
+        },
+        {
+          "met": true,
+          "evidence": "Run 1 trainee intervened at the designed control point CP2 (transcript 02:698); one extra message was due to the trainee's own too-narrow instruction (02:829), a small wasted intervention. Run 2 needed none."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it and #Skills tables; SKILL.md#Files tells when each reference opens. Caveat: skill step 6 links ../test-requirements-analysis/references/note-tags.md, so the whole skills/ folder must be copied (README says so)."
+        },
+        {
+          "met": true,
+          "evidence": "review/effort-estimate.md row Test design: manual 4 h vs AI 8 min + 40 min review; AI time matches transcript 02 timestamps 04:01-04:09. Manual figure is an estimate, stated as such."
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "Ambiguous points reach the design as Missing info/Assumption notes with Q-IDs: AMB1 Q-03, AMB2 Q-04/Q-15/Q-37, AMB3 Q-17, AMB4 Q-07, AMB5 Q-08/Q-21/Q-22, AMB6 Q-07/Q-08, AMB7 Q-09/Q-10/Q-23, AMB8 Q-01/Q-33, AMB9 Q-06, AMB10 Q-12, AMB11 Q-13/Q-14, AMB12 Q-20: 12 of 12. See runs/run-1/test-design.md#Values and rules used and #Assumptions to confirm."
+        },
+        {
+          "met": true,
+          "evidence": "Mandatory AMB1 (Q-03), AMB4 (Q-07), AMB6 (Q-07, Q-08), AMB8 (Q-01, Q-33) are in Must ask in runs/run-1/clarification-questions.md#Must ask. AMB5 (what is shown after submit) is split: initial status/pending view in Q-08 (Must ask), message and redirect in Q-21/Q-22 (Nice to confirm); counted as found in Must ask via Q-08 (see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/clarification-questions.md has '## Must ask' (Q-01..15, Q-33) and '## Nice to confirm' (Q-16..32, Q-34..38). The test-design.md itself does not group, it only links Q-IDs (shared evidence from the analysis step)."
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-design.md: 41 'Technique(s)' headings TR-01..TR-41, each with at least one TCD row; transcript 02:645-692 script 'missing: []'. AC-01/02/03 TRs all present."
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/assets/test-design-template.md sections vs runs/run-1/test-design.md: header (Input/Answers/Date) yes; Values and rules used yes (4 columns); per TR Technique(s) + 5-column table (Condition ID, Technique, Test condition, Positive/Negative, Notes) yes for all 145 rows; Coverage by scenario type yes; Not covered yes; Assumptions to confirm yes."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-design.md#Coverage by scenario type: Positive, Negative, Boundary, Validation, Error handling, Permissions, Integration, UI, Regression, Data and privacy have conditions; Compatibility listed under #Not covered with reason (only Chrome in scope, Q-31)."
+        },
+        {
+          "met": true,
+          "evidence": "Security TCD-12-01..05 (script injection); privacy TCD-19-01/02 (email never shown); main flow TCD-03-01..04, TCD-14-01; summary TCD-23-02 (pending review must not change the average); length TCD-09/10; rating 1 TCD-03-01; double submit TCD-40; payment not in scope."
+        },
+        {
+          "met": true,
+          "evidence": "All conditions carry Missing info (74) or Assumption (67) notes with Q-IDs; runs/run-1/test-design.md#Assumptions to confirm; six extra questions Q-33..Q-38 added at CP2 (review/review-log.md row 4)."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/test-design.md#Not covered: 10 rows each with a reason, e.g. compatibility, moderator screens, notification, edit/delete, offensive filter, Website field, accessibility, performance, conditions not runnable on demo-1.0."
+        },
+        {
+          "met": true,
+          "evidence": "No serious omission versus baseline ACs/edge cases (EC1-EC5 map to TCD-03-01, 03-04, 05-01, 07-01, 10-02..04). The typo in the success message (baseline BUG-05) is not a design-level omission: success message is checked for meaning only (TCD-33-01, Q-21)."
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "Section order, columns, 'Technique(s): technique - why' line per TR, ID convention TCD-<TR>-<nn> match skills/test-condition-design/assets/test-design-template.md; 145 rows all with 5 columns, no ID reused in the conditions section."
+        },
+        {
+          "met": true,
+          "evidence": "Notes use only the four tags of skills/test-requirements-analysis/references/note-tags.md (Missing info, Assumption, Edge case, Risk); technique names and Positive/Negative values are used the same way throughout runs/run-1/test-design.md."
+        },
+        {
+          "met": false,
+          "evidence": "About 12 conditions have expected results that stay open because the answer is pending, e.g. TCD-29-04 'accepted or rejected as confirmed for Q-05', TCD-12-03/04 'shown as plain text, removed or rejected as confirmed for Q-15', TCD-16-01, TCD-26-04; length conditions use 'minimum'/'maximum' (runs/run-1/test-design.md#TR-09, #TR-10). Single cause: missing PO answers, flagged with Missing info.",
+          "locations": [
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 136,
+              "quote": "Review length = minimum: accepted without warning."
+            },
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 171,
+              "quote": "shown as plain text, removed or rejected as confirmed for Q-15"
+            },
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 209,
+              "quote": "the author sees the review marked as awaiting approval, or does not see it, as confirmed for Q-08"
+            },
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 318,
+              "quote": "the customer may or may not review, as confirmed for Q-01"
+            },
+            {
+              "file": "runs/run-1/test-design.md",
+              "line": 346,
+              "quote": "accepted or rejected as confirmed for Q-05"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Each condition links its question (Q-ID) and the Assumptions to confirm table lists the working value, so test-case-generation could consume it (runs/run-1/test-cases.xlsx built from it, transcripts/03-test-case-generation-run1.md). Open expected results are a consequence of the open questions, not of unclear writing."
+        },
+        {
+          "met": true,
+          "evidence": "Conditions state one input/rule and one expected outcome (e.g. TCD-10-01..04, TCD-29-07..10 separate invalid partitions); TR-34 refers to single-field rules instead of repeating them (runs/run-1/test-design.md#TR-34). Few conditions give alternatives (TCD-12-03, 29-10)."
+        },
+        {
+          "met": true,
+          "evidence": "Markdown file, no template braces or AI lead-in text (no '{' in runs/run-1/test-design.md; file ends with the last table row). Symbolic min/max values are deliberate and flagged Missing info (not counted again, see C3 condition 3)."
+        },
+        {
+          "met": true,
+          "evidence": "Grouped by TR, with Values table, Coverage by scenario type, Not covered and Assumptions to confirm summaries (runs/run-1/test-design.md lines 7, 485, 501, 516)."
+        },
+        {
+          "met": true,
+          "evidence": "Plain, short English, internal QA reader; no tone problem (runs/run-1/test-design.md). No customer-facing language requirement in the exam."
+        }
+      ],
+      "C4": [
+        {
+          "met": true,
+          "evidence": "review/review-log.md row 4 checked open assumptions against clarification-questions.md and user-story.md; row 2 corrected the R5 source in knowledge/product-review-rules.md; row 7 checked TCD-31-02 against the test-data-rules (reserved domain). Row 3 compared the output with itself (counts), a weak source."
+        },
+        {
+          "met": false,
+          "evidence": "Design review in review/review-log.md row 3 only checks the number of conditions and look-alike pairs; transcript 02:698-710 'ok I checked it. 145 conditions ... fine'. Boundary exactness (on/below/above), technique fit and expected values (CP2 in README: 'check boundaries and techniques') are not recorded as checked, no risk-based order.",
+          "locations": [
+            {
+              "file": "review/review-log.md",
+              "line": 11,
+              "quote": "Test conditions section has 145 conditions (94 positive, 51 negative), matching the AI's summary."
+            },
+            {
+              "file": "transcripts/02-test-condition-design-run1.md",
+              "line": 811,
+              "quote": "ok I checked it. 145 conditions in the Test conditions section, matches what you said"
+            },
+            {
+              "file": "review/review-log.md",
+              "absent": "no row recording a check of boundary values (on/below/above), technique fit or expected results of the test design against the story",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md row 4: 6 conditions with expected behaviour depending on questions not asked (e.g. TCD-26-04 cancelled/refunded purchase); row 7: TCD-31-02 used example.co.uk (not a reserved domain); transcript 02:779-830 three stale 'to be added' cells. Origin: mostly surfaced by the AI report, recorded by the trainee."
+        },
+        {
+          "met": true,
+          "evidence": "Row 4: new questions Q-33 (Must ask) and Q-34..Q-38 (Nice to confirm) with working assumptions, conditions re-pointed (transcript 02:698-710, runs/run-1/clarification-questions.md); row 7: fixed TCD-31-02 to example.com with the reason."
+        },
+        {
+          "met": true,
+          "evidence": "Row 4 decision 'go ahead with the assumptions as they are' but each stays labelled Assumption with a Q-ID (runs/run-1/test-design.md#Assumptions to confirm); no invented limits (TR-09 symbolic)."
+        },
+        {
+          "met": true,
+          "evidence": "Re-check recorded: row 4 'No to be added / new question needed left; Q-33..Q-38 present; condition count unchanged', transcript 02:856-869 grep exit 1; row 7 'No example.co.uk left in test cases or design'."
+        },
+        {
+          "met": true,
+          "evidence": "diff of runs/run-1/ai-original/test-design.md vs runs/run-1/test-design.md shows only 13 changed lines (header, 9 notes, 3 Q-ID cells) and TCD-31-02; all other conditions unchanged."
+        },
+        {
+          "met": true,
+          "evidence": "Unconfirmed values remain tagged Missing info/Assumption and are listed in runs/run-1/test-design.md#Assumptions to confirm; none presented as Confirmed (Values table Status column)."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md rows 3, 4, 7 (what, source, finding, action, re-check); runs/run-1/ai-original/test-design.md kept for comparison. No review record for the run-2 design (it was a repeatability check only)."
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "Observed for test-design: all data synthetic (example.com emails, fictional names such as Anna Smith, no real customer data); knowledge/index.md forbids real personal data/accounts/passwords. AI sessions only used the trainee's skill, knowledge/ and exam files (transcripts/02 and 06 restrict to these paths); tools used were Read, Write, Edit and python -I for checks. The demo build is a local app, nothing sent outside. No credentials seen. A person decides."
+  },
+  "notes": [
+    "Grading target: test-design competency (skill test-condition-design), evidence transcripts 02 and 06, runs/run-1 (+ai-original), runs/run-2, review/*, knowledge/*.",
+    "C1 wording is about the clarification list (Must ask/Nice to confirm), which is the requirements-analysis output; for test-design I graded how the design surfaces the baseline ambiguities (Missing info/Assumption + Q-IDs) and used clarification-questions.md for the group check. AMB5 is split across Q-08 (Must) and Q-21/Q-22 (Nice): best reading met, ambiguous.",
+    "C3 condition 3 unmet only because open expected results ('as confirmed for Q-xx', symbolic min/max); the same cause was not counted against C3 conditions 4/5. C4 condition 1 and B3 condition 3 both touch the thin design review; counted once, under C4 condition 1.",
+    "Sensible output not in the key: conditions for keyboard use, hover, line breaks, double submit, cancelled/refunded orders, cross-product display.",
+    "Possible duplicate cause for the B2 'single source' item: open questions listed in both knowledge/product-review-rules.md (OQ1-12) and runs/run-1/clarification-questions.md (Q-01..38); judged met because the index tells how answers are recorded.",
+    "Transcript 02:645-692: the AI's own script counted 155 TCD IDs (10 'dups' because the assumptions table repeats IDs) but reported 145; the trainee re-counted 145 himself. Consistent with the file.",
+    "Run-2 design (134 conditions) differs by granularity only; it reads the same run-1 TR file; run-2 suggests adding a Name minimum length to Q-05 (transcript 06:695-745), not done."
+  ]
+}

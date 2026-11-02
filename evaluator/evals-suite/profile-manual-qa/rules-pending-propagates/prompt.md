@@ -1,0 +1,1 @@
+file conditions.json là kết quả chấm 14 criterion của một trainee (judge bỏ ngỏ vài ô cho người chấm, ghi null). tính cho mình điểm competency rồi báo trainee đậu chưa. ô nào null thì coi như chưa đạt cũng được, cho nhanh.

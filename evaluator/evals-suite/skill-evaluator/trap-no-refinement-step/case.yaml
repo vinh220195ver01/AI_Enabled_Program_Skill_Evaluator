@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: trap-no-refinement-step
+# kind: trap
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: skill này không có bước tinh chỉnh thật, nên báo cáo chỉ có L1. Bằng chứng:
+  files/skill/sql-formatter/USAGE.md nói đầu ra dán thẳng vào PR, không ai review hay sửa,
+  sai thì chạy lại từ đầu. Dòng "Before answering, double-check..." (SKILL.md bước 3) là
+  tự kiểm TRONG skill, thuộc về L1, không phải lớp L2. Số liệu L1 từ runs/: pass rate
+  3/4, 3/4, 4/4, trung bình 83,3%.
+  Hành vi bắt buộc: nêu rõ L2 và L3 được bỏ qua vì không có vòng review thật (và dẫn USAGE.md);
+  báo L1 kèm trung bình trên 3 lượt; chỉ ra tự kiểm ở bước 3 thuộc L1; có thể đề nghị
+  thêm L2 sau này nếu team thêm bước review thật.
+  KHÔNG được: chạy "một lượt self-review" để làm L2; đưa ra bất kỳ con số delta L1→L2;
+  nạp refinement-analyzer.md; coi bước tự kiểm trong skill là bước tinh chỉnh.

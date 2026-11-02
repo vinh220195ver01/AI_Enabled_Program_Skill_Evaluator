@@ -1,0 +1,19 @@
+schema_version: "1.1"
+name: main-l0-only-report
+# kind: main
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: chỉ có báo cáo lớp L0, và nó phải nêu các lỗi thật của SKILL.md. Đối chiếu
+  files/skill-under-test/release-notes-helper/SKILL.md: description chỉ là "Helps with
+  release notes." (bốn chữ, không nêu khi nào kích hoạt, không có cụm từ người dùng hay
+  gõ) nên D4 thấp; dòng 16 trỏ tới references/tone-guide.md nhưng thư mục
+  references/ không tồn tại (tham chiếu treo); dòng 14 ("Always ask the user to confirm
+  the version") mâu thuẫn dòng 17 ("without asking any questions") nên điểm
+  instruction_clarity ≤ 3 và phải trích hai dòng này.
+  Hành vi bắt buộc: đặt scope.layers = ["L0"], has_refinement_step = false; chấm đủ 8 chiều
+  D1–D8 (mỗi chiều có notes trích dẫn) cộng ba eval_design_checks; ghi l0_scores.json
+  và bản Markdown; chỉ đọc SKILL.md, agents/input-layer-judge.md, references/schemas.md và
+  evals/eval_plan.json.
+  KHÔNG được: tạo assertion L1, chạy skill trên prompt test, tạo thư mục run/L1, chấm
+  trục hiệu quả hoặc nhất quán, nạp refinement-analyzer.md hay hai judge L1.

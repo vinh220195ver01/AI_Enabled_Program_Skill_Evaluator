@@ -1,0 +1,90 @@
+{
+  "eval_id": 1,
+  "layer": "L1",
+  "criteria": {
+    "A1": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A2": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A3": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A4": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A5": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A6": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A7": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "A8": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B1": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B2": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B3": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C1": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C2": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C3": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C4": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C7": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    }
+  },
+  "advisory_flags": [],
+  "grading_notes": [
+    "Ideal result: this trainee's outputs ARE the trainer's baseline, so every assessed criterion should have 0 errors. A real judge may still report a few; each one needs a quoted ref and is worth reading."
+  ]
+}

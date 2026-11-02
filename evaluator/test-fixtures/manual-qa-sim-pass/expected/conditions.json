@@ -1,0 +1,345 @@
+{
+ "A1": [
+  {
+   "met": true,
+   "evidence": "submission/skills/ (5 kebab-case folders)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md"
+  }
+ ],
+ "A2": [
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md (frontmatter lines 1-4)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md name = folder"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md description 305-392 chars, no < >"
+  }
+ ],
+ "A3": [
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md description 'Use when...'"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md description: activity + input"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md descriptions: 5 distinct tasks with 'Do NOT use' boundaries"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md '## Process'"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md numbered steps 7-10"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md steps start with a verb"
+  }
+ ],
+ "A4": [
+  {
+   "met": true,
+   "evidence": "submission/skills/ (no project terms found)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/*/SKILL.md '## Inputs' with {placeholders} and 'ask the user'"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/test-requirements-analysis/references/note-tags.md; skills/defect-analysis-reporting/references/severity-priority-guide.md (shared by relative path)",
+   "note": "Shared content kept once and referenced by relative path; open question M-28"
+  }
+ ],
+ "B1": [
+  {
+   "met": true,
+   "evidence": "submission/README.md#Workflow and control points"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#Workflow and control points (analysis, design, cases, data, execution, bugs)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#Skills (one output per skill)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/run-log.md (each step uses the previous output)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/ (5 skills, one task each)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#Workflow and control points (CP1-CP5)"
+  }
+ ],
+ "B2": [
+  {
+   "met": true,
+   "evidence": "submission/knowledge/index.md; transcripts/01-test-requirements-analysis-run1.md (first prompt)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/skills/ (instructions) vs knowledge/ (project) vs exam input"
+  },
+  {
+   "met": true,
+   "evidence": "submission/knowledge/index.md"
+  },
+  {
+   "met": true,
+   "evidence": "submission/knowledge/product-review-rules.md (Fact / Assumption / Open question)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/clarification-questions.md#Conflicts between sources; review/review-log.md #2"
+  },
+  {
+   "met": true,
+   "evidence": "submission/knowledge/*.md 'Source:' and 'Last updated:' lines; review/review-log.md #2"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-data.xlsx (example.com only); review/review-log.md #7"
+  }
+ ],
+ "B3": [
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/run-log.md"
+  },
+  {
+   "met": true,
+   "evidence": "submission/transcripts/02-test-condition-design-run1.md (answers at CP2); transcripts/03-test-case-generation-run1.md (answers at CP3)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/transcripts/02-*, 03-* (skills stopped at checkpoints; trainee approved)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #1, #4, #6"
+  },
+  {
+   "met": false,
+   "evidence": "submission/review/consistency.md",
+   "note": "Skills 1-4 ran twice and are consistent; defect-analysis-reporting ran once, so there is no second run to compare (fail condition 'only one run is available as evidence')"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#How to run it"
+  }
+ ],
+ "B4": [
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #1, #2, #10 (found from the outputs and the evidence)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx (BLOCKED / OBSERVE ONLY instead of guessing); transcripts/09-defect-analysis-reporting-run1.md (resumed after a connection error)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/transcripts/09-defect-analysis-reporting-run1.md (same session resumed, files kept); review/review-log.md re-check column"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#Workflow and control points (stop and escalate)"
+  }
+ ],
+ "B5": [
+  {
+   "met": true,
+   "evidence": "submission/README.md#Workflow and control points"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/run-log.md (5 linked AI steps)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#How to run it step 4 (same output folder)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md CP1, CP3, CP5 (high risk)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md steps 2 and 6 (human only)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md steps 2 and 6 with reasons"
+  }
+ ],
+ "B6": [
+  {
+   "met": true,
+   "evidence": "submission/README.md#How to run it"
+  },
+  {
+   "met": true,
+   "evidence": "submission/knowledge/ read by every skill via {knowledge_dir}"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#How to run it step 4"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/run-log.md (no copy-paste between steps)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md (interventions at CP1-CP5 and review fixes)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/effort-estimate.md"
+  }
+ ],
+ "C1": [
+  {
+   "met": null,
+   "evidence": "answer key needed",
+   "note": "Share of ambiguous points found can only be judged against the trainer's answer key, which the trainee never sees"
+  },
+  {
+   "met": null,
+   "evidence": "answer key needed",
+   "note": "Which ambiguous points are Mandatory is in the answer key"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/clarification-questions.md (Must ask, Nice to confirm)"
+  }
+ ],
+ "C2": [
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-requirements.xlsx (every AC has TRs)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx (pre-condition, steps, expected result, notes); test-data.xlsx"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-design.md#Coverage by scenario type, #Not covered (compatibility with reason)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/bug-list.xlsx BUG-01 (privacy); test-design.md TR-19, TR-12"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/clarification-questions.md (Q-01..Q-38); test-cases.xlsx Assumption notes"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-design.md#Not covered; test-cases.xlsx BLOCKED / NOT RUN notes; README.md#Status"
+  },
+  {
+   "met": true,
+   "evidence": "submission/README.md#Status (rating-summary problem found in retest, not yet in the bug list)",
+   "note": "'Allowed threshold' is undefined (M-22)"
+  }
+ ],
+ "C3": [
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/*.xlsx (template sheets and headers)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #5 (no vague expected results)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx (one condition per case)"
+  },
+  {
+   "met": null,
+   "evidence": "submission/runs/run-1/test-cases.xlsx BLOCKED cases",
+   "note": "22 BLOCKED cases keep labelled placeholders ([minimum], [maximum], [page size]) until the PO answers, instead of inventing limits. Strict reading of 'no placeholders' fails C3; C4 forbids guessing. Needs a grader decision"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx sorted by TR; test-design.md sections"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/ (English, plain)"
+  }
+ ],
+ "C4": [
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md (sources column)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #4, #6 (expected results, boundaries first)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #1, #7, #10"
+  },
+  {
+   "met": false,
+   "evidence": "submission/review/review-log.md #11",
+   "note": "The retest finding RT-01 (rating summary counts a pending review) is recorded but not yet handled in bug-list.xlsx"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx (BLOCKED / OBSERVE ONLY instead of guessing)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md re-check column; diffs against runs/run-1/ai-original/"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md #3 (no change where the AI was right)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/runs/run-1/test-cases.xlsx (Assumption ... until Q-xx; OBSERVE ONLY)"
+  },
+  {
+   "met": true,
+   "evidence": "submission/review/review-log.md"
+  }
+ ]
+}

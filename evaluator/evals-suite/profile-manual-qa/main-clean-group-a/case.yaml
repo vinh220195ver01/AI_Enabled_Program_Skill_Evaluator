@@ -1,0 +1,19 @@
+schema_version: "1.1"
+name: main-clean-group-a
+# kind: main
+# profile: manual-qa (criteria v0.11-draft)
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: skill defect-analysis-reporting đạt các điều kiện A1, A2 và A3 (bài sạch ở
+  nhóm này). Đối chiếu files: thư mục submission/skills/defect-analysis-reporting/ có đúng một
+  SKILL.md; name trùng tên thư mục; description bắt đầu "Use when" và nêu hoạt động + đầu
+  vào; mục "## Process" có 10 bước đánh số 1–10 liên tục, mỗi bước mở bằng động từ.
+  Hành vi bắt buộc: grade-A.json có đủ A1 (2 kết quả), A2 (3), A3 (6), A4 (3) theo thứ tự
+  của plan; A1, A2, A3 đều met true; mỗi kết quả có evidence là đường dẫn tương đối kèm vị
+  trí (path:line, path#Heading); đề xuất ánh xạ skill → competency defect-analysis-reporting kèm lý do;
+  đúng cấu trúc kết quả của judge (skills, skill_results hoặc competency_results, gate, notes) và `merge_judge_results.py --submission-dir submission/` không báo lỗi riêng nào của file (nó chỉ phàn nàn các competency chưa chấm). A4 không khẳng định
+  cứng (README fixture ghi quy tắc "một nguồn duy nhất" còn tranh luận): nếu A4 có điều kiện
+  false thì phải có locations kiểm chứng được hoặc ghi mơ hồ vào notes.
+  KHÔNG được: bịa điều kiện false cho bài sạch; cho điểm hay verdict; kết quả không bằng
+  chứng; đọc expected/ hay design/.

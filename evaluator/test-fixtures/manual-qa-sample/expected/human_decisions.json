@@ -1,0 +1,6 @@
+{
+  "C6-severity:BUG-002": {
+    "decision": "fail",
+    "errors": 1
+  }
+}

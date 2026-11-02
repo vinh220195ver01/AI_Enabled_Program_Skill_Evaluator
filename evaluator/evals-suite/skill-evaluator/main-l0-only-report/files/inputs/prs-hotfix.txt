@@ -1,0 +1,2 @@
+#431 fix: login 500 on empty password [fixed]
+#432 fix: footer typo [fixed]

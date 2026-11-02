@@ -1,0 +1,18 @@
+schema_version: "1.1"
+name: no-trigger-skill-authoring
+# kind: no-trigger
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: đây là việc viết lại câu description (nghề của skill-creator), không phải
+  câu hỏi "skill có hiệu quả không / có tốt hơn không" của skill-evaluator. Người dùng đã
+  biết skill không kích hoạt (files/skills/pr-description-writer/SKILL.md có description
+  chỉ "Writes PR descriptions.", không có cụm "viết mô tả PR" hay "pull request description"
+  hay điều kiện kích hoạt).
+  Hành vi bắt buộc: không kích hoạt quy trình của skill-evaluator; viết lại description trực
+  tiếp (hoặc qua skill-creator), nêu cả WHAT lẫn WHEN và có cụm người dùng hay gõ, trong đó
+  có "viết mô tả PR" / "PR description"; với "chấm điểm xem khá chưa", trả lời định tính
+  (vì sao description mới kích hoạt tốt hơn) và có thể hỏi xem người dùng có muốn đo
+  chính thức (phạm vi, N lượt) sau đó không.
+  KHÔNG được: tạo eval_plan.json hoặc l0_scores.json; chạy nhiều lượt thử với N lặp; đưa điểm
+  số dạng 1–5 / D1–D8 như một kết quả đánh giá; nạp các judge hay aggregate_layered.py.

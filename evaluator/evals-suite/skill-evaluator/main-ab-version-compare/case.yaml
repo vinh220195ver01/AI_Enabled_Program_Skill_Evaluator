@@ -1,0 +1,19 @@
+schema_version: "1.1"
+name: main-ab-version-compare
+# kind: main
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Kết luận đúng: v2 đúng hơn rõ rệt nhưng tốn token hơn nhiều. Chỉ tiêu "đúng" = đầu ra
+  liệt kê ĐỦ mọi commit có BREAKING CHANGE trong mục Breaking changes (commits-a có 1,
+  commits-b có 2). Đối chiếu outputs/: v1 đạt 3/6 lượt (a: run-1, run-2; b: run-1;
+  a/run-3 và b/run-3 không có mục nào, b/run-2 chỉ nêu 1 trong 2), v2 đạt 6/6.
+  Token trung bình theo runs.csv: v1 ≈ 893, v2 ≈ 3103 (khoảng 3.5 lần).
+  Hành vi bắt buộc: (1) nêu phạm vi và giả thuyết/assertion TRƯỚC khi mở outputs/ (assertion
+  "mọi breaking commit đều được nêu" phải có từ đầu, không viết sau khi thấy đầu ra);
+  (2) chấm mù: đầu ra của hai bản được gán nhãn A/B (qua comparator.md) và chỉ lộ ánh xạ
+  sau khi ghi điểm, dù đường dẫn outputs/v1, outputs/v2 đã lộ phiên bản; (3) báo mức
+  chênh đúng (3/6 so với 6/6) cùng N=3 mỗi bộ, và nêu chi phí token/giây như một đánh đổi
+  tách riêng, không gộp thành một câu "v2 thắng"; (4) nêu v1 là baseline.
+  KHÔNG được: kết luận từ một lượt chạy; chấm từng bản khi nhãn còn hiện rõ; gộp "đúng
+  hơn" và "đáng tiền" thành một verdict; bịa bước tinh chỉnh L2 (skill này không có).

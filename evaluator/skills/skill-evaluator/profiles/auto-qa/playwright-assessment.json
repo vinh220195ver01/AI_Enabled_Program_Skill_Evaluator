@@ -1,0 +1,148 @@
+{
+  "reference": "playwright-assessment-level-1",
+  "version": "1.0",
+  "title": "Playwright Assessment Level 1",
+  "applies_to": "Output of automation scripts (sub-category SCR, Script Development): the company's Playwright Level 1 assessment is the reference for grading it (course decision). How it combines with C1-C4 and with the pass/fail model is undecided.",
+  "rating_scale": [
+    {
+      "rate": "Poor",
+      "point": 1
+    },
+    {
+      "rate": "Need to improve",
+      "point": 2
+    },
+    {
+      "rate": "Meet",
+      "point": 3
+    },
+    {
+      "rate": "Very Good",
+      "point": 4
+    },
+    {
+      "rate": "Excellent",
+      "point": 5
+    }
+  ],
+  "item_score": "weight x point of the item's rating",
+  "section_score": "sum(weight x point) over the rated items / sum(weight) of the rated items; a value from 1 to 5",
+  "section_qualified_at": 3,
+  "comment_rule": "A comment is required for every item rated below Meet.",
+  "sections": [
+    {
+      "id": "PW-INT",
+      "name": "Interface (Locator and Page structure)",
+      "items": [
+        {
+          "id": "PW-INT-1",
+          "text": "Interface is clean (no redundant/duplicated entities)",
+          "weight": 1
+        },
+        {
+          "id": "PW-INT-2",
+          "text": "Understand the locator in Playwright and use the correct one.",
+          "weight": null
+        },
+        {
+          "id": "PW-INT-3",
+          "text": "Controls' locators are comprehensive, robust, and good performance (in case of using xpath, xpath should be clean)",
+          "weight": 2
+        },
+        {
+          "id": "PW-INT-4",
+          "text": "Be able use dynamic locators",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "PW-SD",
+      "name": "Scripting and Debugging",
+      "items": [
+        {
+          "id": "PW-SD-1",
+          "text": "Code format/convention",
+          "weight": 1
+        },
+        {
+          "id": "PW-SD-2",
+          "text": "Avoid sleep and hardcode",
+          "weight": 2
+        },
+        {
+          "id": "PW-SD-3",
+          "text": "Test cases should be able to prepare and clean up test data/environment before and after the test run",
+          "weight": 1
+        },
+        {
+          "id": "PW-SD-4",
+          "text": "Test cases can be executed in parallel (variable, data, configuration)",
+          "weight": 5
+        },
+        {
+          "id": "PW-SD-5",
+          "text": "Scripts are well documented/commented (Test case's description, comments for steps, no spelling or grammar mistakes)",
+          "weight": 1
+        },
+        {
+          "id": "PW-SD-6",
+          "text": "Provide enough log for debugging (e.g. log in test case, wrapper, try/catch…)",
+          "weight": 2
+        },
+        {
+          "id": "PW-SD-7",
+          "text": "Variables, methods and classes are defined and used properly",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "PW-DES",
+      "name": "Automation Test design",
+      "items": [
+        {
+          "id": "PW-DES-1",
+          "text": "Checkpoints are implemented properly. The results correctly reflect AUT's status, no wrong passed/failed",
+          "weight": 5
+        },
+        {
+          "id": "PW-DES-2",
+          "text": "Test cases are well organized in corresponding test suite/folder.",
+          "weight": 1
+        },
+        {
+          "id": "PW-DES-3",
+          "text": "Test cases use Page objects' methods instead of built-in APIs directly",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "PW-CFG",
+      "name": "Configuration",
+      "items": [
+        {
+          "id": "PW-CFG-1",
+          "text": "Able to set up environment to develop test",
+          "weight": 1
+        },
+        {
+          "id": "PW-CFG-2",
+          "text": "Clear configuration for assets, test scripts, locators, reports, etc.",
+          "weight": 1
+        },
+        {
+          "id": "PW-CFG-3",
+          "text": "Project is well documented e.g. How to setup environment to execute single/multiple tests, serial/parallel execution, set up develop environment",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "level_1_expectation": [
+    "Get to know Test automation and Playwright",
+    "Can apply pageObject.",
+    "Applying Framework is plus"
+  ]
+}

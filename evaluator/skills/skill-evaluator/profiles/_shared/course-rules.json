@@ -1,0 +1,67 @@
+{
+  "shared": "course-rules",
+  "version": "0.4-draft",
+  "settings": {
+    "pass_rule": {
+      "mode": "proportional",
+      "min_ratio": 0.8,
+      "text": "Every condition of a criterion (including sub-category conditions, where present) has the same weight. Each unmet condition deducts its share of the criterion's points. The criterion passes when at least 80% of its conditions are met (4 of 5, 5 of 6, 8 of 10) and fails below 80% (3 of 4, 4 of 6, 5 of 7); a failed criterion keeps its partial points. Only the pass conditions are graded: criteria have no fail list."
+    },
+    "scoring": {
+      "option": 2,
+      "formula": "Skill Standard = Average of all skills for one competency\nAI Application/QA Output Quality\nCompetency Score = Skill Standard*0.2 + AI Application * 0.5 + QA Output Quality * 0.3\nProposed Passing Rules: No Competency Score <3 and AI Safety & Responsible Use is Pass",
+      "group_score": "mean",
+      "group_score_text": "A group's score is the mean of its criteria scores; criteria in a group have equal weight.",
+      "competency_score": "A*0.2 + B*0.5 + C*0.3, using each group's weight",
+      "per_competency": {
+        "groups": [
+          "A",
+          "B",
+          "C"
+        ],
+        "text": "Every group is scored separately for each competency the profile covers: B and C from the work done for that competency, A from the skills that belong to it."
+      },
+      "skill_to_competency": {
+        "decided_by": "judge",
+        "reported": true,
+        "reviewed_by": "trainer",
+        "text": "The judge (AI agent) decides which competency each submitted skill belongs to, with a reason; the final report lists the mapping, and the trainer reviews it."
+      },
+      "group_points": 5,
+      "criterion_score": "A group is worth 5 points, shared equally by its criteria (5 / n each). A criterion earns its share x (conditions met / conditions total), so each unmet condition deducts an equal slice; a failed criterion keeps the partial points.",
+      "pass_threshold": 3,
+      "pass_threshold_text": "Competency Score (0-5) = A*0.2 + B*0.5 + C*0.3 with A, B, C in points out of 5; pass when it is >= 3 (the old 'no competency score < 3'), for every competency, and the safety gate passes.",
+      "status": "Option 2 chosen; Option 1 rejected. Groups are scored per competency; the judge maps skills to competencies and the trainer reviews the mapping. Points: 5 per group, equal share per criterion, equal share per condition; criterion passes at >= 80% of its conditions met and fails below. A Fail criterion keeps its partial points; pass line 3 of 5 confirmed. Still undecided: whether group A is scored per skill (the report averages per skill for now), and rounding."
+    },
+    "competency_catalog": [
+      {
+        "id": "requirements-analysis",
+        "name": "AI-assisted Requirements Analysis"
+      },
+      {
+        "id": "test-design",
+        "name": "AI-assisted Test Design"
+      },
+      {
+        "id": "test-case-generation",
+        "name": "AI-assisted Test Case Generation"
+      },
+      {
+        "id": "test-data-generation",
+        "name": "AI-assisted Test Data Generation"
+      },
+      {
+        "id": "automation-development",
+        "name": "AI-assisted Automation Development"
+      },
+      {
+        "id": "test-maintenance",
+        "name": "AI-assisted Test Maintenance"
+      },
+      {
+        "id": "defect-analysis-reporting",
+        "name": "AI-assisted Defect Analysis & Reporting"
+      }
+    ]
+  }
+}

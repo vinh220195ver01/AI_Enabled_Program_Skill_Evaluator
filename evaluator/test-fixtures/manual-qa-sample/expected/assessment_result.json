@@ -1,0 +1,223 @@
+{
+  "eval_id": 1,
+  "layer": "L1",
+  "criteria": {
+    "A1": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation",
+          "quote": "folder name has uppercase letters"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A2": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation/SKILL.md:2",
+          "quote": "name 'test-case-generation' differs from folder 'Test-Case-Generation'"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A3": {
+      "errors": [
+        {
+          "where": "skills/defect-analysis-reporting/SKILL.md:3",
+          "quote": "description 'This skill writes bug reports.' has no trigger clause"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A4": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation/SKILL.md:13",
+          "quote": "steps are numbered 1, 2, 3, 5 (4 is skipped)"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A5": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation/references/old-notes.md",
+          "quote": "file is never mentioned in SKILL.md"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A6": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation/references/tc-template.xlsx",
+          "quote": "an Excel template sits in references/"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A7": {
+      "errors": [
+        {
+          "where": "skills/Test-Case-Generation/SKILL.md:17",
+          "quote": "https://staging.acme-notes.example/login"
+        },
+        {
+          "where": "skills/Test-Case-Generation/references/tc-writing-rules.md:5",
+          "quote": "the account locks after 5 failed attempts and stays locked for 15 minutes"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "A8": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B1": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B2": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "B3": {
+      "errors": [
+        {
+          "where": "chat-transcript.md:56",
+          "quote": "code saves tc-list-v1.xlsx but the submitted file is tc-list.xlsx"
+        },
+        {
+          "where": "outputs/tc-list.xlsx!TC List!A12",
+          "quote": "TC-09 uses TR-11, which is not in tr-list.xlsx"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "B4": {
+      "errors": [
+        {
+          "where": "chat-transcript.md:69",
+          "quote": "section 'Missing Information & Recommended Next Investigation' is missing"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C1": {
+      "errors": [
+        {
+          "where": "chat-transcript.md:20",
+          "quote": "only 1 of 2 mandatory and 3 of 5 ambiguities found (60%, below 70%)"
+        },
+        {
+          "where": "chat-transcript.md:20",
+          "quote": "mandatory AMB2 (counter reset) is not asked"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C2": {
+      "errors": [
+        {
+          "where": "outputs/tr-list.xlsx!Test Requirement",
+          "quote": "AC4 has no TR row"
+        },
+        {
+          "where": "outputs/tr-list.xlsx!Test Requirement",
+          "quote": "mandatory AMB2 has no TR row"
+        },
+        {
+          "where": "outputs/tr-list.xlsx!Test Requirement",
+          "quote": "3 of 5 ambiguities (60%) have a TR row, below 70%"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C3": {
+      "errors": [
+        {
+          "where": "outputs/tr-list.xlsx!Test Requirement!C10",
+          "quote": "TR-07 (correct password during the lock, mandatory edge case EC2) has no TC in outputs/tc-list.xlsx"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C4": {
+      "errors": [
+        {
+          "where": "outputs/tc-list.xlsx!TC List!F7",
+          "quote": "Expected Result 'Error is displayed correctly'"
+        },
+        {
+          "where": "outputs/tc-list.xlsx!TC List!F12",
+          "quote": "Expected Result 'Success'"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C5": {
+      "errors": [],
+      "na": false,
+      "note": ""
+    },
+    "C6": {
+      "errors": [
+        {
+          "where": "outputs/bug-list.xlsx!Bug List!C6",
+          "quote": "no Observed Result"
+        },
+        {
+          "where": "outputs/bug-list.xlsx!Bug List!N5",
+          "quote": "OS 'Windows 11' is not provided by the exam"
+        }
+      ],
+      "na": false,
+      "note": ""
+    },
+    "C7": {
+      "errors": [
+        {
+          "where": "outputs/tc-list.xlsx!TC List!F10",
+          "quote": "'Password must be 8-20 characters' is not in the user story and has no Assumption flag"
+        },
+        {
+          "where": "outputs/tc-list.xlsx!TC List!F8",
+          "quote": "spaces-only email shows 'Email is required' (the story only covers an empty email) and has no Assumption flag"
+        },
+        {
+          "where": "outputs/tc-list.xlsx!TC List!F9",
+          "quote": "'the Login button is disabled' after the lock is not in the story and has no Assumption flag"
+        }
+      ],
+      "na": false,
+      "note": ""
+    }
+  },
+  "advisory_flags": [
+    {
+      "id": "C6-severity",
+      "ref": "BUG-002",
+      "detail": "Trainee severity Trivial, key Major (2 levels apart on the scale). BUG-001 is Major vs Critical (1 level), not flagged."
+    }
+  ],
+  "grading_notes": [
+    "Expected counts are the planted flaws. C3 counts TR-07 and edge case EC2 once because they are the same gap. C7 includes two rules the sample did not plan but that really are not in the story (TC-05 and TC-06 Expected Results).",
+    "Borderline, not counted: TC-02/TC-03/TC-08 state the exact text 'Invalid email or password' although the story gives no message text."
+  ]
+}

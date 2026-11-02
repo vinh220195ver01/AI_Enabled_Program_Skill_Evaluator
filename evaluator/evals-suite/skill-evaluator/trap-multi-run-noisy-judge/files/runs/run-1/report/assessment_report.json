@@ -1,0 +1,298 @@
+{
+  "scoring_model": "weighted-pass-fail",
+  "status": "provisional",
+  "verdict": "PENDING",
+  "pass_threshold": 3,
+  "gate": {
+    "id": "SAFE",
+    "verdict": "pass",
+    "note": "synthetic data only"
+  },
+  "mapping_reviewed": false,
+  "skill_to_competency": [
+    {
+      "skill": "tc-gen",
+      "competency": "test-case-generation"
+    },
+    {
+      "skill": "test-design",
+      "competency": "test-design"
+    }
+  ],
+  "competencies": [
+    {
+      "id": "test-case-generation",
+      "skills": [
+        "tc-gen"
+      ],
+      "competency_score": 4.2083,
+      "verdict": "pass",
+      "groups": {
+        "A": {
+          "points": 5.0,
+          "max": 5,
+          "weight": 0.2,
+          "criteria": 4,
+          "failed": [],
+          "pending": []
+        },
+        "B": {
+          "points": 4.1667,
+          "max": 5,
+          "weight": 0.5,
+          "criteria": 6,
+          "failed": [
+            "B5"
+          ],
+          "pending": []
+        },
+        "C": {
+          "points": 3.75,
+          "max": 5,
+          "weight": 0.3,
+          "criteria": 4,
+          "failed": [
+            "C3"
+          ],
+          "pending": []
+        }
+      },
+      "criteria": {
+        "A1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A3": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B3": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B5": {
+          "verdict": "fail",
+          "score": 0.0,
+          "met": 0,
+          "total": 3,
+          "pending": 0
+        },
+        "B6": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C3": {
+          "verdict": "fail",
+          "score": 0.0,
+          "met": 0,
+          "total": 3,
+          "pending": 0
+        },
+        "C4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        }
+      }
+    },
+    {
+      "id": "test-design",
+      "skills": [
+        "test-design"
+      ],
+      "competency_score": 5.0,
+      "verdict": "pass",
+      "groups": {
+        "A": {
+          "points": 5.0,
+          "max": 5,
+          "weight": 0.2,
+          "criteria": 4,
+          "failed": [],
+          "pending": []
+        },
+        "B": {
+          "points": 5.0,
+          "max": 5,
+          "weight": 0.5,
+          "criteria": 6,
+          "failed": [],
+          "pending": []
+        },
+        "C": {
+          "points": 5.0,
+          "max": 5,
+          "weight": 0.3,
+          "criteria": 4,
+          "failed": [],
+          "pending": []
+        }
+      },
+      "criteria": {
+        "A1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A3": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "A4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B3": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B5": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "B6": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C1": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C2": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C3": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        },
+        "C4": {
+          "verdict": "pass",
+          "score": 1.0,
+          "met": 3,
+          "total": 3,
+          "pending": 0
+        }
+      }
+    }
+  ],
+  "criteria_sha256": "a947c4aa7de87983fb2d1be04a190a3f98d28497165ba66fb1bc63f091ce1594",
+  "notes": []
+}

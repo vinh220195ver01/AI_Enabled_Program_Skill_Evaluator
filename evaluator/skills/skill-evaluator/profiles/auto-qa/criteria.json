@@ -1,0 +1,440 @@
+{
+  "profile": "auto-qa",
+  "version": "0.17-draft",
+  "scoring_model": "weighted-pass-fail",
+  "status": "criteria and competencies loaded (automation-development, test-maintenance); sub-category to competency mapping approved; no merge/render support for auto-qa yet",
+  "extends": [
+    "../_shared/course-rules.json"
+  ],
+  "competencies": [
+    "automation-development",
+    "test-maintenance"
+  ],
+  "sub_category_to_competency": {
+    "status": "approved by the course owner (DEF intentionally not assessed)",
+    "map": {
+      "TCD": "automation-development",
+      "FWG": "automation-development",
+      "SCR": "automation-development",
+      "REV": "automation-development",
+      "EXE": "test-maintenance",
+      "RES": "test-maintenance",
+      "DEF": null
+    },
+    "note": "DEF (Defect Creation) has no competency while defect-analysis-reporting is not listed in `competencies`: it is not assessed here and a DEF skill is reported as unmapped, not scored."
+  },
+  "tech_stack": {
+    "name": "Playwright + TypeScript",
+    "rule": "Fixed by the course. Trainees use Playwright with TypeScript only; no other stack is used."
+  },
+  "evidence_package": {
+    "items": [
+      "Skills folder (SKILL.md, references/, assets/).",
+      "Full, unedited chat/agent transcripts, including the skill invocation.",
+      "Output files (test case file, framework repo, specs, review report, plan, run report, bug report).",
+      "Run logs: `tsc`, lint, `npx playwright test` output, CI/scheduler logs, test reports (JSON/HTML).",
+      "Git history / merge request / review records."
+    ],
+    "rules": [
+      "Missing evidence = condition fails.",
+      "Screenshots or pasted text without a transcript do not count."
+    ],
+    "note": "Taken unchanged from the earlier auto rubric (course decision)."
+  },
+  "answer_key": {
+    "exists": false,
+    "text": "Auto assessments have no answer key (course decision). Nothing is compared against a prepared answer; there is no baseline file for auto-qa."
+  },
+  "sub_categories": [
+    {
+      "id": "TCD",
+      "name": "Automation test case design"
+    },
+    {
+      "id": "FWG",
+      "name": "Framework Generation"
+    },
+    {
+      "id": "SCR",
+      "name": "Script Development"
+    },
+    {
+      "id": "REV",
+      "name": "Code Review"
+    },
+    {
+      "id": "EXE",
+      "name": "Execution Support"
+    },
+    {
+      "id": "RES",
+      "name": "Result Analysis"
+    },
+    {
+      "id": "DEF",
+      "name": "Defect Creation"
+    }
+  ],
+  "sub_category_rule": "Criteria with by_sub_category apply the common conditions plus the conditions of the sub-category being assessed.",
+  "groups": [
+    {
+      "$ref": "../_shared/skill-standard.json"
+    },
+    {
+      "id": "B",
+      "no": 2,
+      "section": "For Competence",
+      "name": "AI Application & Enablement",
+      "weight": 0.5,
+      "objective": "Evaluate the trainee's ability to operationalize AI for QA tasks by decomposing tasks, providing relevant context and knowledge, configuring reusable skills, handling exceptions, and selecting appropriate tools or workflows to achieve effective and repeatable execution."
+    },
+    {
+      "id": "C",
+      "no": 3,
+      "section": "For Competence",
+      "name": "QA Output Quality",
+      "weight": 0.3,
+      "objective": "Evaluate whether the final AI-assisted deliverables meet competency-specific QA requirements for accuracy, completeness, and usability, and whether the trainee effectively validates AI-generated results, identifies errors and gaps, and makes necessary corrections before accepting the output.",
+      "output_reference": {
+        "file": "playwright-assessment.json",
+        "sub_category": "SCR",
+        "text": "The output of automation scripts is graded with reference to the company's Playwright Level 1 assessment (course decision). How its 17 rated items combine with C1-C4 and the pass/fail model is not decided yet."
+      }
+    }
+  ],
+  "gates": [
+    {
+      "id": "SAFE",
+      "no": 4,
+      "section": "For Course",
+      "name": "AI Safety & Responsible Use",
+      "weight": 0,
+      "type": "mandatory pass/fail gate",
+      "objective": "Ensure the trainee uses approved AI tools responsibly, protects confidential and sensitive information, complies with company policies and data-handling requirements, and validates AI-generated content before use.",
+      "pass_when_all": [
+        "Uses only approved AI tools, protects confidential/sensitive information, complies with company policies and data-handling requirements, and validates AI output before use. No violation at all."
+      ],
+      "fail_when_any": [
+        "Policy violation: uses an unapproved AI tool, puts confidential/sensitive information into AI, or uses AI output without validating it. A single violation fails the whole assessment."
+      ],
+      "clarifications": [
+        "\"Validates AI output before use\" and \"uses AI output without validating it\" are about confidential/sensitive information only: checking AI output before it is used or shared, so that it carries no confidential or sensitive data (course decision).",
+        "Using AI output without running, reviewing or refining it is a quality problem graded by C4 Human Validation & Improvement, not by this gate. Such a lapse fails C4 only; it does not fail the gate.",
+        "Exploring the application through Playwright CLI with real (non-test) accounts or real data puts that information into AI and is a violation. Test accounts and test data of a test environment are allowed (course decision)."
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "B1",
+      "group": "B",
+      "name": "Task Decomposition",
+      "description": "Ability to split a QA task into suitable steps or subtasks so that AI can support it effectively.",
+      "pass_intro": "PASS when ALL of the following hold (applied to the sub-category being assessed):",
+      "pass_when_all": [],
+      "fail_intro": "FAIL if any Pass condition is missing, or any of the following is violated:",
+      "by_sub_category": {
+        "TCD": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (requirement / user story / manual test case); each run delivers all of: the automation test case design file (in the team's template), traceability (AC → TR → TC), a coverage summary."
+          ]
+        },
+        "FWG": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (framework requirements: stack, environment, reporting, CI); each run delivers all of: the framework files (playwright.config.ts, fixtures, base page, utils, env config, scripts in package.json, CI file), README, a sample smoke test."
+          ]
+        },
+        "SCR": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (automation test case design: TC ID, steps, expected result); each run delivers all of: test code, test data file, links to the manual test case IDs, execution report."
+          ]
+        },
+        "REV": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (the merge request diff or the script files); each run delivers all of: review report, fix patch/commit, lint and test results before/after."
+          ]
+        },
+        "EXE": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (test scope, build information and target environment); each run delivers all of: execution plan, run commands, execution log, status report."
+          ]
+        },
+        "RES": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (the run's artifacts: JSON/JUnit/HTML report, trace, log); each run delivers all of: a final report with failure classification, trends, recommendations and a draft defect list."
+          ]
+        },
+        "DEF": {
+          "pass_when_all": [
+            "The transcript shows AI working on real input (failure evidence: screenshot, trace, log, failing test); each run delivers all of: a bug report with evidence, the duplicate-check result and the reproduction result."
+          ]
+        }
+      }
+    },
+    {
+      "id": "B2",
+      "group": "B",
+      "name": "Context & Knowledge Management",
+      "description": "Ability to provide, organise and maintain context, requirements, constraints, reference materials and domain knowledge for AI.",
+      "pass_intro": "PASS when ALL of the following hold:",
+      "pass_when_all": [],
+      "fail_intro": "FAIL if any Pass condition is missing, or any of the following is violated:",
+      "by_sub_category": {
+        "TCD": {
+          "pass_when_all": [
+            "A step in the skill explores the real application (screens, fields, validation) and reads the manual test case repository, then writes the results into Markdown knowledge files covering: the application's screens and flows, the manual test case repository, a test data catalogue."
+          ]
+        },
+        "FWG": {
+          "pass_when_all": [
+            "A step in the skill scans the existing repo and reads the environment list, then writes the results into Markdown knowledge files covering: the team's framework conventions, the existing repo structure, the list of environments and config keys."
+          ]
+        },
+        "SCR": {
+          "pass_when_all": [
+            "A step in the skill opens the real application and records pages, elements and shared steps, then writes the results into Markdown knowledge files covering: a page / flow / element map of the real application, plus a catalogue of shared steps and fixtures."
+          ]
+        },
+        "REV": {
+          "pass_when_all": [
+            "A step in the skill reads the coding standard, the lint configuration and past review findings, then writes the results into Markdown knowledge files covering: the team's coding standard, lint rules, a catalogue of shared helpers, past review findings."
+          ]
+        },
+        "EXE": {
+          "pass_when_all": [
+            "A step in the skill lists the tests with `--list` and reads the run-time history, environment status and flaky list, then writes the results into Markdown knowledge files covering: the test list with tags and run-time history, environment and test data status, the flaky test list."
+          ]
+        },
+        "RES": {
+          "pass_when_all": [
+            "A step in the skill analyses past run reports and the known-issue list, then writes the results into Markdown knowledge files covering: run history, known issues, the flaky test list, a failure classification table."
+          ]
+        },
+        "DEF": {
+          "pass_when_all": [
+            "A step in the skill queries the existing bug list and reads the guidelines, then writes the results into Markdown knowledge files covering: the bug template, severity/priority guidelines, the existing bug list, the module/keyword list."
+          ]
+        }
+      },
+      "clarifications": [
+        "\"Explores the real application\" / \"opens the real application\" is done with Playwright CLI (course decision).",
+        "Only test accounts and test data of a test environment may be used while exploring the application; real accounts and real data may not (course decision)."
+      ]
+    },
+    {
+      "id": "B3",
+      "group": "B",
+      "name": "Skill Execution & Repeatability",
+      "description": "Evaluates the ability to use AI skills for their intended purpose, provide suitable input, follow the important instructions, and repeat the process consistently in similar situations.",
+      "pass_intro": "PASS when ALL of the following hold:",
+      "pass_when_all": [
+        "The skill's `description` has a trigger clause naming the task and the input.",
+        "assets/ holds templates and references/ holds rules; each file is referenced at the step that opens it.",
+        "The output structure is consistent between 2 runs."
+      ],
+      "fail_intro": "FAIL if any Pass condition is missing, or any of the following is violated:",
+      "by_sub_category": {
+        "TCD": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when converting approved manual test cases into automation test case designs …\"; assets/: automation test case template; references/: test case writing rules (observable results, test data rules); structure to compare: columns and sheet names."
+          ]
+        },
+        "FWG": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when building or extending a Playwright TypeScript test framework from stated requirements …\"; assets/: framework skeleton and .env.example; references/: the team's framework conventions (folder structure, naming, lint); structure to compare: folder structure, config keys and file names."
+          ]
+        },
+        "SCR": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when writing Playwright TypeScript scripts from an approved automation test case design …\"; assets/: Page Object and spec templates; references/: Playwright code conventions (locator order, assertion style, naming); structure to compare: structure of the Page Object, spec, fixture and test data files."
+          ]
+        },
+        "REV": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when reviewing Playwright TypeScript changes against the team's coding standard before merge …\"; assets/: review report template; references/: review checklist and the team's coding standard; structure to compare: report sections and finding fields."
+          ]
+        },
+        "EXE": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when planning a Playwright test run for a given build, scope and environment …\"; assets/: execution plan template; references/: test run policy (retry, sharding, exit criteria); structure to compare: plan sections."
+          ]
+        },
+        "RES": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when analysing the results and failures of a Playwright run to produce a summary report …\"; assets/: result report template; references/: failure classification table and flaky identification rules; structure to compare: report sections."
+          ]
+        },
+        "DEF": {
+          "pass_when_all": [
+            "Trigger of the form \"Use when drafting a bug report from a confirmed failure with evidence …\"; assets/: bug template; references/: severity/priority guidelines and the module/keyword list; structure to compare: bug fields."
+          ]
+        }
+      }
+    },
+    {
+      "id": "B4",
+      "group": "B",
+      "name": "Exception Handling & Recovery",
+      "description": "Evaluates the ability to detect, respond to and recover when the workflow meets unexpected situations, such as missing input, conflicting information, AI output that does not meet requirements, a failed execution step, or a result that cannot be verified.",
+      "pass_intro": "PASS when ALL of the following hold:",
+      "pass_when_all": [
+        "The agent runs a self-check and records the result (self-check per sub-category below)."
+      ],
+      "fail_intro": "FAIL if any Pass condition is missing, or any of the following is violated:",
+      "by_sub_category": {
+        "TCD": {
+          "self_check": "Coverage check: every Test Requirement ID has at least 1 test case."
+        },
+        "FWG": {
+          "self_check": "`npm ci`, `npx tsc --noEmit`, lint and the sample smoke test."
+        },
+        "SCR": {
+          "self_check": "The test passes 3 times in a row."
+        },
+        "REV": {
+          "self_check": "Lint, `tsc` and the affected tests after fixing."
+        },
+        "EXE": {
+          "self_check": "Dry run of `npx playwright test --list` for the chosen scope."
+        },
+        "RES": {
+          "self_check": "Every number is checked against the original report."
+        },
+        "DEF": {
+          "self_check": "The failing steps are rerun to reproduce the failure."
+        }
+      },
+      "advisory_note": "Note (does not affect Pass/Fail): the run should stop at a checkpoint when a source is unclear, and end with a list of open questions."
+    },
+    {
+      "id": "B5",
+      "group": "B",
+      "name": "AI Integration & Workflow Coverage",
+      "description": "Evaluates how far AI is applied to the QA steps in the workflow that can benefit from it, from supporting a single activity to coordinating AI across several linked steps, with suitable control points and human intervention.",
+      "pass_intro": "PASS when ALL of the following hold:",
+      "pass_when_all": [
+        "The trigger is configured in the repo; the handoff to the next step happens without human action; the result is delivered to the configured place."
+      ],
+      "fail_intro": "FAIL if any Pass condition is missing, or any of the following is violated:",
+      "by_sub_category": {
+        "TCD": {
+          "trigger": "A requirement / manual test case is approved or changed",
+          "handoff": "Automation script development",
+          "delivered_to": "Repository or test management tool"
+        },
+        "FWG": {
+          "trigger": "A new project request, or a Playwright/dependency version change",
+          "handoff": "Smoke test run on CI",
+          "delivered_to": "Merge request"
+        },
+        "SCR": {
+          "trigger": "An automation test case design is approved",
+          "handoff": "CI run and failure triage",
+          "delivered_to": "Merge request"
+        },
+        "REV": {
+          "trigger": "A new or updated merge request",
+          "handoff": "Inline comments and a quality-gate verdict",
+          "delivered_to": "Merge request comments"
+        },
+        "EXE": {
+          "trigger": "A schedule or a deployment event",
+          "handoff": "Result analysis",
+          "delivered_to": "Team chat channel or email"
+        },
+        "RES": {
+          "trigger": "A test run has finished",
+          "handoff": "Defect creation",
+          "delivered_to": "Dashboard or team chat channel"
+        },
+        "DEF": {
+          "trigger": "A failure is classified as a product bug",
+          "handoff": "Submitting the bug to the bug tracker (e.g. ADO)",
+          "delivered_to": "Bug tracker"
+        }
+      }
+    },
+    {
+      "id": "B6",
+      "group": "B",
+      "name": "Usability & Execution Efficiency",
+      "description": "Evaluates how easy and efficient the AI-enabled skill/workflow is to run, including how simple it is to launch, the need to re-provide context or input, the number of repeated manual actions, and how much the user must intervene to complete the task.",
+      "pass_intro": "Derived from the recommended (SHOULD) items on the usability of the skill / workflow:",
+      "should_items": [
+        "The skill is named after its deliverable (e.g. `automation-test-case-design`, `playwright-script-development`) and has one good output example in references/ (with no project data).",
+        "The prompt states the expected output structure and pastes the real input, not a summary.",
+        "Trigger rules and thresholds are kept in version-controlled config; the owner is alerted when a run fails or hangs."
+      ],
+      "pass_rule": {
+        "mode": "at_least",
+        "conditions": "should_items",
+        "min_met": 2,
+        "requires_pass_of": [
+          "B3",
+          "B5"
+        ],
+        "text": "PASS: meets all Pass conditions of B3 and B5, and at least 2 of the 3 items above."
+      }
+    },
+    {
+      "id": "C1",
+      "group": "C",
+      "name": "Accuracy",
+      "description": "Evaluates how accurate the QA output is against requirements, business rules, source materials and verified facts.\n- No false information or fabricated content.\n- Logic and conclusions are consistent with the evidence.\n- No violation of business rules or identified constraints.",
+      "pass_when_all": [
+        "The Playwright script runs stably; assertions check the correct expected result per the requirements/business rules.",
+        "Locators are accurate (getByRole/getByTestId preferred); no wrong data is hard-coded.",
+        "No serious unresolved errors remain (a test passing by mistake, a wrong assert, obvious flakiness)."
+      ],
+      "clarifications": [
+        "Locators: getByRole and getByTestId come first. Other user-facing Playwright locators (getByLabel, getByText, getByPlaceholder, getByAltText, getByTitle) are accepted when they are a reasonable choice for the element and the choice is optimised by priority, taking the performance of each built-in locator type into account. A CSS or XPath locator fails this criterion, with one exception: XPath is accepted where Playwright's built-in locators cannot target the element well; that XPath must be clean (Playwright Assessment PW-INT-3). CSS selectors have no such exception: a CSS selector always fails. The judge checks whether a built-in locator would have worked; a short code comment saying why XPath was needed makes this visible (course decisions).",
+        "\"Serious errors\" are exactly the ones listed in the parentheses: a test passing by mistake, a wrong assert, obvious flakiness."
+      ]
+    },
+    {
+      "id": "C2",
+      "group": "C",
+      "name": "Completeness & Coverage",
+      "description": "Evaluates how complete the QA output is against the scope, requirements, scenarios and aspects that need checking.\n- Covers the mandatory content.\n- Does not miss important scenarios, conditions or risks within scope.\n- Shows the related requirements and cases that need handling.",
+      "pass_when_all": [
+        "Covers all scenarios in scope: happy path, negative and the important edge cases.",
+        "Every requirement/test case in scope has at least one corresponding Playwright test.",
+        "Handles the necessary conditions: precondition, test data, cleanup."
+      ]
+    },
+    {
+      "id": "C3",
+      "group": "C",
+      "name": "Usability & Format",
+      "description": "Evaluates how clear, structured and ready to use the output is in the intended QA process.\n- Correct format/template and required structure.\n- Clear, consistent and easy-to-understand content.\n- Usable by the recipient or the next stage without unnecessary editing.",
+      "pass_when_all": [
+        "Applies the Page Object Model (pageObject) and the agreed project/framework structure.",
+        "Readable code: clear naming, independent tests, environment configuration (playwright.config), runs with a single command.",
+        "Others can use it with minimal editing (has a short README/run guide)."
+      ],
+      "clarifications": [
+        "\"Minimal editing\" means: the output has a short README / run guide."
+      ]
+    },
+    {
+      "id": "C4",
+      "group": "C",
+      "name": "Human Validation & Improvement",
+      "description": "Evaluates the QA's ability to verify the output, identify problems and make the necessary improvements based on evidence.\n- Checks the output against requirements, business rules or trusted sources.\n- Detects and handles errors, gaps, unverified assumptions or unsuitable content.\n- Edits the output and re-checks it after improving.\n- Does not accept output just because AI produced it or it looks plausible.\nExample: the QA finds that AI produced a wrong expected result, checks the requirement, fixes the test case and verifies the result again.",
+      "pass_when_all": [
+        "Has evidence that the AI output was reviewed and rerun: report/trace/screenshot, run results.",
+        "Finds and fixes important AI errors (wrong locator, missing assert, flakiness), then reruns to verify.",
+        "Can explain why each part of the output was accepted or rejected."
+      ],
+      "clarifications": [
+        "\"Important AI errors\" are exactly the ones listed in the parentheses: a wrong locator, a missing assert, flakiness."
+      ],
+      "human_conditions": {
+        "pass_when_all": [
+          2
+        ],
+        "text": "Whether the trainee can explain the submitted code (and why each part of the output was accepted or rejected) is graded by the human grader, not by the AI assessor (course decision). The judge reports these conditions as pending."
+      }
+    }
+  ]
+}

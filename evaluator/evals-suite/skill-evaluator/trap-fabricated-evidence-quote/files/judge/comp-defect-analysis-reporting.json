@@ -1,0 +1,385 @@
+{
+  "competency_results": {
+    "defect-analysis-reporting": {
+      "B1": [
+        {
+          "met": true,
+          "evidence": "README.md#Skills row 5 and skills/defect-analysis-reporting/SKILL.md#Inputs/#Output: task = turn failure evidence (screenshots, execution results, TC file, environment) into defect-analysis.md + bug-list.xlsx; goal line under the title; generic {placeholders}, not hard-coded."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process steps 1-10: list evidence (1), compare with expected (2), group (3), facts/hypotheses/missing info (4), severity/priority (5), write analysis (6), write rows (7), export (8), verify (9), report and stop (10). README.md#Workflow rows 6-7 put manual execution before and human confirmation after. No stage missing (analyse, write, check)."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process: each step names one product (EV list; BUG groups; facts/hypotheses/missing; severity+reason; analysis file; rows; xlsx; verification; summary). Step 4 keeps three outputs apart but in one coherent product."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md#Process: evidence list (1) before comparison (2) before grouping (3) before severity (5) before write-up (6,7,8) before verification (9). Order followed in transcripts/09-defect-analysis-reporting-run1.md (skill read near l.10, files written, check at ~l.1464)."
+        },
+        {
+          "met": true,
+          "evidence": "The skill is run as one prompt/session (transcripts/09-defect-analysis-reporting-run1.md:5) but with a 10-step process and a verification step; analysis and bug writing are one coherent job, not unrelated activities. Execution (no AI) is kept out (README.md#Workflow row 6). Borderline: analysis + bug-list export in one run (see notes)."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md step 10 and #Exceptions: AI stops, 'a person confirms severity and priority, re-checks each bug and logs it'; README.md#Workflow row 7 CP5 (high risk); step 9 self-verification; Exceptions list where AI is likely to go wrong (unreadable evidence, requirement silent, cause unknown)."
+        }
+      ],
+      "B2": [
+        {
+          "met": true,
+          "evidence": "SKILL.md#Inputs lists failure_evidence, environment, tc_file, knowledge_dir, output_dir; knowledge/product-review-rules.md (story, AC, rules, assumptions, open questions), knowledge/environment.md (Build/Browser), knowledge/index.md; severity guide in skills/defect-analysis-reporting/references/severity-priority-guide.md."
+        },
+        {
+          "met": true,
+          "evidence": "Instructions in skills/defect-analysis-reporting; domain knowledge in knowledge/ (index.md#Files and when to read them); run input in the prompt (transcripts/09-defect-analysis-reporting-run1.md:5-22). Not one block."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md maps each file to the skills that read it (defect skill: product-review-rules, environment). Files short and named. Note: in the session the AI read every knowledge file (transcripts/09-defect-analysis-reporting-run1.md:212-425), more than the index says for this skill; minor."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Labels used (Fact/Observed/Assumption/Open question); defect-analysis.md has 'Assumptions' under each bug and a 'Missing information' table; SKILL.md#Inputs: environment 'Not provided', never guess; runs/run-1/defect-analysis.md line 3 browser version/OS 'Not provided'."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge/index.md#Source priority (PO answers > story > mockup > app-note > build never a source of expected results); SKILL.md#Exceptions: requirement and evidence conflict -> report as question, do not decide. Applied to TC-02-04 and the summary in runs/run-1/defect-analysis.md#Failures not raised as bugs."
+        },
+        {
+          "met": true,
+          "evidence": "knowledge files carry 'Last updated: 2026-10-21' and Maintenance rules (knowledge/index.md#Maintenance); severity/priority has one source file (SKILL.md#Files). Weak point: the deliverables are not kept current after the retest (review/review-log.md#11 'Not done'), but that is output, not context."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/defect-analysis.md l.45 'All email addresses use example.com (synthetic) no masking needed'; skills/defect-analysis-reporting/references/bug-report-rules.md last bullet (mask personal data); knowledge/environment.md synthetic data only; evidence/run-1/TC-19-02-dom.txt uses example.com only."
+        }
+      ],
+      "B3": [
+        {
+          "met": true,
+          "evidence": "transcripts/09-defect-analysis-reporting-run1.md:5-22: trainee invokes defect-analysis-reporting after execution produced Fail rows and screenshots, matching SKILL.md description (use after failures exist, not before)."
+        },
+        {
+          "met": true,
+          "evidence": "transcripts/09-defect-analysis-reporting-run1.md:5-22 supplies execution results, screenshots, TC file, environment (exam app-note), knowledge dir and output dir, i.e. every input in SKILL.md#Inputs; states that no console logs exist (recorded as EV-33 in defect-analysis.md). No AI question went unanswered."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/defect-analysis.md follows steps: EV table EV-01..EV-33 (step 1), facts/hypotheses/missing kept apart (4), severity and priority each with a reason (5), template sections (6); runs/run-1/bug-list.xlsx sorted Critical, High, Low (step 8); verification at transcripts/09-defect-analysis-reporting-run1.md:1464-1486 (step 9); report then stop (step 10, l.1496)."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md#10 checks each bug against test-execution.xlsx, evidence and exam/app-note.md, the grouping of the 9 fails, environment fields and evidence quality; feedback prompt at transcripts/09-defect-analysis-reporting-run1.md:1547-1570 is specific and asks for changes. No clear AI deviation from the skill was recorded; check exists, loop not closed (counted under C4.6)."
+        },
+        {
+          "met": false,
+          "evidence": "Only one run of defect-analysis-reporting exists (README.md#Status: 'ran once'; review/consistency.md covers skills 1-4 only). Consistency across similar runs cannot be shown; fail item 'Only one run is available as evidence' applies.",
+          "locations": [
+            {
+              "file": "README.md",
+              "line": 59,
+              "quote": "ran once"
+            },
+            {
+              "file": "review/consistency.md",
+              "absent": "a row for defect-analysis-reporting run-1 vs run-2 (only skills 1-4 are compared)",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "README.md#How to run it steps 1-6 and Skills table row 5 (input/output); SKILL.md is self-contained and the transcript shows the invocation from the same files; review/review-log.md#9 records what was given to the skill (notes on duplicates, TC-02-04, typo)."
+        }
+      ],
+      "B4": [
+        {
+          "met": true,
+          "evidence": "Detected from concrete signals: AI found 10 byte-identical screenshots (defect-analysis.md EV-23..26, EV-29..32), no console files (EV-33), 'Chrome (headless)' in EV-01 vs environment 'Chrome', a pending review counted in the summary (EV-08 vs EV-17); trainee confirmed the summary defect by retest (evidence/run-1/retest/retest-log.md RT-01)."
+        },
+        {
+          "met": true,
+          "evidence": "Missing input: browser version/OS 'Not provided' + Missing information #1 (defect-analysis.md#Missing information). Conflict/requirement silent: TC-02-04 and summary kept as questions Q-34 / Q-11, not decided (#Failures not raised as bugs). Output not acceptable: specific 5-point correction request, transcripts/09-defect-analysis-reporting-run1.md:1547-1570. Step failed: API drop (l.1486) answered by a resume request that finished the remaining steps (l.1490-1500). Unverifiable: DOM fact for TC-19-02/TC-32-01 marked as execution-record only (#Missing information #7), later supported by evidence/run-1/TC-19-02-dom.txt."
+        },
+        {
+          "met": true,
+          "evidence": "Recovery kept good results and redid only what was weak: only the 10 duplicate screenshots re-captured, DOM files added, RT-01..RT-04 run and compared with earlier results (evidence/run-1/retest/retest-log.md column 'Same as before / different'; review/review-log.md#10). The incomplete update of the deliverables is counted once under C4.6."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points: 'Stop and escalate to the trainer / PO when: ... a skill fails twice on the same step ...; an output cannot be verified'; SKILL.md#Exceptions and step 10 (AI stops, person confirms)."
+        }
+      ],
+      "B5": [
+        {
+          "met": true,
+          "evidence": "README.md#Workflow and control points maps 7 steps with 'AI?' yes/no and why (rows 1-7)."
+        },
+        {
+          "met": true,
+          "evidence": "test-cases.xlsx (skill 3) and test-data.xlsx (skill 4) feed execution, whose results (test-execution.xlsx) are input to skill 5 (README.md#Skills; runs/run-1/run-log.md rows 4-7); skill 5 reads {tc_file} directly (SKILL.md#Inputs)."
+        },
+        {
+          "met": true,
+          "evidence": "Skill 5 reads test-cases.xlsx, test-execution.xlsx, the evidence folder and knowledge by path (transcripts/09-defect-analysis-reporting-run1.md:5-22); EV table built by the AI from the files, not retyped."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow row 7: CP5 (high risk) confirm severity, priority, reproducibility before logging; SKILL.md steps 9 and 10."
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md step 10 and severity-priority-guide.md ('final severity and priority are confirmed by a person'); README row 2 (communication with PO is human); TC-02-04 left as a question for the PO (defect-analysis.md#Failures not raised as bugs)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md#Workflow rows 2 and 6: PO communication and test execution are not AI, with reasons ('Actual results must come from what the tester sees')."
+        }
+      ],
+      "B6": [
+        {
+          "met": true,
+          "evidence": "README.md#How to run it; transcripts/09-defect-analysis-reporting-run1.md:5 one short prompt with paths launched the skill."
+        },
+        {
+          "met": true,
+          "evidence": "Context lives in knowledge/ and the skill folder; the prompt gives only the new input (evidence, execution file, paths) (transcripts/09-defect-analysis-reporting-run1.md:5-22)."
+        },
+        {
+          "met": true,
+          "evidence": "No input asked twice (no AI question to the trainee in transcripts/09-defect-analysis-reporting-run1.md); EV IDs from step 1 flow to bug-list.xlsx Evidence column and are checked in step 9 (l.1464-1486)."
+        },
+        {
+          "met": true,
+          "evidence": "AI wrote both files by script from the template (transcripts/09-defect-analysis-reporting-run1.md:~1440 fill_bugs.py); no manual re-entry. The trainee's execution notes in the prompt are a small manual input."
+        },
+        {
+          "met": true,
+          "evidence": "Human steps are the designed ones: execution, review (review-log#10), severity confirmation; the only extra prompt was after an API outage (transcripts/09-defect-analysis-reporting-run1.md:1490)."
+        },
+        {
+          "met": true,
+          "evidence": "README.md Skills row 5 states input and output; SKILL.md#Inputs gives all variables and what to do if missing. README step 6 is terse but SKILL.md covers it; judged enough."
+        },
+        {
+          "met": true,
+          "evidence": "review/effort-estimate.md: bug analysis 1.5 h by hand vs 10 min AI + 40 min review; AI time consistent with transcript timestamps 04:43 to 04:53. Estimates labelled unmeasured."
+        }
+      ],
+      "C1": [
+        {
+          "met": true,
+          "evidence": "Criterion is worded for ambiguous points (requirements competency); judged here as the bug equivalent using baseline.json thresholds.bug_found_pct = 60. runs/run-1/bug-list.xlsx!Bug List holds BUG-01 email shown as name (= baseline BUG-02), BUG-02 1-star rejected (= baseline BUG-01), BUG-03 'submited' typo (= baseline BUG-05): 3 of 5 = 60%, exactly at threshold. Not logged: baseline BUG-03 (summary counts a pending review; seen in defect-analysis.md#Failures not raised as bugs TC-16-01 / EV-08 and confirmed by retest RT-01, but left as question Q-11) and baseline BUG-04 (500-char review rejected; no execution row, cases BLOCKED). Below the literal 70% if that figure applied. Ambiguous, see notes."
+        },
+        {
+          "met": true,
+          "evidence": "Read as 'findings correctly classified': severities match the key ordering: email exposure Critical (key Critical), 1-star rejected High (key Major), typo Low (key Trivial), runs/run-1/bug-list.xlsx!Bug List!K2:K4. Open questions rest on Must ask items (Q-03, Q-09, Q-11 are Must ask in runs/run-1/clarification-questions.md); facts checked against evidence/run-1/TC-17-01.png, TC-16-01.png and TC-19-02-dom.txt and are accurate."
+        },
+        {
+          "met": true,
+          "evidence": "The analysis has no Must ask / Nice to confirm groups of its own; it cites Q-IDs from both groups (Q-03, Q-09, Q-11 Must ask; Q-21, Q-34 Nice to confirm) in runs/run-1/defect-analysis.md#Missing information rows 2-6. Best reading, flagged in notes."
+        }
+      ],
+      "C2": [
+        {
+          "met": true,
+          "evidence": "All 9 Fail rows covered: TC-17-01/17-03/18-01/18-02/19-01/19-02/32-01 in BUG-01, TC-03-01 in BUG-02, TC-02-04 explained in defect-analysis.md#Failures not raised as bugs; typo from Pass/Observed rows as BUG-03; every Observed row listed. Gaps in logged defects are counted under C2.4 / C2.7."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/defect-analysis.md has every section of skills/defect-analysis-reporting/assets/defect-analysis-template.md (Evidence reviewed; per bug Related test cases, Evidence, Facts, Root cause hypotheses table, Assumptions, Severity and priority table; Missing information; Failures not raised as bugs). runs/run-1/bug-list.xlsx has all 14 template columns ID..Notes, filled for BUG-01..03."
+        },
+        {
+          "met": true,
+          "evidence": "Read as 'failure types covered by the evidence': privacy/data exposure (BUG-01), validation of rating minimum (BUG-02), UI text (BUG-03), keyboard/accessibility as a question (TC-02-04), summary/state as a question (TC-16-01). Missing length-boundary and summary bugs are counted once under C2.4 / C2.7."
+        },
+        {
+          "met": false,
+          "evidence": "Baseline BUG-03 (average and count include a pending review: '3.0 out of 5 - based on 4 reviews' with 'Reviews (3)') is a data-accuracy defect on the product page. Seen in defect-analysis.md EV-08 and #Failures not raised as bugs TC-16-01, confirmed by evidence/run-1/retest/retest-log.md RT-01, but absent from bug-list.xlsx and defect-analysis.md#Defects (review/review-log.md#11 'Not done'; final files identical to runs/run-1/ai-original/).",
+          "locations": [
+            {
+              "file": "runs/run-1/bug-list.xlsx",
+              "sheet": "Bug List",
+              "absent": "a bug row for the rating summary counting a pending review (only BUG-01..BUG-03 exist, rows 2-4)",
+              "kind": "content"
+            },
+            {
+              "file": "runs/run-1/defect-analysis.md",
+              "line": 162,
+              "quote": "The pending review appears to be counted before approval"
+            },
+            {
+              "file": "runs/run-1/clarification-questions.md",
+              "line": 22,
+              "quote": "Should the product page show an average rating"
+            },
+            {
+              "file": "evidence/run-1/retest/retest-log.md",
+              "line": 7,
+              "quote": "the pending review is counted and the average drops to 3.0"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 19,
+              "quote": "Not done"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Missing/ambiguous points raised as questions or assumptions: Q-09, Q-03, Q-21, Q-34, Q-11 in defect-analysis.md#Missing information and per-bug 'Assumptions'; bug-list.xlsx Expected Result 'Not confirmed: ... Q-xx'."
+        },
+        {
+          "met": true,
+          "evidence": "defect-analysis.md#Failures not raised as bugs gives reasons for TC-02-04, TC-16-01, TC-23-01/02, name parts of TC-18-02/32-01/12-05 and the Observed rows; byte-identical screenshots EV-23..32 flagged as not proof. Weak point: the 22 Blocked and 26 Not run cases appear only as counts in EV-01 (reasons live in test-cases.xlsx); README.md#Status states the open rating-summary bug."
+        },
+        {
+          "met": false,
+          "evidence": "Serious omissions in the delivered bug list: baseline BUG-03 (Major) not logged although confirmed by retest, and baseline BUG-04 (exactly 500 characters rejected, Minor) never found (no execution row, length cases BLOCKED; review/review-log.md#6 'did not use the build's 500 counter'; evidence/run-1 has no 500-char case). 3 of 5 planted bugs logged.",
+          "locations": [
+            {
+              "file": "runs/run-1/bug-list.xlsx",
+              "sheet": "Bug List",
+              "absent": "bug rows for the rating summary (planted BUG-03) and the exactly-500-character rejection (planted BUG-04)",
+              "kind": "content"
+            },
+            {
+              "file": "runs/run-1/test-execution.xlsx",
+              "sheet": "Execution",
+              "absent": "any executed case for a review of exactly 500 characters (length cases are BLOCKED)",
+              "kind": "content"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 14,
+              "quote": "did not use the build's 500 counter"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 19,
+              "quote": "Not done"
+            }
+          ]
+        }
+      ],
+      "C3": [
+        {
+          "met": true,
+          "evidence": "runs/run-1/bug-list.xlsx!Bug List row 1 identical to skills/defect-analysis-reporting/assets/bug-list-template.xlsx (14 columns ID, Summary, Description, Pre-Condition, Steps to Reproduce, Expected Result, Actual Result, Evidence, Build, Browser, Severity, Priority, Status, Notes); IDs BUG-01..03 continuous; '[Area] ...' summaries per bug-report-rules.md; sheet name and widths kept (transcripts/09-defect-analysis-reporting-run1.md:1464-1486)."
+        },
+        {
+          "met": true,
+          "evidence": "Same pattern in all 3 rows (summary format, numbered steps with exact data, 'Related TCs' / 'Hypothesis' tags in Notes); severity/priority vocabulary Critical/High/Low and P1-P3 consistent with the skill's guide. Note: key scale is Critical/Major/Minor/Trivial; the trainee's guide uses Critical/High/Medium/Low."
+        },
+        {
+          "met": true,
+          "evidence": "runs/run-1/bug-list.xlsx!Bug List!E2:E4 numbered, one action per step with exact data (e.g. enter \"unique.reviewer@example.com\" in \"Email *\"); expected and actual results quote messages exactly."
+        },
+        {
+          "met": true,
+          "evidence": "A developer can reproduce from Pre-Condition + Steps + Expected/Actual (bug-list.xlsx rows 2-4). Minor: internal references (R3, A1, Q-09, 'H1/H2 in defect-analysis.md') are not explained inside the row."
+        },
+        {
+          "met": true,
+          "evidence": "Each row has one problem: BUG-01 groups 7 TCs with one symptom and says 'one fix resolves all' (Notes); BUG-02 and BUG-03 are single issues."
+        },
+        {
+          "met": true,
+          "evidence": "No placeholders ({...}) and no AI lead-in text in defect-analysis.md or bug-list.xlsx; flat sheet, importable. Stale content needing later edit (review/review-log.md#11) is not a placeholder."
+        },
+        {
+          "met": true,
+          "evidence": "bug-list.xlsx sorted by severity (K2:K4 Critical, High, Low); defect-analysis.md sectioned per bug with severity/priority table; indexed evidence table."
+        },
+        {
+          "met": true,
+          "evidence": "English, neutral and factual tone throughout (bug-list.xlsx Description / Actual Result); no blame."
+        }
+      ],
+      "C4": [
+        {
+          "met": true,
+          "evidence": "review/review-log.md#10 checks bugs against test-execution.xlsx, evidence/run-1 screenshots and exam/app-note.md (#9 also the user-story ACs); the retest in the app (evidence/run-1/retest/retest-log.md RT-01..04) is an independent source, not the AI asked again."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md#9 sorts the 9 fails by AC (TC-03-01 and TC-17/18/19 against ACs, TC-02-04 against an assumption) before bug analysis; retests target the high-risk bugs (RT-02, RT-03, RT-04)."
+        },
+        {
+          "met": true,
+          "evidence": "Real problems found: 10 duplicate screenshots (found by the AI, EV-23..32, recorded in review-log#10), pending review counted in the summary (RT-01), missing DOM evidence for TC-19-02/TC-32-01 (TC-19-02-dom.txt), headless-only runs (RT-04)."
+        },
+        {
+          "met": true,
+          "evidence": "Each finding handled with a reason in review/review-log.md#10: screenshots re-captured with captions, DOM text added, RT-01..RT-04 run; TC-02-04 kept as a question (assumption Q-34); the summary finding recorded as a new defect in retest-log.md RT-01."
+        },
+        {
+          "met": true,
+          "evidence": "No guess fixes: TC-02-04 not turned into a bug; hypotheses H1/H2 stay hypotheses until retest (retest-log.md RT-02/RT-03); Chrome version/OS left 'Not provided' (transcripts/09-defect-analysis-reporting-run1.md:1547-1565)."
+        },
+        {
+          "met": false,
+          "evidence": "The fix is not carried into the deliverables: runs/run-1/defect-analysis.md and runs/run-1/bug-list.xlsx are identical to runs/run-1/ai-original/ (diff/cmp show no difference). The update to add the rating-summary bug and narrow hypotheses was stopped (transcripts/09-defect-analysis-reporting-run1.md:2029 'The session was stopped here'; review/review-log.md#11 'Not done'; README.md#Status). So no corrected output and no re-check of it. The evidence re-capture itself was re-run and re-checked (retest-log.md).",
+          "locations": [
+            {
+              "file": "review/review-log.md",
+              "line": 19,
+              "quote": "I then stopped that update"
+            },
+            {
+              "file": "review/review-log.md",
+              "line": 19,
+              "quote": "Not done"
+            },
+            {
+              "file": "transcripts/09-defect-analysis-reporting-run1.md",
+              "line": 2232,
+              "quote": "The session was stopped here."
+            },
+            {
+              "file": "runs/run-1/bug-list.xlsx",
+              "sheet": "Bug List",
+              "absent": "the rating-summary bug and any change versus runs/run-1/ai-original/bug-list.xlsx (files byte-identical)",
+              "kind": "content"
+            },
+            {
+              "file": "runs/run-1/defect-analysis.md",
+              "absent": "any change versus runs/run-1/ai-original/defect-analysis.md (files identical)",
+              "kind": "content"
+            }
+          ]
+        },
+        {
+          "met": true,
+          "evidence": "Nothing the AI got right was changed: runs/run-1/defect-analysis.md equals runs/run-1/ai-original/defect-analysis.md."
+        },
+        {
+          "met": true,
+          "evidence": "Unverified items are marked: DevTools fact 'supported only by the execution record' (defect-analysis.md#Missing information #7), Expected Result 'Not confirmed' with Q-IDs (bug-list.xlsx!Bug List!F2:F4), 'Assumption:' and 'Hypothesis:' labels."
+        },
+        {
+          "met": true,
+          "evidence": "review/review-log.md#9-#11 record found / source checked / what was done / re-check; original AI output kept in runs/run-1/ai-original/; retest-log.md records re-check results. Entry #11 honestly records 'Not done'."
+        }
+      ]
+    }
+  },
+  "gate": {
+    "verdict": "pending",
+    "note": "Observed: test data and evidence are synthetic (all emails on example.com, fictional names; runs/run-1/defect-analysis.md l.45, knowledge/environment.md); the application under test is a local demo build (exam/app/index.html); the trainee told the AI not to read the app source (transcripts/09-defect-analysis-reporting-run1.md:5-22); the AI wrote only runs/run-1 files; retest used Chrome headless/headed on the local file. No credentials, real customer data or external services seen in this competency. Tools: Claude Code session with Read/Bash/Edit and Python (openpyxl). A person decides."
+  },
+  "notes": [
+    "Only one run of this competency exists: B3.5 judged unmet for that reason; no two-run comparison possible (review/consistency.md covers skills 1-4 only).",
+    "C1 is worded for ambiguous points (requirements competency; plan 'needs' = ambiguities). Quote: 'Finds at least 70% of all ambiguous points'. For this competency I applied it as the bug equivalent using baseline.json thresholds.bug_found_pct = 60: 3/5 planted bugs logged = exactly 60%; with 70% it would be unmet. C1.2/C1.3 have no direct defect-analysis meaning; best readings given. Trainer should decide if C1 applies to this competency.",
+    "Planted-bug match: baseline BUG-01 (1-star rejected) = deliverable BUG-02; baseline BUG-02 (email shown instead of name, Critical) = deliverable BUG-01; baseline BUG-05 (submited typo, Trivial) = deliverable BUG-03. Baseline BUG-03 (summary counts pending review, Major) observed and confirmed by retest RT-01 but not logged. Baseline BUG-04 (exactly 500 chars rejected, Minor) never found (500-char cases BLOCKED by design, no execution evidence).",
+    "Severity names differ: deliverable uses Critical/High/Low (own severity-priority-guide.md); key scale is Critical/Major/Minor/Trivial. Mapping is straightforward, not marked as error.",
+    "Deliverables are identical to ai-original; the trainee's retest update was started and stopped (transcripts/09-defect-analysis-reporting-run1.md:1547-2029, review-log#11). Counted once under C4.6 (and as missing bug content under C2.4/C2.7), not under B4.3.",
+    "Credit: the AI itself found the duplicate screenshots and the summary anomaly (transcripts/09-defect-analysis-reporting-run1.md:1496-1540; review-log#10 'The AI found two problems I had missed').",
+    "Stale items in defect-analysis.md#Missing information after retest: #1 headless/headed (RT-04 shows both reproduce), #7 DOM screenshots (TC-19-02-dom.txt now exists), #8 duplicate screenshots (re-captured).",
+    "Screenshots checked: evidence/run-1/TC-16-01.png (summary '3.0 out of 5 - based on 4 reviews' with Reviews (3), pending 1) and TC-17-01.png (reviewer shows anna.smith@example.com; typo 'submited') support the stated facts. TC-19-02-dom.txt shows span.review-author with the email.",
+    "Wording: B4 condition 2 has five sub-bullets and is graded as one condition (4 conditions total)."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 1,
+  "eval_name": "format-join",
+  "layer": "L1",
+  "configuration": "with_skill",
+  "run_number": 2,
+  "correctness": {
+    "assertions_passed": 3,
+    "assertions_total": 4,
+    "pass_rate": 0.75
+  },
+  "efficiency": {
+    "total_tokens": 1180,
+    "duration_seconds": 13
+  }
+}

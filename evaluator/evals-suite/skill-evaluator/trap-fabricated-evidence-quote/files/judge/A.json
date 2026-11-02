@@ -1,0 +1,368 @@
+{
+  "skills": [
+    {
+      "name": "test-requirements-analysis",
+      "competency": "requirements-analysis",
+      "reason": "Reviews user story and AC, raises clarification questions, builds the Test Requirement list (skills/test-requirements-analysis/SKILL.md:3)."
+    },
+    {
+      "name": "test-condition-design",
+      "competency": "test-design",
+      "reason": "Derives test conditions from the TR list with named techniques (EP, BVA, decision table...), writes test-design.md (skills/test-condition-design/SKILL.md:3). Folder name differs from the competency id but purpose matches test-design."
+    },
+    {
+      "name": "test-case-generation",
+      "competency": "test-case-generation",
+      "reason": "Writes manual test cases from TR list and test design, exports test-cases.xlsx (skills/test-case-generation/SKILL.md:3)."
+    },
+    {
+      "name": "test-data-generation",
+      "competency": "test-data-generation",
+      "reason": "Prepares synthetic input values per test case, exports test-data.xlsx (skills/test-data-generation/SKILL.md:3)."
+    },
+    {
+      "name": "defect-analysis-reporting",
+      "competency": "defect-analysis-reporting",
+      "reason": "Analyses failure evidence and writes defect-analysis.md and bug-list.xlsx (skills/defect-analysis-reporting/SKILL.md:3)."
+    }
+  ],
+  "skill_results": {
+    "test-requirements-analysis": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis: matches ^[a-z0-9]+(-[a-z0-9]+)*$, 25 chars"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md: exactly one SKILL.md at folder root; subfolders hold only references/ and assets/ files"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:1 and :4 are ---; name and description lines parse as plain YAML (no unquoted colon problem)"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:2 name: test-requirements-analysis equals folder name"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:3 description non-empty, about 400 characters, no angle brackets"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:3 starts with Use when"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:3 activity reviewing a user story and AC (plus mockups) before test design, building TR list; outputs named"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:3 distinct task (raw user story to questions + TR list); Do NOT use clause excludes techniques, test cases and defects; other four descriptions take TR list, test design, test cases or failure evidence as input"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:17 heading ## Process"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:19-27 steps 1 to 9 continuous, no repeats"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:19-27 verbs: Read, Read, Identify, Classify, Write, Derive, Check, Export, Report"
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "Opened SKILL.md, references/ambiguity-checklist.md, note-tags.md, tr-writing-rules.md, assets/clarification-questions-template.md, test-requirement-template.xlsx (header only): no project, customer, URL, path, account or project rule; generic examples only"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-requirements-analysis/SKILL.md:12-15 placeholders {user_story}, {knowledge_dir}, {output_dir} with ask the user if missing"
+        },
+        {
+          "met": true,
+          "evidence": "references/note-tags.md:3 single source for tags, other four skills link to it by relative path (SKILL.md:44); templates exist only in assets/, not copied into SKILL.md"
+        }
+      ]
+    },
+    "test-condition-design": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design: valid kebab-case, 21 chars"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md: one SKILL.md at root"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:1 and :4 are ---, YAML valid"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:2 name equals folder name"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:3 description non-empty, about 480 characters, no angle brackets"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:3 starts with Use when"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:3 deriving test conditions from a reviewed TR Excel list with a named technique before test cases; writes test-design.md"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:3 task is technique-based condition derivation; Do NOT use on raw story, step-by-step test cases or data; input TR list is shared with test-case-generation but that skill also needs test design and writes steps, boundary stated in both descriptions"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:17 heading ## Process"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:19-27 steps 1 to 9 continuous"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:19-27 verbs: Open, Read, Select, Derive, Check, Tag, Write, Verify, Report"
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "Opened SKILL.md, references/coverage-checklist.md, test-design-techniques.md, assets/test-design-template.md: generic only, placeholders {story_id} {story_title}; no project data"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-condition-design/SKILL.md:12-15 {tr_file}, {answers}, {knowledge_dir}, {output_dir}, ask the user if missing"
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md:43 links to ../test-requirements-analysis/references/note-tags.md instead of copying; template only in assets/test-design-template.md"
+        }
+      ]
+    },
+    "test-case-generation": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation: valid kebab-case, 20 chars"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md: one SKILL.md at root"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:1 and :4 are ---, YAML valid"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:2 name equals folder name"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:3 description non-empty, about 420 characters, no angle brackets"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:3 starts with Use when"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:3 writing manual test cases with steps and expected results from reviewed TR list and approved test design; exports test-cases.xlsx"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:3 distinct task (steps and expected results); Do NOT use clause excludes raw story analysis, technique selection and data sets; adjacent skills named"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:17 heading ## Process"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:19-25 steps 1 to 7 continuous"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:19-25 verbs: Open, Read, Write, Take, Check, Export, Report"
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "Opened SKILL.md, references/tc-writing-rules.md, assets/test-case-template.xlsx (header row only): no project data; generic examples (for example TC-03-01, Name field)"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-case-generation/SKILL.md:12-15 {tr_file}, {design_file}, {knowledge_dir}, {output_dir}, ask the user if missing"
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md:40 links shared note-tags.md; template once in assets/; writing rules once in references/tc-writing-rules.md"
+        }
+      ]
+    },
+    "test-data-generation": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation: valid kebab-case, 20 chars"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md: one SKILL.md at root"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:1 and :4 are ---, YAML valid"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:2 name equals folder name"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:3 description non-empty, about 350 characters, no angle brackets"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:3 starts with Use when"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:3 preparing concrete valid, invalid and boundary input values from an existing manual test case Excel list; exports test-data.xlsx"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:3 distinct task (data values, synthetic); Do NOT use clause excludes test cases, conditions and requirements"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:17 heading ## Process"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:19-25 steps 1 to 7 continuous"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:19-25 verbs: Open, Collect, Generate, Verify, Check, Export, Report"
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "Opened SKILL.md, references/test-data-rules.md, assets/test-data-template.xlsx (header row only): only reserved example.com style guidance and fictional-name examples (Anna Smith, Test User 01) as illustrations, no real project data, account or business rule"
+        },
+        {
+          "met": true,
+          "evidence": "skills/test-data-generation/SKILL.md:12-15 {tc_file}, {design_file}, {knowledge_dir}, {output_dir}, ask the user if missing"
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md:40 links shared note-tags.md; template once in assets/; rules once in references/test-data-rules.md"
+        }
+      ]
+    },
+    "defect-analysis-reporting": {
+      "A1": [
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting: valid kebab-case, 25 chars"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md: one SKILL.md at root"
+        }
+      ],
+      "A2": [
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:1 and :4 are ---, YAML valid"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:2 name equals folder name"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:3 description non-empty, about 400 characters, no angle brackets"
+        }
+      ],
+      "A3": [
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:3 starts with Use when"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:3 analysing failure evidence (screenshots, logs, failed results) from manual execution and writing defect reports; writes defect-analysis.md and bug-list.xlsx"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:3 distinct task (post-execution failures); Do NOT use to design or write test cases or before any test run"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:18 heading ## Process"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:20-29 steps 1 to 10 continuous"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:20-29 verbs: List, Compare, Group, Write, Assign, Write, Write, Export, Verify, Report"
+        }
+      ],
+      "A4": [
+        {
+          "met": true,
+          "evidence": "Opened SKILL.md, references/bug-report-rules.md, severity-priority-guide.md, assets/defect-analysis-template.md, bug-list-template.xlsx (header only): generic only, placeholders {story_id} {environment}; no project data"
+        },
+        {
+          "met": true,
+          "evidence": "skills/defect-analysis-reporting/SKILL.md:12-16 {failure_evidence}, {environment}, {tc_file}, {knowledge_dir}, {output_dir}; Build and Browser written Not provided if absent"
+        },
+        {
+          "met": true,
+          "evidence": "SKILL.md:44 severity-priority-guide.md declared single source; SKILL.md:47 links shared note-tags.md; both templates only in assets/"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Five skill folders submitted; all five competencies in scope are covered. Folder test-condition-design is mapped to test-design (naming differs from the competency id, not an error under A1).",
+    "No missing, misnamed, extra or lock files found in skills/. No scripts/ folders. All .xlsx assets contain only a header row.",
+    "Four skills reference ../test-requirements-analysis/references/note-tags.md (and defect-analysis-reporting owns severity-priority-guide.md). This is a cross-skill link to a single source, not a copy. The standard's open question (where to place shared content) is still undecided; graded as met for A4 condition 3. A skill used alone without test-requirements-analysis would have a broken relative path, a portability risk to flag to the trainer.",
+    "A3 overlap: test-requirements-analysis, test-condition-design and test-case-generation form a chain and share the reviewed TR list as input, but each description states a different activity and an explicit Do NOT use boundary. Judged not overlapping.",
+    "Fictional sample names in test-data-rules.md (Anna Smith, Test User 01) are illustrations and not project data. The project (My Shop, US-VP02) appears only in knowledge/, outside skills/."
+  ]
+}

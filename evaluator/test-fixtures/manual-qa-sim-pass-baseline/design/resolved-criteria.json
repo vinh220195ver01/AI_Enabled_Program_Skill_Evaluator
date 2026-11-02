@@ -1,0 +1,449 @@
+{
+  "profile": "manual-qa",
+  "version": "0.11-draft",
+  "scoring_model": "weighted-pass-fail",
+  "status": "criteria loaded, not runnable: the pass/fail-to-score mapping and the pass threshold are undecided; the safety gate has no conditions yet",
+  "extends": [
+    "../_shared/course-rules.json"
+  ],
+  "competencies": [
+    "requirements-analysis",
+    "test-design",
+    "test-case-generation",
+    "test-data-generation",
+    "defect-analysis-reporting"
+  ],
+  "groups": [
+    {
+      "id": "A",
+      "no": 1,
+      "section": "For Skills",
+      "name": "Skill Standard",
+      "weight": 0.2,
+      "objective": "Evaluate whether the trainee designs AI skills that comply with established standards for naming, structure, instruction quality, reusability, and maintainability, enabling clear and consistent execution across relevant QA scenarios.",
+      "standard": {
+        "document": "skill-standard.md",
+        "template": "SKILL.template.md",
+        "note": "The skill standard, template and naming convention that A1-A4 refer to (\"the agreed skill template or standard\"). The conditions in this file are what is graded; the document explains them with examples."
+      },
+      "shared_from": "_shared/skill-standard.json",
+      "shared_version": "1.2"
+    },
+    {
+      "id": "B",
+      "no": 2,
+      "section": "For Competence",
+      "name": "AI Application & Enablement",
+      "weight": 0.5,
+      "objective": "Evaluate the trainee's ability to operationalize AI for QA tasks by decomposing tasks, providing relevant context and knowledge, configuring reusable skills, handling exceptions, and selecting appropriate tools or workflows to achieve effective and repeatable execution."
+    },
+    {
+      "id": "C",
+      "no": 3,
+      "section": "For Competence",
+      "name": "QA Output Quality",
+      "weight": 0.3,
+      "objective": "Evaluate whether the final AI-assisted deliverables meet competency-specific QA requirements for accuracy, completeness, and usability, and whether the trainee effectively validates AI-generated results, identifies errors and gaps, and makes necessary corrections before accepting the output."
+    }
+  ],
+  "gates": [
+    {
+      "id": "SAFE",
+      "no": 4,
+      "section": "For Course",
+      "name": "AI Safety & Responsible Use",
+      "weight": 0,
+      "type": "mandatory pass/fail gate",
+      "objective": "Ensure the trainee uses approved AI tools responsibly, protects confidential and sensitive information, complies with company policies and data-handling requirements, and validates AI-generated content before use.",
+      "pass_when_all": null,
+      "fail_when_any": null,
+      "status": "conditions not defined yet"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "A1",
+      "group": "A",
+      "name": "Naming Convention",
+      "description": "How well the skill follows the naming rules, so names are easy to understand, consistent and reflect the intended purpose.",
+      "pass_intro": "Pass when ALL skills satisfy:",
+      "pass_when_all": [
+        "Folder name: lowercase letters, digits and hyphens only (regex ^[a-z0-9]+(-[a-z0-9]+)*$), at most 64 characters",
+        "Exactly one file named exactly SKILL.md at the root of the skill folder"
+      ],
+      "fail_when_any": [
+        "The folder name has uppercase letters, spaces, underscores (_) or Vietnamese diacritics",
+        "The file is named skill.md, SKILL.MD or SKILL.md.txt",
+        "SKILL.md sits in a subfolder"
+      ]
+    },
+    {
+      "id": "A2",
+      "group": "A",
+      "name": "Structure Compliance",
+      "description": "How well the skill complies with the structure, format and mandatory components of the agreed skill template or standard.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "SKILL.md starts with --- on line 1, has a closing ---, and the YAML parses without error",
+        "Has a name key whose value is IDENTICAL to the folder name (case-sensitive)",
+        "Has a non-empty description of at most 1024 characters, containing no < or > characters"
+      ],
+      "fail_when_any": [
+        "The frontmatter is missing, or the closing --- is missing",
+        "name is \"Test Case Generation\" but the folder is test-case-generation",
+        "The frontmatter does not start on line 1"
+      ]
+    },
+    {
+      "id": "A3",
+      "group": "A",
+      "name": "Instruction Quality",
+      "description": "How clear, complete, specific and actionable the instructions in the skill are.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Has a trigger clause: \"Use when…\" / \"Use this skill when…\" / \"Dùng khi…\" (Vietnamese for \"Use when…\")",
+        "States the concrete ACTIVITY + INPUT (e.g. \"reviewing a user story before designing test cases\")",
+        "Read on its own, the description does not overlap with any other skill the trainee submitted: each skill covers a different task, and no two skills do the same job",
+        "SKILL.md has a heading named Process / Workflow / Steps / Quy trình",
+        "Steps are numbered continuously from 1, with no skipped or repeated numbers, and at least 3 steps",
+        "Each step starts with an action verb (Extract, Identify, Export…)"
+      ],
+      "fail_when_any": [
+        "Only says what the skill is (\"This skill generates test cases\")",
+        "The trigger clause is too generic (\"Use when testing\")",
+        "The trigger condition is only written in the SKILL.md body",
+        "The process is written as a paragraph, or as unnumbered \"-\" bullets",
+        "Numbers are skipped or repeated (e.g. 1, 2, 4)",
+        "The process only lives in a references file"
+      ]
+    },
+    {
+      "id": "A4",
+      "group": "A",
+      "name": "Reusability & Maintainability",
+      "description": "How easily the skill can be reused in suitable situations, and updated, extended and maintained when requirements change.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "The skill folder (SKILL.md, references/, assets/, scripts/) contains no information hard-wired to a specific project or customer (project name, customer name, internal URL, personal machine path, account/password, real data, project business rules)",
+        "Project-specific information comes in through the input (a placeholder such as {project_name}, or the skill says \"ask the user if missing\"), not written directly into the process",
+        "Each piece of content has a single source (output template, checklist, severity list...); a change only needs editing in one place"
+      ],
+      "fail_when_any": [
+        "A project name, customer name, URL, path or login information is hard-coded in the skill",
+        "The skill only works for exactly one project (e.g. \"Check against the Login screen of app ABC\")",
+        "Several skills use the same content but each keeps its own copy"
+      ]
+    },
+    {
+      "id": "B1",
+      "group": "B",
+      "name": "Task Decomposition",
+      "description": "Ability to split a QA task into suitable steps or subtasks so that AI can support it effectively.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Picks one concrete QA task and states its goal, input and expected output (e.g. user story → reviewed list of test requirements)",
+        "The subtasks cover the whole chain from input to output, with no key stage missing (analysis, design, review/check)",
+        "Each subtask has one purpose and one checkable output (e.g. \"list of ambiguous points\", \"list of test conditions\")",
+        "The subtasks follow dependency order: each step only uses results that have already been produced",
+        "Each subtask is sized for AI: unrelated activities are not crammed into one prompt, and the task is not chopped into trivial steps",
+        "The decomposition marks where a human must confirm or where AI is likely to go wrong (e.g. after the list of ambiguous points, before test design)"
+      ],
+      "fail_when_any": [
+        "The whole task is handed to AI in one prompt",
+        "One step mixes several different activities (analysis + design + reporting)",
+        "A step has no defined output, so nobody can tell whether it was done right",
+        "There is no step that reviews or checks the AI's results",
+        "The steps only run once, for exactly one requirement (e.g. hard-coded details instead of a generic input)"
+      ]
+    },
+    {
+      "id": "B2",
+      "group": "B",
+      "name": "Context & Knowledge Management",
+      "description": "Ability to provide, organise and maintain context, requirements, constraints, reference materials and domain knowledge for AI.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Provides enough of the right kinds of context for the task: goal, requirements, constraints (scope, test case conventions, priority, environment), reference documents and the necessary domain knowledge. The trainee identifies which information the AI really needs for that task",
+        "Clearly separates the kinds of information: general instructions (how the AI works), project/domain knowledge (project information, glossary, business rules) and the input data of each run. Does not mix everything into one long prompt",
+        "Organises context in a structured, easy-to-find way: context lives in clearly named files/sections, the content is concise, and the AI knows when to read which part. Does not paste a whole long document when only part of it is needed",
+        "Distinguishes fact from assumption: states what is confirmed, what is assumed and what is still missing. Does not let the AI silently fill the gaps",
+        "Handles source reliability: when documents conflict, states which source is authoritative (latest spec, customer decision), or asks the AI to report the conflict instead of choosing on its own",
+        "Maintains and updates context: has a way to keep context correct over time (version/date recorded, updated when requirements change, outdated information removed) and a single source for each kind of information",
+        "Protects information: does not put sensitive data (real customer data, accounts, passwords, personal information) into AI without permission; knows how to mask it or replace it with fake data"
+      ],
+      "fail_when_any": [
+        "Gives only a short request with little background, leaving the AI to guess the domain, conventions or constraints",
+        "Pastes whole long documents without selection, making the context noisy",
+        "Mixes instructions, project knowledge and input data in one undivided block",
+        "Does not distinguish fact from assumption, letting the AI infer when information is missing",
+        "Documents conflict but no authoritative source is named",
+        "Context is old, has no version and no way to be updated when requirements change",
+        "The same information is repeated in several places, so fixing one place leaves the others wrong",
+        "Puts sensitive data or real customer data into AI without control"
+      ]
+    },
+    {
+      "id": "B3",
+      "group": "B",
+      "name": "Skill Execution & Repeatability",
+      "description": "Evaluates the ability to use AI skills for their intended purpose, provide suitable input, follow the important instructions, and repeat the process consistently in similar situations.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Picks the right skill for the right situation (matches its trigger condition)",
+        "Provides the input the skill requires and answers fully when the skill asks for more",
+        "Follows the skill's mandatory steps and checkpoints",
+        "Checks the output against the skill's standard, notices when the AI deviates from the process, and asks for a rerun",
+        "Similar runs give consistent results in structure and level of detail",
+        "Records, or can explain, how to run it, so someone else following it gets an equivalent result"
+      ],
+      "fail_when_any": [
+        "Uses a skill for work outside its scope",
+        "Input is missing or of the wrong type, and the result the AI guessed is accepted",
+        "Skips or overrides the skill's mandatory steps/checkpoints",
+        "Accepts the result without checking it against the skill's output standard",
+        "Two similar runs differ clearly and the difference cannot be explained",
+        "Only one run is available as evidence",
+        "The result depends on different ad-hoc prompts in each run"
+      ]
+    },
+    {
+      "id": "B4",
+      "group": "B",
+      "name": "Exception Handling & Recovery",
+      "description": "Evaluates the ability to detect, respond to and recover when the workflow meets unexpected situations, such as missing input, conflicting information, AI output that does not meet requirements, a failed execution step, or a result that cannot be verified.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Detects exceptions on their own, from concrete signals",
+        "Responds correctly to each type:\n  - Missing input: stop and ask, do not let the AI guess\n  - Conflicting information: state the conflict, ask for the authoritative source\n  - AI output not acceptable: point to exactly what is wrong, ask for a fix with guidance\n  - Execution step failed: read the error, find the cause, try a reasonable fix, limit the number of attempts\n  - Result cannot be verified: mark it unverified, state how to verify it",
+        "Recovers in a controlled way: goes back to the right point, keeps the correct results, re-checks after fixing",
+        "Knows when to stop and hand over to a human (escalation criteria)"
+      ],
+      "fail_when_any": [
+        "Accepts wrong or fabricated output without checking",
+        "Lets the AI fill in missing input, or pick a side when information conflicts",
+        "Gives only generic feedback (\"that's wrong, do it again\")",
+        "Repeats the same approach when a step fails",
+        "Presents unverified results as fact",
+        "Reruns from the start unnecessarily, or does not re-check after fixing",
+        "Has no stop or escalation criteria",
+        "Only handles exceptions when someone points them out"
+      ]
+    },
+    {
+      "id": "B5",
+      "group": "B",
+      "name": "AI Integration & Workflow Coverage",
+      "description": "Evaluates how far AI is applied to the QA steps in the workflow that can benefit from it, from supporting a single activity to coordinating AI across several linked steps, with suitable control points and human intervention.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Maps the QA steps, shows which steps should use AI and explains why",
+        "Applies AI to at least 2 linked steps (the output of one step is the input of the next)",
+        "Output passes between steps without being copied by hand or rewritten",
+        "Has control points at high-risk steps",
+        "Keeps humans in the right places (business decisions, communication with the customer)",
+        "Knows which steps should not use AI and states why"
+      ],
+      "fail_when_any": [
+        "Uses AI only for a single isolated task, with no link between steps",
+        "Skips steps with a clear benefit without explanation",
+        "Connects several steps but has no control point",
+        "Automates decisions that need a human (sending to the customer automatically, finalising expected results automatically)",
+        "The output of one step must be copied by hand and heavily edited before it can be used",
+        "The workflow is only an idea and has never been run"
+      ]
+    },
+    {
+      "id": "B6",
+      "group": "B",
+      "name": "Usability & Execution Efficiency",
+      "description": "Evaluates how easy and efficient the AI-enabled skill/workflow is to run, including how simple it is to launch, the need to re-provide context or input, the number of repeated manual actions, and how much the user must intervene to complete the task.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Simple to launch; someone else can run it by reading the instructions",
+        "Context does not have to be provided again each time; only the new input is given",
+        "Input already given is not asked for again; the previous step's output flows into the next step automatically",
+        "Few repeated manual actions (copy-paste, reformatting, re-entering)",
+        "A human only intervenes at the designed control points; almost no wasted intervention",
+        "The instructions are enough for a new tester to run it the first time without getting stuck",
+        "Effort is lower than the baseline (reasonable estimate)"
+      ],
+      "fail_when_any": [
+        "Complex launch: a long prompt must be pasted each time, or there are many undocumented preparation steps",
+        "Context must be pasted again on every run",
+        "The same information is asked for several times",
+        "Output must be copy-pasted by hand between steps",
+        "The user constantly has to prompt the AI to finish the task",
+        "Only its creator can run it",
+        "Effort equals or exceeds doing it by hand, with no explanation",
+        "No complete run is available as evidence"
+      ]
+    },
+    {
+      "id": "C1",
+      "group": "C",
+      "name": "Accuracy",
+      "description": "Evaluates how accurate the QA output is against requirements, business rules, source materials and verified facts.\n- No false information or fabricated content.\n- Logic and conclusions are consistent with the evidence.\n- No violation of business rules or identified constraints.",
+      "pass_intro": "Pass when ALL of the following hold:",
+      "pass_when_all": [
+        "Finds at least 70% of all ambiguous points",
+        "Every Mandatory ambiguous point the trainee found is in the \"Must ask\" group, not in \"Nice to confirm\"",
+        "Both groups \"Must ask\" and \"Nice to confirm\" are present"
+      ],
+      "fail_when_any": [
+        "Misses even 1 Mandatory ambiguous point",
+        "Puts a Mandatory ambiguous point in \"Nice to confirm\"",
+        "Asks a generic question that names no specific ambiguous point (\"Is there anything else required?\")"
+      ],
+      "needs": [
+        "ambiguities"
+      ]
+    },
+    {
+      "id": "C2",
+      "group": "C",
+      "name": "Completeness & Coverage",
+      "description": "Evaluates how complete the QA output is against the scope, requirements, scenarios and aspects that need checking.\n- Covers the mandatory content.\n- Does not miss important scenarios, conditions or risks within scope.\n- Shows the related requirements and cases that need handling.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Every requirement/AC in scope is covered by at least one output item",
+        "Has all mandatory components of the template (objective, precondition, test data, steps, expected result...)",
+        "Has all relevant scenario types: positive, negative, boundary, validation, error handling, permissions, integration, UI, compatibility, regression",
+        "Misses no important risk in scope (payment, data, security, main flow)",
+        "Missing or ambiguous points in the requirements are raised as clarification questions or assumptions",
+        "Parts not covered or excluded are stated with a reason; out-of-scope content does not count as coverage",
+        "No serious omissions; minor omissions are within the allowed threshold"
+      ],
+      "fail_when_any": [
+        "A requirement in scope has no item covering it",
+        "Only the happy path, with negative/boundary/error handling missing even though relevant",
+        "Mandatory components are missing in many items",
+        "An important scenario or risk is missed",
+        "Unfinished parts are not stated, giving the false impression that the output is complete",
+        "Claims \"fully covered\" with no traceability or evidence",
+        "Pads the count with items that repeat one condition and add no coverage",
+        "Ambiguous points in the requirements are ignored, or silently filled in without saying so"
+      ]
+    },
+    {
+      "id": "C3",
+      "group": "C",
+      "name": "Usability & Format",
+      "description": "Evaluates how clear, structured and ready to use the output is in the intended QA process.\n- Correct format/template and required structure.\n- Clear, consistent and easy-to-understand content.\n- Usable by the recipient or the next stage without unnecessary editing.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Matches the template and structure: all columns/sections, correct order, field names, ID and naming conventions",
+        "Formatting and terminology are consistent across items",
+        "Clear, with only one interpretation: steps are concrete actions, expected results are verifiable",
+        "The recipient understands it and can use it without asking back",
+        "Each item is concise and has one purpose, not crammed with several conditions",
+        "Usable immediately (importable, no bulk hand-editing); no placeholders or AI lead-in text left",
+        "Organised (grouped by function, priority/status, with a summary if long)",
+        "Tone and language suit the recipient (e.g. for a Japanese customer, in English: short, clear, polite)"
+      ],
+      "fail_when_any": [
+        "Template columns/fields are wrong or missing; naming does not follow the convention",
+        "Formatting is inconsistent across items",
+        "Steps or expected results are vague (\"works normally\")",
+        "One item combines several purposes or several expected results",
+        "Traces of the AI remain (lead-in text, placeholders, stray notes)",
+        "Needs a lot of hand-editing before it can be used",
+        "The recipient cannot understand it without asking back",
+        "Too long or rambling, so the key information is buried",
+        "Tone does not suit the recipient, or the structure breaks the next step"
+      ]
+    },
+    {
+      "id": "C4",
+      "group": "C",
+      "name": "Human Validation & Improvement",
+      "description": "Evaluates the QA's ability to verify the output, identify problems and make the necessary improvements based on evidence.\n- Checks the output against requirements, business rules or trusted sources.\n- Detects and handles errors, gaps, unverified assumptions or unsuitable content.\n- Edits the output and re-checks it after improving.\n- Does not accept output just because AI produced it or it looks plausible.\nExample: the QA finds that AI produced a wrong expected result, checks the requirement, fixes the test case and verifies the result again.",
+      "pass_intro": "Pass when:",
+      "pass_when_all": [
+        "Checks against trusted sources (requirements, business rules), not just \"it reads plausibly\"",
+        "Checks systematically, prioritising high-risk items (expected results, boundaries, business rules, conclusions)",
+        "Finds real problems: errors, fabricated content, gaps, unverified assumptions, unsuitable content",
+        "Handles each finding properly (fix per the source, label as an assumption, ask for clarification, or delete) with an evidence-based reason",
+        "Does not fix by guessing when the source is insufficient",
+        "Fixes the output and re-checks after fixing; the fix introduces no new error",
+        "Does not change what the AI already got right",
+        "Items that cannot be verified are marked unverified, not presented as fact",
+        "Keeps a record: what was found, the source checked, what was fixed, the re-check result"
+      ],
+      "fail_when_any": [
+        "Accepts AI output without checking it against a source",
+        "Only checks spelling or changes formatting, ignoring content and business rules",
+        "\"Verifies\" only by asking the same AI again, with no independent source",
+        "Misses a major error that checking the source should have caught",
+        "Gives generic feedback (\"that's wrong, do it again\") without pointing to the error and the correct source",
+        "Fixes by guessing, with no source",
+        "Does not re-check after fixing, or the fix introduces a new error",
+        "Changes correct content into wrong content",
+        "Leaves an unverified assumption as fact in the final version",
+        "Has no verification record, or no original AI output to compare against"
+      ]
+    }
+  ],
+  "pass_rule": {
+    "mode": "all",
+    "text": "A criterion passes only when ALL its conditions hold (including the sub-category conditions, where present); there is no partial pass. One unmet condition fails the whole criterion."
+  },
+  "scoring": {
+    "option": 2,
+    "formula": "Skill Standard = Average of all skills for one competency\nAI Application/QA Output Quality\nCompetency Score = Skill Standard*0.2 + AI Application * 0.5 + QA Output Quality * 0.3\nProposed Passing Rules: No Competency Score <3 and AI Safety & Responsible Use is Pass",
+    "group_score": "mean",
+    "group_score_text": "A group's score is the mean of its criteria scores; criteria in a group have equal weight.",
+    "competency_score": "A*0.2 + B*0.5 + C*0.3, using each group's weight",
+    "per_competency": {
+      "groups": [
+        "A",
+        "B",
+        "C"
+      ],
+      "text": "Every group is scored separately for each competency the profile covers: B and C from the work done for that competency, A from the skills that belong to it."
+    },
+    "skill_to_competency": {
+      "decided_by": "judge",
+      "reported": true,
+      "reviewed_by": "trainer",
+      "text": "The judge (AI agent) decides which competency each submitted skill belongs to, with a reason; the final report lists the mapping, and the trainer reviews it."
+    },
+    "criterion_score": null,
+    "pass_threshold": null,
+    "status": "Option 2 chosen; Option 1 rejected. Groups are scored per competency; the judge maps skills to competencies and the trainer reviews the mapping. Still undecided: the number a pass/fail criterion counts as (criterion_score), the pass line that replaces 'no competency score < 3' (pass_threshold), whether group A is scored per skill, and rounding."
+  },
+  "competency_catalog": [
+    {
+      "id": "requirements-analysis",
+      "name": "AI-assisted Requirements Analysis"
+    },
+    {
+      "id": "test-design",
+      "name": "AI-assisted Test Design"
+    },
+    {
+      "id": "test-case-generation",
+      "name": "AI-assisted Test Case Generation"
+    },
+    {
+      "id": "test-data-generation",
+      "name": "AI-assisted Test Data Generation"
+    },
+    {
+      "id": "automation-development",
+      "name": "AI-assisted Automation Development"
+    },
+    {
+      "id": "test-maintenance",
+      "name": "AI-assisted Test Maintenance"
+    },
+    {
+      "id": "defect-analysis-reporting",
+      "name": "AI-assisted Defect Analysis & Reporting"
+    }
+  ],
+  "settings_from": {
+    "pass_rule": "_shared/course-rules.json",
+    "scoring": "_shared/course-rules.json",
+    "competency_catalog": "_shared/course-rules.json"
+  }
+}

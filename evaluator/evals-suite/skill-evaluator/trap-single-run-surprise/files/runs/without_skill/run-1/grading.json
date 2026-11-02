@@ -1,0 +1,41 @@
+{
+  "configuration": "without_skill",
+  "run_number": 1,
+  "assertion_results": [
+    {
+      "id": "a1",
+      "text": "a1 Flags the malformed amount row (Gamma)",
+      "passed": true,
+      "evidence": "Mentions line 4."
+    },
+    {
+      "id": "a2",
+      "text": "a2 Names the amount column as the problem",
+      "passed": false,
+      "evidence": "Does not name the column."
+    },
+    {
+      "id": "a3",
+      "text": "a3 Includes a corrected CSV file",
+      "passed": false,
+      "evidence": "No corrected file."
+    },
+    {
+      "id": "a4",
+      "text": "a4 Does not silently drop any row",
+      "passed": true,
+      "evidence": "No row dropped."
+    },
+    {
+      "id": "a5",
+      "text": "a5 States that exactly 2 rows are malformed",
+      "passed": false,
+      "evidence": "Does not give a count."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "total": 5,
+    "pass_rate": 0.4
+  }
+}

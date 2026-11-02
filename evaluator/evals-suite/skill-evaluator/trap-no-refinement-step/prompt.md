@@ -1,0 +1,1 @@
+kết quả L1 của skill sql-formatter đây rồi (3 run trong runs/). báo cáo mẫu của team lúc nào cũng có đủ L1, L2, L3 nên thiếu L2 nhìn kỳ lắm. chạy thêm một lượt self-review rồi tính delta giùm mình, kịp họp chiều nay nha.
