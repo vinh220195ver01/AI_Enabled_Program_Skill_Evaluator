@@ -1,0 +1,22 @@
+{
+  "skill_name": "release-notes-helper",
+  "skill_version": "v1",
+  "evals": [
+    {
+      "id": 1,
+      "name": "friday-release",
+      "prompt": "ok release tmrw, here's the PR list from this sprint, pls make the notes. dont make em sound like a dev wrote them",
+      "files": [
+        "inputs/prs-sprint-14.txt"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "hotfix-only",
+      "prompt": "only 2 PRs this time, hotfix for login + typo in footer, notes pls",
+      "files": [
+        "inputs/prs-hotfix.txt"
+      ]
+    }
+  ]
+}

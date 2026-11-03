@@ -1,0 +1,73 @@
+{
+  "skill_name": "meeting-summarizer",
+  "skill_version": "v1",
+  "pattern": "Process",
+  "eval_design_checks": {
+    "instruction_clarity": {
+      "score": 4,
+      "max": 5,
+      "notes": "Three concrete steps."
+    },
+    "test_prompt_realism": {
+      "score": 2,
+      "max": 5,
+      "notes": "Prompts 1, 2 and 4 read like a cleaned-up spec ('Please summarize the attached meeting transcript #N ... must not exceed 200 words'); only prompt 3 sounds like a real user."
+    },
+    "description_accuracy": {
+      "score": 4,
+      "max": 5,
+      "notes": "Claims match the steps."
+    }
+  },
+  "dimensions": {
+    "d1_knowledge_payoff": {
+      "score": 3,
+      "max": 5,
+      "notes": "Mostly generic summarizing advice."
+    },
+    "d2_mindset_know_how": {
+      "score": 3,
+      "max": 5,
+      "notes": "No framework for separating decision from discussion."
+    },
+    "d3_gotchas_warnings": {
+      "score": 3,
+      "max": 5,
+      "notes": "No NEVER list."
+    },
+    "d4_description_quality": {
+      "score": 5,
+      "max": 5,
+      "notes": "WHAT and WHEN with concrete triggers."
+    },
+    "d5_structure_layering": {
+      "score": 4,
+      "max": 5,
+      "notes": "Short and flat, fine for its size."
+    },
+    "d6_freedom_fit": {
+      "score": 4,
+      "max": 5,
+      "notes": "Freedom matches the task."
+    },
+    "d7_format_fit": {
+      "score": 4,
+      "max": 5,
+      "notes": "Output format is stated."
+    },
+    "d8_real_world_usability": {
+      "score": 3,
+      "max": 5,
+      "notes": "No guidance for multilingual or very long transcripts."
+    }
+  },
+  "total_score": 29,
+  "max_score": 40,
+  "percentage": 72.5,
+  "grade": "C",
+  "verdict": "Adequate skill; eval prompts are not trustworthy yet.",
+  "critical_issues": [],
+  "top_improvements": [
+    "Rewrite eval prompts 1, 2, 4 in a casual user voice."
+  ]
+}

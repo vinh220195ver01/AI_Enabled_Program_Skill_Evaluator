@@ -1,0 +1,38 @@
+{
+  "skill_name": "meeting-summarizer",
+  "skill_version": "v1",
+  "evals": [
+    {
+      "id": 1,
+      "name": "weekly-sync",
+      "prompt": "Please summarize the attached meeting transcript #1 into decisions, action items with owners, and open questions. The summary must not exceed 200 words.",
+      "files": [
+        "inputs/meeting-1.txt"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "kickoff",
+      "prompt": "Please summarize the attached meeting transcript #2 into decisions, action items with owners, and open questions. The summary must not exceed 200 words.",
+      "files": [
+        "inputs/meeting-2.txt"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "messy-standup",
+      "prompt": "uh standup notes pasted below, who's doing what?? keep it short",
+      "files": [
+        "inputs/meeting-3.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "retro",
+      "prompt": "Please summarize the attached meeting transcript #4 into decisions, action items with owners, and open questions. The summary must not exceed 200 words.",
+      "files": [
+        "inputs/meeting-4.txt"
+      ]
+    }
+  ]
+}
